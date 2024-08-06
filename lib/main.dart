@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/modules/GameScreen/controllers/game_screen_controller.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app_binding.dart';
 

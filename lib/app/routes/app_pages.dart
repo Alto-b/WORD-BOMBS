@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/GameScreen/bindings/game_screen_binding.dart';
+import '../modules/GameScreen/views/game_screen_view.dart';
 import '../modules/HomeScreen/bindings/home_screen_binding.dart';
 import '../modules/HomeScreen/views/home_screen_view.dart';
 import '../modules/SplashScreen/bindings/splash_screen_binding.dart';
@@ -22,6 +24,11 @@ class AppPages {
       name: _Paths.HOME_SCREEN,
       page: () => const HomeScreenView(),
       binding: HomeScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.GAME_SCREEN,
+      page: () => const GameScreenView(),
+      binding: GameScreenBinding(),
     ),
   ];
 }

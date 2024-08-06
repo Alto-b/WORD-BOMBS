@@ -28,11 +28,15 @@ class HomeScreenFooter extends StatelessWidget {
               )),
           IconButton(
               onPressed: () {
+                controller.isSoundPlayed.value =
+                    !controller.isSoundPlayed.value;
                 log("sound button pressed from homescreen");
                 controller.playAudio();
               },
               icon: Icon(
-                (!controller.soundIsPlayed.value) ? Icons.mic : Icons.mic_off,
+                (controller.isSoundPlayed.value)
+                    ? Icons.volume_up
+                    : Icons.volume_off,
                 color: Colors.white,
               ))
         ],

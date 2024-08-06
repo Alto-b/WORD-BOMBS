@@ -10,7 +10,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
   const SplashScreenView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // controller.goToHomeScreen();
+    Get.find<SplashScreenController>();
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -18,7 +18,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
               height: Get.height,
               width: Get.width,
               child: InkWell(
-                  onTap: () => controller.goToHomeScreen(),
+                  onTap: () async => await controller.goToHomeScreen(),
                   child: Lottie.asset('assets/loaders/splash-1.json'))),
         ),
       ),

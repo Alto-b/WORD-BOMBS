@@ -4,31 +4,36 @@ import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   final AudioPlayer audioPlayer = AudioPlayer();
-  final RxBool soundIsPlayed = false.obs;
+  final RxBool isSoundPlayed = false.obs;
 
   @override
   void onInit() {
     super.onInit();
-    playAudio();
+    log("HomeScreenController onInit");
+    playAudioOnInit();
+    // audioPlayer.play(AssetSource('audio/hp-bgm-1.mp3'));
   }
 
   @override
   void onClose() {
+    audioPlayer.stop();
     audioPlayer.dispose();
     super.onClose();
   }
 
+  Future<void> playAudioOnInit() async {
+    await audioPlayer.play(AssetSource('audio/hp-bgm-1.mp3'));
+  }
+
   Future<void> playAudio() async {
-    if (soundIsPlayed.value) {
-      await audioPlayer.stop();
+    if (isSoundPlayed.value) {
+      await audioPlayer.pause();
       log("Audio stopped");
-      soundIsPlayed.value = false;
+      // isSoundPlayed.value = false;
     } else {
-      soundIsPlayed.value = true;
+      // isSoundPlayed.value = true;
       log("Audio playing");
-      await audioPlayer
-          .play(AssetSource('audio/hp-bgm-1.mp3'))
-          .then((value) => soundIsPlayed.value = false);
+      await audioPlayer.play(AssetSource('audio/hp-bgm-1.mp3'));
     }
   }
 }
