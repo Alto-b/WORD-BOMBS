@@ -1,15 +1,21 @@
 import 'dart:math';
 import 'dart:developer';
 import 'package:get/get.dart';
+import 'package:get/get_rx/get_rx.dart';
+import 'package:hangman_game/data/models/keyMap.dart';
 import 'package:hangman_game/data/repositories/country.dart';
 
 class GameScreenController extends GetxController {
   CountryRepo? countryRepo;
-  RxString? randomCountryHint = 'loading'.obs;
+  RxString randomCountryHint = 'loading'.obs;
+  RxList tappedButtonList = [].obs;
   RxInt lifeCount = 0.obs;
+  late KeyMap keyMapInstance;
+
   @override
   void onInit() {
     super.onInit();
+    keyMapInstance = KeyMap();
     print("getRandomCountry");
     // fetchRandomCountry();
   }
@@ -24,15 +30,7 @@ class GameScreenController extends GetxController {
     super.onClose();
   }
 
-  // List<String> getRandomCountry() {
-  //   final random = Random();
-  //   final randomIndex = random.nextInt(countryRepo!.countries.length);
-  //   final randomKey = countryRepo!.countries.keys.elementAt(randomIndex);
-  //   return [randomKey, countryRepo!.countries[randomKey]!];
-  // }
-
-  // void fetchRandomCountry() {
-  //   final randomCountry = getRandomCountry();
-  //   randomCountryHint?.value = randomCountry[1];
-  // }
+  String? getValue(String key) {
+    return keyMapInstance.keyMap[key];
+  }
 }

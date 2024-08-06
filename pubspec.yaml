@@ -1,7 +1,8 @@
 name: hangman_game
-description: "hangman_game is a complete result of noklachia moment felt during work about good old childhood games."
+description: "hangman_game is a complete result of noklachia moment felt during
+  work about good old childhood games."
 
-publish_to: 'none' 
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -16,6 +17,7 @@ dependencies:
   flutter_staggered_animations: ^1.1.1
   gap: ^3.0.1
   get: ^4.6.6
+  google_fonts: ^6.2.1
   lottie: ^3.1.2
   shimmer: ^3.0.0
 
