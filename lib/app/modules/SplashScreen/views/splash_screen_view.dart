@@ -20,7 +20,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
               width: Get.width,
               child: InkWell(
                   onTap: () async => await controller.goToHomeScreen(),
-                  child: Lottie.asset(Media.loader1))),
+                  child: Lottie.asset(Media.splash2Bomb))),
         ),
       ),
     );
