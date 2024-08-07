@@ -6,6 +6,18 @@ class HomeScreenController extends GetxController {
   final AudioPlayer audioPlayer = AudioPlayer();
   final RxBool isSoundPlayed = false.obs;
 
+  final List<String> items = [
+    'Item1',
+    'Item2',
+    'Item3',
+    'Item4',
+    'Item5',
+    'Item6',
+    'Item7',
+    'Item8',
+  ];
+  String? selectedValue;
+
   @override
   void onInit() {
     super.onInit();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
+import 'package:hangman_game/app/utils/media.dart';
 import 'package:lottie/lottie.dart';
 
 import '../controllers/splash_screen_controller.dart';
@@ -19,7 +20,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
               width: Get.width,
               child: InkWell(
                   onTap: () async => await controller.goToHomeScreen(),
-                  child: Lottie.asset('assets/loaders/splash-1.json'))),
+                  child: Lottie.asset(Media.loader1))),
         ),
       ),
     );

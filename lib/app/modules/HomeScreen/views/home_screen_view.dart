@@ -5,6 +5,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
+import 'package:hangman_game/app/utils/media.dart';
 import 'package:lottie/lottie.dart';
 import '../controllers/home_screen_controller.dart';
 
@@ -18,7 +19,6 @@ class HomeScreenView extends GetView<HomeScreenController> {
     final screenWidth = Get.width;
     return Obx(
       () => Scaffold(
-        backgroundColor: Color(0xFF1f2631),
         body: Container(
           height: screenHeight,
           width: screenWidth,
@@ -43,7 +43,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/hgman-nobg.png',
+                      Media.hgManNoBG,
                       fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
                     ),
@@ -74,11 +74,14 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                   Get.toNamed(Routes.GAME_SCREEN);
                                   log("play button pressed from homescreen");
                                 },
-                                child: Lottie.asset('assets/buttons/play.json',
-                                    height: 100),
+                                child:
+                                    Lottie.asset(Media.playButton, height: 100),
                               ),
                               Gap(70),
-                              Text("data"),
+                              Text(
+                                "dataa",
+                                style: TextStyle(color: Colors.red),
+                              ),
                               Gap(70),
                             ],
                           ),
