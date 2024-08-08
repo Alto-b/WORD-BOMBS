@@ -26,10 +26,10 @@ class HomeScreenView extends GetView<HomeScreenController> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.fromARGB(255, 76, 82, 91),
-                Color.fromARGB(255, 76, 82, 91),
-                Color.fromARGB(255, 36, 42, 51).withOpacity(0.5),
-                Color.fromARGB(255, 0, 0, 0).withOpacity(0.2),
+                const Color.fromARGB(255, 76, 82, 91),
+                const Color.fromARGB(255, 76, 82, 91),
+                const Color.fromARGB(255, 36, 42, 51).withOpacity(0.5),
+                const Color.fromARGB(255, 0, 0, 0).withOpacity(0.2),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -52,7 +52,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                 ),
               ),
               // Start game button
-              Container(
+              SizedBox(
                 height: screenHeight / 2.5,
                 width: screenWidth,
                 child: Center(
@@ -78,20 +78,51 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                 child:
                                     Lottie.asset(Media.playButton, height: 100),
                               ),
-                              // Gap(70),
-                              Text(
-                                'Lifetime Max Score: ${controller.lifetimeMaxScore.value}',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                              const Gap(10),
+                              //high score widget
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'High Score',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors
+                                          .white, // This color will be masked by the gradient
+                                    ),
+                                  ),
+                                  const Gap(10),
+                                  ShaderMask(
+                                    shaderCallback: (bounds) =>
+                                        const LinearGradient(
+                                      colors: [
+                                        Colors.yellow,
+                                        Colors.yellow,
+                                        Colors.orange,
+                                        Colors.red,
+                                        Colors.red
+                                      ],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ).createShader(bounds),
+                                    child: Text(
+                                      '${controller.lifetimeMaxScore.value}',
+                                      style: const TextStyle(
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors
+                                            .white, // This color will be masked by the gradient
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
 
                               // Gap(70),
                             ],
                           ),
-                          Spacer(),
+                          // const Spacer(),
                           // Row(
                           //   mainAxisAlignment: MainAxisAlignment.center,
                           //   children: [

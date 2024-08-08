@@ -87,6 +87,7 @@ class GameScreenController extends GetxController {
 
   void chooseCategory() {
     getRandomSport();
+    // getRandomCountry();
   }
 
   String? getValue(String key) {
