@@ -1,7 +1,10 @@
-import 'package:animated_icon/animated_icon.dart';
+import 'dart:developer';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/routes/app_pages.dart';
 
 import 'package:hangman_game/app/utils/color_converter.dart';
 import 'package:hangman_game/app/utils/media.dart';
@@ -24,23 +27,34 @@ class GameScreenView extends GetView<GameScreenController> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Get.back();
+              Get.offAndToNamed(Routes.HOME_SCREEN,
+                  result: controller.lifetimeMaxScore.value);
             },
             icon: const Icon(
-              Icons.abc,
+              Icons.home_outlined,
               color: Colors.white,
             )),
-        actions: [
-          IconButton(
-              onPressed: () {
-                debugPrint(
-                    "getRandomCountry current ${controller.currentWord} ${controller.currentHint} ");
-              },
-              icon: const Icon(
-                Icons.downhill_skiing,
-                color: Colors.white,
-              ))
-        ],
+        title: Obx(
+          () => Text(
+            'Current Score: ${controller.maxScore.value}',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {
+        //         debugPrint(
+        //             "getRandomCountry current ${controller.currentWord} ${controller.currentHint} ");
+        //       },
+        //       icon: const Icon(
+        //         Icons.downhill_skiing,
+        //         color: Colors.white,
+        //       ))
+        // ],
         centerTitle: true,
       ),
       body: Column(
@@ -49,21 +63,32 @@ class GameScreenView extends GetView<GameScreenController> {
             () => Stack(
               alignment: Alignment.center,
               children: [
-                Lottie.asset(Media.lines_animation_1, height: 150),
+                Lottie.asset(Media.lines_animation_1, height: 120),
                 Center(
                   child: Card(
-                    color: Colors.black12.withOpacity(0.2),
+                    color: Colors.black12.withOpacity(0.1),
                     elevation: 150,
                     shadowColor: Colors.green,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        controller.currentWord.value.toString().toUpperCase(),
-                        style: const TextStyle(
-                          fontSize: 25,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          controller.currentWord.value.length,
+                          (index) => Obx(
+                            () => Text(
+                              controller.revealedLetters[index]
+                                  ? controller.currentWord.value[index]
+                                      .toUpperCase()
+                                  : '_',
+                              style: const TextStyle(
+                                fontSize: 25,
+                                letterSpacing: 2,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -72,25 +97,66 @@ class GameScreenView extends GetView<GameScreenController> {
               ],
             ),
           ),
+
+          //carousal builder for hints
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Obx(
-                () => Text(
-                  textAlign: TextAlign.center,
-                  controller.currentHint.value,
-                  maxLines: 10,
-                  style: const TextStyle(
-                    overflow: TextOverflow.ellipsis,
-                    color: Colors.white,
-                    fontSize: 17,
+                () => CarouselSlider.builder(
+                  options: CarouselOptions(
+                      autoPlay: true,
+                      scrollPhysics: FixedExtentScrollPhysics(),
+                      autoPlayAnimationDuration: Duration(seconds: 2),
+                      // autoPlayInterval: Duration(seconds: 3),
+                      enlargeCenterPage: true,
+                      enlargeFactor: 0.2,
+                      animateToClosest: true,
+                      height: (Get.height) / 4.5),
+                  itemCount: controller.currentHint.length,
+                  itemBuilder: (BuildContext context, int itemIndex,
+                          int pageViewIndex) =>
+                      Container(
+                    child: Card(
+                        color: Colors.green,
+                        elevation: 10,
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              controller.currentHint[itemIndex],
+                              textAlign: TextAlign.center,
+                              maxLines: 10,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w600,
+                                overflow: TextOverflow.ellipsis,
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        )),
                   ),
                 ),
               ),
             ),
           ),
+          // Column(
+          //   children: [
+          //     Obx(
+          //       () => Text(
+          //         'Current Score: ${controller.maxScore.value}',
+          //         style: TextStyle(
+          //           fontSize: 20,
+          //           fontWeight: FontWeight.bold,
+          //           color: Colors.white,
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           const Spacer(),
-          const Gap(10),
+          // const Gap(10),
           Padding(
             padding: const EdgeInsets.all(0.0),
             child: SizedBox(
@@ -106,7 +172,7 @@ class GameScreenView extends GetView<GameScreenController> {
                       return _buildKeyButton(controller, keyIndex);
                     }).toList(),
                   ),
-                  const Gap(15),
+                  const Gap(10),
                   //row 2
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -115,7 +181,7 @@ class GameScreenView extends GetView<GameScreenController> {
                       return _buildKeyButton(controller, keyIndex);
                     }).toList(),
                   ),
-                  const Gap(15),
+                  const Gap(10),
                   //row 3
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -124,7 +190,7 @@ class GameScreenView extends GetView<GameScreenController> {
                       return _buildKeyButton(controller, keyIndex);
                     }).toList(),
                   ),
-                  const Gap(15),
+                  const Gap(10),
                 ],
               ),
             ),
@@ -133,7 +199,6 @@ class GameScreenView extends GetView<GameScreenController> {
             () => Stack(
               children: [
                 ClipRRect(
-                  // borderRadius: BorderRadius.circular(25),
                   child: LinearProgressIndicator(
                     minHeight: 25,
                     backgroundColor: Colors.green.shade300,
@@ -143,7 +208,6 @@ class GameScreenView extends GetView<GameScreenController> {
                   ),
                 ),
                 ClipRRect(
-                  // borderRadius: BorderRadius.circular(25),
                   child: Container(
                     height: 25,
                     width: screenWidth * (controller.lifeCount.value / 5),
@@ -178,11 +242,11 @@ class GameScreenView extends GetView<GameScreenController> {
           width: Get.width / 12,
           child: PushableButton(
             height: 45,
-            // width: 40,
             elevation: 8,
             hslColor: ColorConverter.listToHSLColor(
                 ColorConverter.colorToHSL(controller.getButtonColor(keyIndex))),
             onPressed: () {
+              HapticFeedback.mediumImpact(); // Trigger haptic feedback
               controller.checkIfWordExists(
                   controller.getValue(keyIndex.toString())!, keyIndex);
 

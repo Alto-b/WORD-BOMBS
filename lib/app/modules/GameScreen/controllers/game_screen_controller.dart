@@ -4,22 +4,30 @@ import 'package:animated_icon/animated_icon.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app/utils/media.dart';
 import 'package:hangman_game/data/models/keyMap.dart';
 import 'package:hangman_game/data/repositories/country.dart';
+import 'package:hangman_game/data/repositories/sports.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottie/lottie.dart';
 
 class GameScreenController extends GetxController {
   CountryRepo? countryRepo;
   RxString randomCountryHint = 'loading'.obs;
+
   RxList tappedButtonList = [].obs;
+  RxList resultList = [].obs;
+
   RxInt lifeCount = 0.obs;
+  RxInt maxScore = 0.obs;
+  RxInt lifetimeMaxScore = 0.obs;
   RxString currentWord = "".obs;
-  RxString currentHint = "".obs;
+  RxList currentHint = [].obs;
+
   late KeyMap keyMapInstance;
+  RxList<bool> revealedLetters = <bool>[].obs;
+  SharedPreferences? prefs;
 
   final List<int> qwertyOrder = [
     16, 22, 4, 17, 19, 24, 20, 8, 14, 15, // QWERTYUIOP
@@ -34,19 +42,51 @@ class GameScreenController extends GetxController {
   void onInit() {
     super.onInit();
     keyMapInstance = KeyMap();
-    getRandomCountry();
-    lifeCount.value = 0; // Initialize life count to 0
+    _initPrefs();
+    _resetGame();
+  }
+
+  Future<void> _initPrefs() async {
+    prefs = await SharedPreferences.getInstance();
+    maxScore.value = prefs?.getInt('maxScore') ?? 0;
+    lifetimeMaxScore.value = prefs?.getInt('lifetimeMaxScore') ?? 0;
+  }
+
+  void _updateMaxScore(int newScore) {
+    if (newScore > maxScore.value) {
+      maxScore.value = newScore;
+      prefs?.setInt('maxScore', newScore);
+    }
+    if (newScore > lifetimeMaxScore.value) {
+      lifetimeMaxScore.value = newScore;
+      prefs?.setInt('lifetimeMaxScore', newScore);
+    }
+  }
+
+  void _resetMaxScore() {
+    maxScore.value = 0;
+    prefs?.setInt('maxScore', 0);
+  }
+
+  void _resetGame() {
+    lifeCount.value = 0;
+    tappedButtonList.clear();
+    chooseCategory();
   }
 
   @override
   void onReady() {
     super.onReady();
-    getRandomCountry();
+    chooseCategory();
   }
 
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void chooseCategory() {
+    getRandomSport();
   }
 
   String? getValue(String key) {
@@ -71,7 +111,7 @@ class GameScreenController extends GetxController {
   }
 
   // Method to get a random key-value pair from the countries map
-  Future<MapEntry<String, String>> getRandomCountry() async {
+  Future<MapEntry<String, List<String>>> getRandomCountry() async {
     final random = Random();
     final keys = CountryRepo().countries.keys.toList();
     final randomKey = keys[random.nextInt(keys.length)];
@@ -79,17 +119,38 @@ class GameScreenController extends GetxController {
         "getRandomCountry $randomKey ${CountryRepo().countries[randomKey]}");
     currentWord.value = randomKey;
     currentHint.value = CountryRepo().countries[randomKey]!;
+    resultList.value = currentWord.value.split('').toList();
+
+    // Initialize revealedLetters with true for spaces and false for other characters
+    revealedLetters.value =
+        currentWord.value.split('').map((char) => char == ' ').toList();
+
     return MapEntry(randomKey, CountryRepo().countries[randomKey]!);
+  }
+
+// Method to get a random key-value pair from the sports map
+  Future<MapEntry<String, List<String>>> getRandomSport() async {
+    final random = Random();
+    final keys = SportsRepo().sports.keys.toList();
+    final randomKey = keys[random.nextInt(keys.length)];
+    debugPrint("getRandomSport $randomKey ${SportsRepo().sports[randomKey]}");
+    currentWord.value = randomKey;
+    currentHint.value = SportsRepo().sports[randomKey]!;
+    resultList.value = currentWord.value.split('').toList();
+
+    // Initialize revealedLetters with true for spaces and false for other characters
+    revealedLetters.value =
+        currentWord.value.split('').map((char) => char == ' ').toList();
+
+    return MapEntry(randomKey, SportsRepo().sports[randomKey]!);
   }
 
   void checkIfWordExists(String keyword, int index) async {
     print("lifeCount ${lifeCount.value}");
     if (lifeCount.value == 5) {
+      _updateMaxScore(maxScore.value); // Save the score
       showAlertDialog("Game Over", "You've exhausted all your chances.");
-      // Check if the user has exhausted their chances
-      // Future.delayed(const Duration(milliseconds: 700)).then((value) {
-      // Get.back();
-      // });
+      _resetMaxScore(); // Reset maxScore for new game
       return; // Prevent further processing
     }
 
@@ -99,7 +160,22 @@ class GameScreenController extends GetxController {
       lifeCount.value += 1; // Increment life count for wrong guess
     } else if (wordList.contains(keyword) &&
         !(tappedButtonList.contains(index))) {
-      // Correct guess, no action needed
+      // Correct guess, reveal the character
+      for (int i = 0; i < wordList.length; i++) {
+        if (wordList[i] == keyword) {
+          revealedLetters[i] = true;
+        }
+      }
+    }
+
+    // Check if all characters are revealed
+    if (!revealedLetters.contains(false)) {
+      maxScore.value++;
+      _updateMaxScore(maxScore.value); // Save the score
+      await Future.delayed(Duration(milliseconds: 500)).then((value) {
+        tappedButtonList.clear();
+        chooseCategory(); // Get a new random country
+      }); // Add a small delay for user experience
     }
   }
 
@@ -110,7 +186,7 @@ class GameScreenController extends GetxController {
     ));
   }
 
-//alert dialog for game over
+  //alert dialog for game over
   void showAlertDialog(String title, String message) {
     Get.dialog(
       Center(
@@ -147,16 +223,13 @@ class GameScreenController extends GetxController {
                 AnimateIcon(
                   key: UniqueKey(),
                   onTap: () {
-                    Get.offAllNamed(Routes.HOME_SCREEN);
+                    Get.offAndToNamed(Routes.HOME_SCREEN,
+                        result: lifetimeMaxScore.value);
                   },
                   iconType: IconType.continueAnimation,
                   height: 70,
-                  width: 70, color: Colors.white,
-                  // color: Color.fromRGBO(
-                  //     Random.secure().nextInt(255),
-                  //     Random.secure().nextInt(255),
-                  //     Random.secure().nextInt(255),
-                  //     1),
+                  width: 70,
+                  color: Colors.white,
                   animateIcon: AnimateIcons.home,
                 )
               ],
@@ -165,6 +238,8 @@ class GameScreenController extends GetxController {
         ),
       ),
       barrierDismissible: false,
-    );
+    ).then((_) {
+      _resetGame(); // Reset game state when dialog is dismissed
+    });
   }
 }

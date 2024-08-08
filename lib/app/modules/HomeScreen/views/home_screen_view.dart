@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -14,9 +13,11 @@ class HomeScreenView extends GetView<HomeScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<HomeScreenController>();
+    final HomeScreenController controller = Get.find<HomeScreenController>();
+    controller.initSharedPreference();
     final screenHeight = Get.height;
     final screenWidth = Get.width;
+
     return Obx(
       () => Scaffold(
         body: Container(
@@ -43,7 +44,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                 child: Column(
                   children: [
                     Image.asset(
-                      Media.hgManNoBG,
+                      Media.bombNoBG,
                       fit: BoxFit.cover,
                       filterQuality: FilterQuality.high,
                     ),
@@ -77,41 +78,46 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                 child:
                                     Lottie.asset(Media.playButton, height: 100),
                               ),
-                              Gap(70),
+                              // Gap(70),
                               Text(
-                                "dataa",
-                                style: TextStyle(color: Colors.red),
+                                'Lifetime Max Score: ${controller.lifetimeMaxScore.value}',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
-                              Gap(70),
+
+                              // Gap(70),
                             ],
                           ),
                           Spacer(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                  onPressed: () {
-                                    log("settings button pressed from homescreen");
-                                  },
-                                  icon: Icon(
-                                    Icons.settings,
-                                    color: Colors.white,
-                                  )),
-                              IconButton(
-                                  onPressed: () {
-                                    controller.isSoundPlayed.value =
-                                        !controller.isSoundPlayed.value;
-                                    controller.playAudio();
-                                    log("settings button pressed from homescreen");
-                                  },
-                                  icon: Icon(
-                                    (controller.isSoundPlayed.value)
-                                        ? Icons.volume_up
-                                        : Icons.volume_off,
-                                    color: Colors.white,
-                                  )),
-                            ],
-                          ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     IconButton(
+                          //         onPressed: () {
+                          //           log("settings button pressed from homescreen");
+                          //         },
+                          //         icon: Icon(
+                          //           Icons.settings,
+                          //           color: Colors.white,
+                          //         )),
+                          //     IconButton(
+                          //         onPressed: () {
+                          //           controller.isSoundPlayed.value =
+                          //               !controller.isSoundPlayed.value;
+                          //           controller.playAudio();
+                          //           log("settings button pressed from homescreen");
+                          //         },
+                          //         icon: Icon(
+                          //           (controller.isSoundPlayed.value)
+                          //               ? Icons.volume_up
+                          //               : Icons.volume_off,
+                          //           color: Colors.white,
+                          //         )),
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),

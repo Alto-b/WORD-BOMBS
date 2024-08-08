@@ -5,6 +5,8 @@ class Media {
 
 //home screen
   static const hgManNoBG = 'assets/hgman-nobg.png';
+  static const wordBomb = 'assets/word-bomb.png';
+  static const bombNoBG = 'assets/bomb_no_bg.png';
   static const playButton = 'assets/buttons/play.json';
 
   //game screen

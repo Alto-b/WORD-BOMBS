@@ -1,29 +1,19 @@
 import 'dart:developer';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreenController extends GetxController {
   final AudioPlayer audioPlayer = AudioPlayer();
   final RxBool isSoundPlayed = false.obs;
-
-  final List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-  ];
-  String? selectedValue;
+  RxInt lifetimeMaxScore = 0.obs;
 
   @override
   void onInit() {
     super.onInit();
     log("HomeScreenController onInit");
     playAudioOnInit();
-    // audioPlayer.play(AssetSource('audio/hp-bgm-1.mp3'));
+    initSharedPreference();
   }
 
   @override
@@ -31,6 +21,16 @@ class HomeScreenController extends GetxController {
     audioPlayer.stop();
     audioPlayer.dispose();
     super.onClose();
+  }
+
+  void initSharedPreference() async {
+    // Obtain shared preferences.
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    lifetimeMaxScore.value = prefs.getInt('lifetimeMaxScore') ?? 0;
+  }
+
+  void updateLifetimeMaxScore(int newScore) {
+    lifetimeMaxScore.value = newScore;
   }
 
   Future<void> playAudioOnInit() async {
@@ -41,9 +41,7 @@ class HomeScreenController extends GetxController {
     if (isSoundPlayed.value) {
       await audioPlayer.pause();
       log("Audio stopped");
-      // isSoundPlayed.value = false;
     } else {
-      // isSoundPlayed.value = true;
       log("Audio playing");
       await audioPlayer.play(AssetSource('audio/hp-bgm-1.mp3'));
     }
