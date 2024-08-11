@@ -9,6 +9,7 @@ import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app/utils/media.dart';
 import 'package:hangman_game/data/models/keyMap.dart';
 import 'package:hangman_game/data/repositories/country.dart';
+import 'package:hangman_game/data/repositories/dataRepo.dart';
 import 'package:hangman_game/data/repositories/sports.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottie/lottie.dart';
@@ -88,7 +89,8 @@ class GameScreenController extends GetxController {
   }
 
   void chooseCategory() {
-    getRandomSport();
+    getRandomEntryFromRepo(dataRepo().countries);
+    // getRandomSport();
     // getRandomCountry();
   }
 
@@ -113,40 +115,58 @@ class GameScreenController extends GetxController {
     }
   }
 
-  // Method to get a random key-value pair from the countries map
-  Future<MapEntry<String, List<String>>> getRandomCountry() async {
+  Future<MapEntry<String, List<String>>> getRandomEntryFromRepo(
+      Map<String, List<String>> repo) async {
     final random = Random();
-    final keys = CountryRepo().countries.keys.toList();
+    final keys = repo.keys.toList();
     final randomKey = keys[random.nextInt(keys.length)];
-    debugPrint(
-        "getRandomCountry $randomKey ${CountryRepo().countries[randomKey]}");
+    debugPrint("getRandomEntry $randomKey ${repo[randomKey]}");
+
     currentWord.value = randomKey;
-    currentHint.value = CountryRepo().countries[randomKey]!;
+    currentHint.value = repo[randomKey]!;
     resultList.value = currentWord.value.split('').toList();
 
     // Initialize revealedLetters with true for spaces and false for other characters
     revealedLetters.value =
         currentWord.value.split('').map((char) => char == ' ').toList();
 
-    return MapEntry(randomKey, CountryRepo().countries[randomKey]!);
+    return MapEntry(randomKey, repo[randomKey]!);
   }
+
+  // Method to get a random key-value pair from the countries map
+  // Future<MapEntry<String, List<String>>> getRandomCountry() async {
+  //   final random = Random();
+  //   final keys = dataRepo().countries.keys.toList();
+  //   final randomKey = keys[random.nextInt(keys.length)];
+  //   debugPrint(
+  //       "getRandomCountry $randomKey ${dataRepo().countries[randomKey]}");
+  //   currentWord.value = randomKey;
+  //   currentHint.value = dataRepo().countries[randomKey]!;
+  //   resultList.value = currentWord.value.split('').toList();
+
+  //   // Initialize revealedLetters with true for spaces and false for other characters
+  //   revealedLetters.value =
+  //       currentWord.value.split('').map((char) => char == ' ').toList();
+
+  //   return MapEntry(randomKey, dataRepo().countries[randomKey]!);
+  // }
 
 // Method to get a random key-value pair from the sports map
-  Future<MapEntry<String, List<String>>> getRandomSport() async {
-    final random = Random();
-    final keys = SportsRepo().sports.keys.toList();
-    final randomKey = keys[random.nextInt(keys.length)];
-    debugPrint("getRandomSport $randomKey ${SportsRepo().sports[randomKey]}");
-    currentWord.value = randomKey;
-    currentHint.value = SportsRepo().sports[randomKey]!;
-    resultList.value = currentWord.value.split('').toList();
+  // Future<MapEntry<String, List<String>>> getRandomSport() async {
+  //   final random = Random();
+  //   final keys = dataRepo().sports.keys.toList();
+  //   final randomKey = keys[random.nextInt(keys.length)];
+  //   debugPrint("getRandomSport $randomKey ${dataRepo().sports[randomKey]}");
+  //   currentWord.value = randomKey;
+  //   currentHint.value = dataRepo().sports[randomKey]!;
+  //   resultList.value = currentWord.value.split('').toList();
 
-    // Initialize revealedLetters with true for spaces and false for other characters
-    revealedLetters.value =
-        currentWord.value.split('').map((char) => char == ' ').toList();
+  //   // Initialize revealedLetters with true for spaces and false for other characters
+  //   revealedLetters.value =
+  //       currentWord.value.split('').map((char) => char == ' ').toList();
 
-    return MapEntry(randomKey, SportsRepo().sports[randomKey]!);
-  }
+  //   return MapEntry(randomKey, dataRepo().sports[randomKey]!);
+  // }
 
   void checkIfWordExists(String keyword, int index) async {
     print("lifeCount ${lifeCount.value}");
