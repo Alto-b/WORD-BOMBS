@@ -14,6 +14,9 @@ class Media {
   static const lines_animation_1 = 'assets/loaders/lines_animation_1.json';
   static const lines_animation_2 = 'assets/loaders/lines_animation_2.json';
   static const bomb = 'assets/loaders/bomb.json';
+  static const hint_loader_1 = 'assets/loaders/hint_loader_1.json';
+
   //audio
   static const wordSelectSuccessSound = 'assets/audio/success_bell.mp3';
+  static const guess_success_1 = 'assets/audio/guess_success_1.mp3';
 }

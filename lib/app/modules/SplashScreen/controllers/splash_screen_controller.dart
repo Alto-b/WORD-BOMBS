@@ -13,7 +13,7 @@ class SplashScreenController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    goToHomeScreen();
+    // goToHomeScreen();
   }
 
   @override

@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:animated_icon/animated_icon.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app/utils/media.dart';
@@ -13,7 +14,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottie/lottie.dart';
 
 class GameScreenController extends GetxController {
-  CountryRepo? countryRepo;
+  Rx<Color> scaffoldColor = Color(0xFF1f2631).obs;
+  RxBool isLoadingHints = false.obs;
   RxString randomCountryHint = 'loading'.obs;
 
   RxList tappedButtonList = [].obs;
@@ -173,19 +175,40 @@ class GameScreenController extends GetxController {
     if (!revealedLetters.contains(false)) {
       maxScore.value++;
       _updateMaxScore(maxScore.value); // Save the score
-      await Future.delayed(Duration(milliseconds: 500)).then((value) {
+      // await splashScaffoldColor();
+      await updateHintsAfterRight();
+      await Future.delayed(Duration(milliseconds: 1200)).then((value) {
         tappedButtonList.clear();
         chooseCategory(); // Get a new random country
       }); // Add a small delay for user experience
     }
   }
 
-  Future<void> playAudioForSuccess() async {
-    debugPrint('asddasdas');
-    await audioPlayer.play(AssetSource(
-      Media.wordSelectSuccessSound,
-    ));
+  Future<void> updateHintsAfterRight() async {
+    isLoadingHints.value = true;
+    await Future.delayed(Duration(seconds: 1));
+    playAudioOnSuccess();
+    isLoadingHints.value = false;
   }
+
+  Future<void> playAudioOnSuccess() async {
+    await audioPlayer.play(AssetSource(Media.guess_success_1));
+  }
+
+  Future<void> splashScaffoldColor() async {
+    // Change scaffold color to green for 500 milliseconds
+    scaffoldColor.value = Colors.blueGrey;
+    HapticFeedback.heavyImpact(); // Trigger haptic feedback
+    await Future.delayed(Duration(milliseconds: 200));
+    scaffoldColor.value = Color(0xFF1f2631); // Change back to original color
+  }
+
+  // Future<void> playAudioForSuccess() async {
+  //   debugPrint('asddasdas');
+  //   await audioPlayer.play(AssetSource(
+  //     Media.guess_success_1,
+  //   ));
+  // }
 
   //alert dialog for game over
   void showAlertDialog(String title, String message) {
