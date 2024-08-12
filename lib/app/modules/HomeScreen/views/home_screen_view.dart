@@ -80,7 +80,13 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                       .isNotEmpty) {
                                     Get.delete<
                                         HomeScreenController>(); // Ensure the controller is deleted
-                                    Get.toNamed(Routes.GAME_SCREEN);
+                                    Get.toNamed(
+                                      Routes.GAME_SCREEN,
+                                      arguments: {
+                                        'selectedRepo':
+                                            controller.selectedRepository.value,
+                                      },
+                                    );
                                   } else {
                                     shakeKey.currentState?.shake();
                                   }

@@ -65,8 +65,8 @@ class GameScreenController extends GetxController {
     lifetimeMaxScore.value = prefs?.getInt('lifetimeMaxScore') ?? 0;
 
     // Get the selectedRepository value from the HomeScreenController
-    final homeScreenController = Get.find<HomeScreenController>();
-    selectedRepository.value = homeScreenController.selectedRepository.value;
+    // final homeScreenController = Get.find<HomeScreenController>();
+    // selectedRepository.value = homeScreenController.selectedRepository.value;
 
     // Print to check if the value is correctly retrieved
     debugPrint(
