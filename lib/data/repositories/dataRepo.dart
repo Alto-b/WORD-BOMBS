@@ -1,4 +1,4 @@
-class dataRepo {
+class DataRepo {
   //repositories for country
   Map<String, List<String>> countries = {
     "United States": [

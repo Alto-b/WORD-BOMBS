@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 
 import 'package:hangman_game/app/utils/color_converter.dart';
@@ -37,14 +38,12 @@ class GameScreenView extends GetView<GameScreenController> {
           appBar: AppBar(
             backgroundColor: controller.scaffoldColor.value,
             leading: IconButton(
-                onPressed: () {
-                  Get.offAndToNamed(Routes.HOME_SCREEN,
-                      result: controller.lifetimeMaxScore.value);
-                },
-                icon: const Icon(
-                  Icons.home_outlined,
-                  color: Colors.white,
-                )),
+              onPressed: () {
+                Get.offAndToNamed(Routes.HOME_SCREEN,
+                    result: controller.lifetimeMaxScore.value);
+              },
+              icon: const Icon(Icons.home_outlined, color: Colors.white),
+            ),
             title: Obx(
               () => Text(
                 'Current Score: ${controller.maxScore.value}',
@@ -55,21 +54,15 @@ class GameScreenView extends GetView<GameScreenController> {
                 ),
               ),
             ),
-            // actions: [
-            //   IconButton(
-            //       onPressed: () {
-            //         debugPrint(
-            //             "getRandomCountry current ${controller.currentWord} ${controller.currentHint} ");
-            //       },
-            //       icon: const Icon(
-            //         Icons.downhill_skiing,
-            //         color: Colors.white,
-            //       ))
-            // ],
             centerTitle: true,
           ),
+
           body: Column(
             children: [
+              Text(
+                "Category: ${controller.selectedRepository.value}",
+                style: TextStyle(color: Colors.white),
+              ),
               Obx(
                 () => Stack(
                   alignment: Alignment.center,

@@ -5,12 +5,13 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app/utils/media.dart';
 import 'package:hangman_game/data/models/keyMap.dart';
-import 'package:hangman_game/data/repositories/country.dart';
+
 import 'package:hangman_game/data/repositories/dataRepo.dart';
-import 'package:hangman_game/data/repositories/sports.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottie/lottie.dart';
 
@@ -18,6 +19,7 @@ class GameScreenController extends GetxController {
   Rx<Color> scaffoldColor = Color(0xFF1f2631).obs;
   RxBool isLoadingHints = false.obs;
   RxString randomCountryHint = 'loading'.obs;
+  RxString selectedRepository = ''.obs;
 
   RxList tappedButtonList = [].obs;
   RxList resultList = [].obs;
@@ -46,13 +48,29 @@ class GameScreenController extends GetxController {
     super.onInit();
     keyMapInstance = KeyMap();
     _initPrefs();
+    initRepositories();
+
+    // Retrieve the selected repository from the arguments passed from HomeScreen
+    if (Get.arguments != null) {
+      selectedRepository.value = Get.arguments['selectedRepo'];
+    }
+
     _resetGame();
+    chooseCategory();
   }
 
   Future<void> _initPrefs() async {
     prefs = await SharedPreferences.getInstance();
     maxScore.value = prefs?.getInt('maxScore') ?? 0;
     lifetimeMaxScore.value = prefs?.getInt('lifetimeMaxScore') ?? 0;
+
+    // Get the selectedRepository value from the HomeScreenController
+    final homeScreenController = Get.find<HomeScreenController>();
+    selectedRepository.value = homeScreenController.selectedRepository.value;
+
+    // Print to check if the value is correctly retrieved
+    debugPrint(
+        "GameScreenController onInit with repo: ${selectedRepository.value}");
   }
 
   void _updateMaxScore(int newScore) {
@@ -86,12 +104,51 @@ class GameScreenController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+    selectedRepository.value = '';
+    HomeScreenController().selectedRepository.value = '';
   }
 
   void chooseCategory() {
-    getRandomEntryFromRepo(dataRepo().countries);
-    // getRandomSport();
-    // getRandomCountry();
+    final selectedRepo = selectedRepository.value;
+    debugPrint('Choosing category for repository: $selectedRepo');
+
+    // Use the selected repository to fetch the appropriate data
+    final repo = getRepository(selectedRepo);
+    if (repo.isNotEmpty) {
+      getRandomEntryFromRepo(repo);
+    } else {
+      debugPrint('Error: Repository not found or empty for $selectedRepo');
+    }
+  }
+
+  void initRepositories() {
+    try {
+      // Initialize your repositories here
+      Get.put(DataRepo());
+      debugPrint("Repositories initialized successfully");
+    } catch (e) {
+      debugPrint("Error initializing repositories: $e");
+    }
+  }
+
+  List<String> getRepositoryNames() {
+    return ['Countries', 'Sports'];
+  }
+
+  // Method to return the appropriate repository based on input
+  Map<String, List<String>> getRepository(String repoName) {
+    debugPrint('Selected Repository: $repoName');
+
+    switch (repoName) {
+      case 'Countries':
+        return DataRepo().countries;
+      case 'Sports':
+        return DataRepo().sports;
+      default:
+        return DataRepo().countries;
+      // debugPrint('Repository not found: $repoName');
+      // throw Exception('Error loading repo');
+    }
   }
 
   String? getValue(String key) {
@@ -132,41 +189,6 @@ class GameScreenController extends GetxController {
 
     return MapEntry(randomKey, repo[randomKey]!);
   }
-
-  // Method to get a random key-value pair from the countries map
-  // Future<MapEntry<String, List<String>>> getRandomCountry() async {
-  //   final random = Random();
-  //   final keys = dataRepo().countries.keys.toList();
-  //   final randomKey = keys[random.nextInt(keys.length)];
-  //   debugPrint(
-  //       "getRandomCountry $randomKey ${dataRepo().countries[randomKey]}");
-  //   currentWord.value = randomKey;
-  //   currentHint.value = dataRepo().countries[randomKey]!;
-  //   resultList.value = currentWord.value.split('').toList();
-
-  //   // Initialize revealedLetters with true for spaces and false for other characters
-  //   revealedLetters.value =
-  //       currentWord.value.split('').map((char) => char == ' ').toList();
-
-  //   return MapEntry(randomKey, dataRepo().countries[randomKey]!);
-  // }
-
-// Method to get a random key-value pair from the sports map
-  // Future<MapEntry<String, List<String>>> getRandomSport() async {
-  //   final random = Random();
-  //   final keys = dataRepo().sports.keys.toList();
-  //   final randomKey = keys[random.nextInt(keys.length)];
-  //   debugPrint("getRandomSport $randomKey ${dataRepo().sports[randomKey]}");
-  //   currentWord.value = randomKey;
-  //   currentHint.value = dataRepo().sports[randomKey]!;
-  //   resultList.value = currentWord.value.split('').toList();
-
-  //   // Initialize revealedLetters with true for spaces and false for other characters
-  //   revealedLetters.value =
-  //       currentWord.value.split('').map((char) => char == ' ').toList();
-
-  //   return MapEntry(randomKey, dataRepo().sports[randomKey]!);
-  // }
 
   void checkIfWordExists(String keyword, int index) async {
     print("lifeCount ${lifeCount.value}");
@@ -222,13 +244,6 @@ class GameScreenController extends GetxController {
     await Future.delayed(Duration(milliseconds: 200));
     scaffoldColor.value = Color(0xFF1f2631); // Change back to original color
   }
-
-  // Future<void> playAudioForSuccess() async {
-  //   debugPrint('asddasdas');
-  //   await audioPlayer.play(AssetSource(
-  //     Media.guess_success_1,
-  //   ));
-  // }
 
   //alert dialog for game over
   void showAlertDialog(String title, String message) {

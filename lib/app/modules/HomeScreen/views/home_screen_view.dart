@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/modules/HomeScreen/widgets/repo_dropdown.dart';
+import 'package:hangman_game/app/modules/HomeScreen/widgets/shake_widget.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
 import 'package:hangman_game/app/utils/media.dart';
 import 'package:lottie/lottie.dart';
@@ -17,6 +19,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
     controller.initSharedPreference();
     final screenHeight = Get.height;
     final screenWidth = Get.width;
+    final GlobalKey<ShakeWidgetState> shakeKey = GlobalKey<ShakeWidgetState>();
 
     return Obx(
       () => Scaffold(
@@ -72,14 +75,23 @@ class HomeScreenView extends GetView<HomeScreenController> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Get.toNamed(Routes.GAME_SCREEN);
-                                  log("play button pressed from homescreen");
+                                  if (controller.selectedRepository.value
+                                      .trim()
+                                      .isNotEmpty) {
+                                    Get.delete<
+                                        HomeScreenController>(); // Ensure the controller is deleted
+                                    Get.toNamed(Routes.GAME_SCREEN);
+                                  } else {
+                                    shakeKey.currentState?.shake();
+                                  }
+                                  log("Play button pressed from HomeScreen");
                                 },
                                 child:
                                     Lottie.asset(Media.playButton, height: 100),
                               ),
+
                               const Gap(10),
-                              //high score widget
+                              // High score widget
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -88,8 +100,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors
-                                          .white, // This color will be masked by the gradient
+                                      color: Colors.white,
                                     ),
                                   ),
                                   const Gap(10),
@@ -101,7 +112,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                         Colors.yellow,
                                         Colors.orange,
                                         Colors.red,
-                                        Colors.red
+                                        Colors.red,
                                       ],
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
@@ -111,44 +122,21 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                       style: const TextStyle(
                                         fontSize: 40,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors
-                                            .white, // This color will be masked by the gradient
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-
-                              // Gap(70),
                             ],
                           ),
-                          // const Spacer(),
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.center,
-                          //   children: [
-                          //     IconButton(
-                          //         onPressed: () {
-                          //           log("settings button pressed from homescreen");
-                          //         },
-                          //         icon: Icon(
-                          //           Icons.settings,
-                          //           color: Colors.white,
-                          //         )),
-                          //     IconButton(
-                          //         onPressed: () {
-                          //           controller.isSoundPlayed.value =
-                          //               !controller.isSoundPlayed.value;
-                          //           controller.playAudio();
-                          //           log("settings button pressed from homescreen");
-                          //         },
-                          //         icon: Icon(
-                          //           (controller.isSoundPlayed.value)
-                          //               ? Icons.volume_up
-                          //               : Icons.volume_off,
-                          //           color: Colors.white,
-                          //         )),
-                          //   ],
-                          // ),
+                          ShakeWidget(
+                            key: shakeKey,
+                            child: RepositoryDropdown(
+                              onRepositorySelected:
+                                  controller.onRepositorySelected,
+                            ),
+                          ),
                         ],
                       ),
                     ),
