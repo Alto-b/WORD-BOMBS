@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 
 class RepositoryDropdown extends StatefulWidget {
@@ -33,110 +34,105 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
     super.dispose();
   }
 
+  void _showCustomDropdownDialog(BuildContext context) {
+    final homeScreenController = Get.find<HomeScreenController>();
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Material(
+            color: Colors.transparent,
+            child: ScaleTransition(
+              scale: _scaleAnimation!,
+              child: Container(
+                width: Get.width * 0.7,
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.black87,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.pink.withOpacity(0.8),
+                      blurRadius: 3,
+                      offset: Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: homeScreenController
+                      .getRepositoryNames()
+                      .map<Widget>((String value) {
+                    return ListTile(
+                      title: Text(
+                        value,
+                        style: GoogleFonts.orbitron(
+                          color: selectedRepository == value
+                              ? Colors.pink
+                              : Colors.white,
+                          fontSize: selectedRepository == value ? 18 : 14,
+                          fontWeight: selectedRepository == value
+                              ? FontWeight.w900
+                              : FontWeight.w500,
+                        ),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          selectedRepository = value;
+                          homeScreenController.selectedRepository.value = value;
+                        });
+                        widget.onRepositorySelected(value);
+                        Navigator.of(context).pop();
+                      },
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+    _animationController?.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     final homeScreenController = Get.find<HomeScreenController>();
 
-    return ScaleTransition(
-      scale: _scaleAnimation!,
+    return GestureDetector(
+      onTap: () => _showCustomDropdownDialog(context),
       child: Container(
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        width: Get.width / 2,
+        width: Get.width * 0.7,
         decoration: BoxDecoration(
-          color: Colors.black87, // Dark background color
+          color: Colors.grey.withOpacity(0.5),
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.green.withOpacity(0.5),
+              color: Colors.grey.withOpacity(0.2),
               blurRadius: 8,
               offset: Offset(0, 4),
             ),
           ],
         ),
-        child: DropdownButtonFormField<String>(
-          alignment: Alignment.center,
-          value: selectedRepository,
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.transparent, // Dark background for the dropdown
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 12),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(
-                  // color: Colors.deepOrange.withOpacity(0.8),
-                  // width: 1.5,
-                  ),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(
-                  // color: Colors.deepOrange.withOpacity(0.5),
-                  // width: 1,
-                  ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(
-                // color: Colors.redAccent,
-                width: 2,
-              ),
-            ),
-          ),
-          hint: Text(
-            'Select Category',
-            style: TextStyle(
-              color: Colors.white70, // Light text color for hint
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          dropdownColor: Colors.black87, // Dark background for dropdown items
-          icon: Icon(Icons.arrow_drop_down, color: Colors.deepOrange),
-          onChanged: (String? newValue) {
-            setState(() {
-              selectedRepository = newValue;
-              homeScreenController.selectedRepository.value = newValue ?? "";
-              debugPrint(
-                  "selectedRepository: ${homeScreenController.selectedRepository.value}");
-            });
-            widget.onRepositorySelected(newValue!);
-          },
-          style: TextStyle(
-            color: Colors.white, // Light text color for selected item
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-          ),
-          items: homeScreenController
-              .getRepositoryNames()
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Center(
-                // Align the text to center
-                child: FadeTransition(
-                  opacity: _animationController!,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 0.0),
-                    child: Text(
-                      value,
-                      style: TextStyle(
-                        color: Colors.white, // Light text color for items
-                        fontSize: 16,
-                        fontWeight: selectedRepository == value
-                            ? FontWeight.w700
-                            : FontWeight.normal,
-                      ),
-                    ),
-                  ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                selectedRepository ?? 'Select Category',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
-            );
-          }).toList(),
-          onTap: () {
-            _animationController
-                ?.forward(); // Play the scale animation when dropdown opens
-          },
+              Icon(Icons.arrow_drop_down, color: Colors.pink),
+            ],
+          ),
         ),
       ),
     );
