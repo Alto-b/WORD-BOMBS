@@ -1,9 +1,13 @@
 import 'dart:developer';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:get/get.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
+import 'package:hangman_game/app/utils/media.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class SplashScreenController extends GetxController {
+  final AudioPlayer audioPlayer = AudioPlayer();
+  final RxBool isSoundPlayed = false.obs;
   RxString appName = ''.obs;
   RxString packageName = ''.obs;
   RxString version = ''.obs;
@@ -14,7 +18,8 @@ class SplashScreenController extends GetxController {
   @override
   void onInit() {
     log("SplashScreenController initialized");
-    // goToHomeScreen();
+    playAudioOnInit();
+    goToHomeScreen();
     getAppDetails();
     super.onInit();
   }
@@ -31,6 +36,13 @@ class SplashScreenController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+    audioPlayer.stop(); // Stop the audio when the controller is closed
+  }
+
+  Future<void> playAudioOnInit() async {
+    await audioPlayer.play(AssetSource(
+      Media.futuristic,
+    ));
   }
 
   Future<void> goToHomeScreen() async {

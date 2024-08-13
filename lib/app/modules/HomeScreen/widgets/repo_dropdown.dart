@@ -105,7 +105,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
       onTap: () => _showCustomDropdownDialog(context),
       child: Container(
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        width: Get.width * 0.7,
+        width: Get.width / 2,
         decoration: BoxDecoration(
           color: Colors.grey.withOpacity(0.5),
           borderRadius: BorderRadius.circular(25),

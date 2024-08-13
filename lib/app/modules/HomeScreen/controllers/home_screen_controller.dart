@@ -17,7 +17,7 @@ class HomeScreenController extends GetxController {
     debugPrint(
         "homescreen controller onInit with repo ${selectedRepository.value}");
     initRepositories();
-    playAudioOnInit();
+    // playAudioOnInit();
     initSharedPreference();
   }
 
@@ -35,7 +35,7 @@ class HomeScreenController extends GetxController {
   }
 
   List<String> getRepositoryNames() {
-    return ['Countries', 'Sports', 'Vehicles'];
+    return ['Countries', 'Sports', 'Vehicles', 'Animals', 'Chemistry'];
   }
 
   void resetRepositorySelection() {

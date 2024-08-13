@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -42,14 +43,17 @@ class HomeScreenView extends GetView<HomeScreenController> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Gap(screenHeight / 14),
-              // Hangman logo
+              // game logo
               Center(
                 child: Column(
                   children: [
-                    Image.asset(
-                      Media.bombNoBG,
-                      fit: BoxFit.cover,
-                      filterQuality: FilterQuality.high,
+                    Hero(
+                      tag: "gameLogo",
+                      child: Image.asset(
+                        Media.bombNoBG,
+                        fit: BoxFit.cover,
+                        filterQuality: FilterQuality.high,
+                      ),
                     ),
                   ],
                 ),
@@ -88,6 +92,8 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                       },
                                     );
                                   } else {
+                                    HapticFeedback
+                                        .vibrate(); // Trigger haptic feedback
                                     shakeKey.currentState?.shake();
                                   }
                                   log("Play button pressed from HomeScreen");

@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: AppPages.INITIAL,
       initialBinding: AppBinding(),
       getPages: AppPages.routes,
-      defaultTransition: Transition.cupertino,
+      // defaultTransition: Transition.cupertino,
       theme: ThemeData(
           scaffoldBackgroundColor: Color(0xFF1f2631),
           appBarTheme: AppBarTheme(

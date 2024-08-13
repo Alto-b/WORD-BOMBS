@@ -132,7 +132,13 @@ class GameScreenController extends GetxController {
   }
 
   List<String> getRepositoryNames() {
-    return ['Countries', 'Sports', 'Vehicles'];
+    return [
+      'Countries',
+      'Sports',
+      'Vehicles',
+      'Animals',
+      'Chemistry',
+    ];
   }
 
   // Method to return the appropriate repository based on input
@@ -146,8 +152,15 @@ class GameScreenController extends GetxController {
         return DataRepo().sports;
       case 'Vehicles':
         return DataRepo().vehicles;
+      case 'Animals':
+        return DataRepo().animals;
+      case 'Chemistry':
+        return DataRepo().chemistryAndChemicals;
       default:
-        return DataRepo().countries;
+        // If the repository name is not found, return a random repository
+        String randomRepoName =
+            getRepositoryNames()[Random().nextInt(getRepositoryNames().length)];
+        return getRepository(randomRepoName);
       // debugPrint('Repository not found: $repoName');
       // throw Exception('Error loading repo');
     }

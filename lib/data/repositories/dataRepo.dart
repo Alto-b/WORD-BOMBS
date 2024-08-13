@@ -617,4 +617,285 @@ class DataRepo {
       "They are known for their versatility, efficiency, and the growing infrastructure supporting them."
     ],
   };
+//...............................................repository for animals...............................................
+  Map<String, List<String>> animals = {
+    "Mammals": [
+      "Mammals are warm-blooded animals with hair or fur and most give birth to live young.",
+      "The blue whale, the largest animal on Earth, is a mammal.",
+      "Mammals include a wide variety of species such as humans, dogs, elephants, and dolphins.",
+      "They have a four-chambered heart and a well-developed brain.",
+      "Mammals are known for their ability to regulate their body temperature internally."
+    ],
+    "Birds": [
+      "Birds are warm-blooded animals with feathers, wings, and beaks, most of which can fly.",
+      "The ostrich is the largest bird in the world, but it cannot fly.",
+      "Birds lay eggs with hard shells and are found in a wide range of habitats worldwide.",
+      "They have a unique respiratory system that allows for efficient oxygen exchange during flight.",
+      "Birds are known for their diverse songs, plumage, and migration patterns."
+    ],
+    "Reptiles": [
+      "Reptiles are cold-blooded animals that include snakes, lizards, turtles, and crocodiles.",
+      "The Komodo dragon is the largest living species of lizard.",
+      "Reptiles are known for their scaly skin, which helps prevent water loss.",
+      "They lay eggs with leathery shells, and some species give live birth.",
+      "Reptiles are ectothermic, meaning they rely on external heat sources to regulate their body temperature."
+    ],
+    "Amphibians": [
+      "Amphibians are cold-blooded animals that include frogs, toads, salamanders, and newts.",
+      "The axolotl is a unique amphibian that can regenerate lost body parts.",
+      "Amphibians typically have a life cycle that includes both aquatic and terrestrial stages.",
+      "They have permeable skin that allows them to absorb water and oxygen directly from the environment.",
+      "Amphibians are known for their vocalizations, especially frogs, which use calls to attract mates."
+    ],
+    "Fish": [
+      "Fish are cold-blooded animals that live in water and breathe through gills.",
+      "The great white shark is one of the most well-known predatory fish.",
+      "Fish have a streamlined body, fins for swimming, and scales that protect their skin.",
+      "They can be found in freshwater, saltwater, and brackish environments.",
+      "Fish are known for their diversity, with over 30,000 species, making them the largest group of vertebrates."
+    ],
+    "Insects": [
+      "Insects are the largest group of animals on Earth, with over a million known species.",
+      "The monarch butterfly is famous for its long migration across North America.",
+      "Insects have a segmented body with an exoskeleton, three pairs of legs, and usually one or two pairs of wings.",
+      "They undergo metamorphosis, a process that includes stages such as egg, larva, pupa, and adult.",
+      "Insects play crucial roles in ecosystems, including pollination, decomposition, and as a food source for other animals."
+    ],
+    "Arachnids": [
+      "Arachnids are a group of joint-legged invertebrates that include spiders, scorpions, and ticks.",
+      "The tarantula is one of the largest spider species, known for its hairy body and legs.",
+      "Arachnids have eight legs and a body divided into two segments: the cephalothorax and the abdomen.",
+      "They do not have antennae or wings, unlike insects.",
+      "Arachnids are known for their diverse methods of hunting and capturing prey, such as webs spun by spiders."
+    ],
+    "Crustaceans": [
+      "Crustaceans are aquatic animals that include crabs, lobsters, shrimp, and barnacles.",
+      "The Japanese spider crab is the largest crustacean, with a leg span of up to 12 feet.",
+      "Crustaceans have a hard exoskeleton, which they molt as they grow, and multiple pairs of legs.",
+      "They are found in a variety of aquatic environments, from deep oceans to freshwater lakes.",
+      "Crustaceans are important in marine food chains and are also consumed by humans as seafood."
+    ],
+    "Mollusks": [
+      "Mollusks are a diverse group of soft-bodied animals that include snails, clams, octopuses, and squids.",
+      "The giant squid is one of the largest mollusks, known for its deep-sea habitat and large eyes.",
+      "Mollusks have a soft body, often protected by a hard shell, and a muscular foot for movement.",
+      "They are found in both aquatic and terrestrial environments.",
+      "Mollusks are known for their unique feeding structures, such as the radula in snails and the beak in octopuses."
+    ],
+    "Echinoderms": [
+      "Echinoderms are marine animals that include starfish, sea urchins, and sand dollars.",
+      "The crown-of-thorns starfish is a large, venomous starfish known for its impact on coral reefs.",
+      "Echinoderms have a unique water vascular system that aids in movement and feeding.",
+      "They have a radial symmetry, usually with five arms or multiples of five.",
+      "Echinoderms are known for their ability to regenerate lost body parts, such as limbs in starfish."
+    ],
+    "Cnidarians": [
+      "Cnidarians are a group of marine animals that include jellyfish, corals, and sea anemones.",
+      "The box jellyfish is one of the most venomous creatures in the ocean.",
+      "Cnidarians have a simple body structure with a single opening serving as both mouth and anus.",
+      "They possess specialized cells called cnidocytes, which contain stinging structures used for capturing prey.",
+      "Cnidarians are known for their diverse forms, ranging from the floating medusae to the sessile polyps."
+    ],
+    "Annelids": [
+      "Annelids are segmented worms that include earthworms, leeches, and polychaetes.",
+      "The giant earthworm can grow up to 10 feet long and is found in South America.",
+      "Annelids have a body divided into segments, each containing the same set of organs.",
+      "They live in a variety of environments, including soil, freshwater, and marine habitats.",
+      "Annelids are important for soil health, with earthworms playing a crucial role in aerating and enriching the soil."
+    ],
+    "Cephalopods": [
+      "Cephalopods are a class of mollusks that include octopuses, squids, and cuttlefish.",
+      "The octopus is known for its intelligence, ability to camouflage, and unique locomotion.",
+      "Cephalopods have a well-developed nervous system, large eyes, and a beak-like mouth.",
+      "They are found in marine environments, from shallow waters to the deep sea.",
+      "Cephalopods are known for their ability to rapidly change color and texture, often used for communication and camouflage."
+    ],
+    "Amphibious Fish": [
+      "Amphibious fish are fish that have adapted to survive both in water and on land.",
+      "The mudskipper is a well-known amphibious fish that can walk on land using its pectoral fins.",
+      "Amphibious fish have specialized adaptations, such as modified fins and the ability to breathe air.",
+      "They are typically found in intertidal zones, mangroves, and swamps.",
+      "Amphibious fish are known for their unique behaviors, including burrowing and climbing."
+    ],
+    "Marsupials": [
+      "Marsupials are a group of mammals that give birth to underdeveloped young, which continue to grow in a pouch.",
+      "The kangaroo is the most well-known marsupial, native to Australia.",
+      "Marsupials include species such as koalas, wombats, and opossums.",
+      "They are primarily found in Australia, New Guinea, and the Americas.",
+      "Marsupials are known for their unique reproductive process, with the young developing outside the womb in a pouch."
+    ],
+    "Primates": [
+      "Primates are a group of mammals that include monkeys, apes, and humans.",
+      "The gorilla is the largest primate, known for its strength and social behavior.",
+      "Primates have large brains, forward-facing eyes, and opposable thumbs.",
+      "They are found in a variety of habitats, from tropical rainforests to savannas.",
+      "Primates are known for their complex social structures, communication, and problem-solving abilities."
+    ],
+    "Rodents": [
+      "Rodents are a group of mammals characterized by a single pair of continuously growing incisors.",
+      "The capybara is the largest rodent, native to South America.",
+      "Rodents include species such as mice, rats, squirrels, and beavers.",
+      "They are found in nearly every habitat and play important roles in ecosystems, often as prey for larger animals.",
+      "Rodents are known for their adaptability, reproductive rate, and ability to gnaw through various materials."
+    ],
+    "Carnivores": [
+      "Carnivores are animals that primarily eat meat, and this group includes predators like lions, wolves, and tigers.",
+      "The lion is known as the 'king of the jungle' and is a social carnivore, living in groups called prides.",
+      "Carnivores have sharp teeth and claws designed for hunting and tearing flesh.",
+      "They are found in a wide range of habitats, from savannas to forests to arctic regions.",
+      "Carnivores are known for their role in maintaining the balance of ecosystems by controlling prey populations."
+    ],
+    "Herbivores": [
+      "Herbivores are animals that primarily eat plants, including leaves, stems, fruits, and flowers.",
+      "The elephant is one of the largest herbivores, known for its massive size and trunk.",
+      "Herbivores include species such as deer, rabbits, giraffes, and zebras.",
+      "They are found in a variety of habitats, including forests, grasslands, and deserts.",
+      "Herbivores play a crucial role in ecosystems by controlling plant growth and serving as prey for carnivores."
+    ],
+    "Omnivores": [
+      "Omnivores are animals that eat both plants and animals, giving them a versatile diet.",
+      "The bear is a well-known omnivore, consuming a diet that includes berries, fish, and insects.",
+      "Omnivores include species such as pigs, raccoons, and humans.",
+      "They are highly adaptable and can thrive in a variety of environments.",
+      "Omnivores are known for their ability to switch between different food sources depending on availability."
+    ],
+  };
+//...............................................repository for chemistry
+//...............................................
+
+  Map<String, List<String>> chemistryAndChemicals = {
+    "Elements": [
+      "Elements are the basic building blocks of matter, consisting of atoms with the same number of protons.",
+      "Oxygen (O) is the most abundant element in the Earth's crust and is essential for respiration.",
+      "Carbon (C) is the basis of organic chemistry and forms the backbone of life on Earth.",
+      "Gold (Au) is a precious metal known for its malleability and conductivity.",
+      "Hydrogen (H) is the lightest and most abundant element in the universe."
+    ],
+    "Compounds": [
+      "Compounds are substances formed by the chemical combination of two or more elements in fixed ratios.",
+      "Water (H₂O) is a compound made of hydrogen and oxygen, essential for all known forms of life.",
+      "Carbon dioxide (CO₂) is a compound produced by respiration and combustion, playing a key role in the carbon cycle.",
+      "Sodium chloride (NaCl), commonly known as table salt, is a compound essential for human nutrition.",
+      "Methane (CH₄) is a simple hydrocarbon and a potent greenhouse gas."
+    ],
+    "Acids": [
+      "Acids are substances that donate protons (H⁺ ions) in a chemical reaction and typically have a sour taste.",
+      "Hydrochloric acid (HCl) is a strong acid found in stomach acid, aiding in digestion.",
+      "Sulfuric acid (H₂SO₄) is a highly corrosive acid used in batteries and industrial processes.",
+      "Acetic acid (CH₃COOH) is a weak acid found in vinegar.",
+      "Nitric acid (HNO₃) is used in the production of fertilizers and explosives."
+    ],
+    "Bases": [
+      "Bases are substances that accept protons or donate hydroxide ions (OH⁻) in a chemical reaction.",
+      "Sodium hydroxide (NaOH), also known as lye, is a strong base used in soap making.",
+      "Ammonia (NH₃) is a common base used in household cleaning products.",
+      "Calcium hydroxide (Ca(OH)₂), also known as lime, is used in construction and to neutralize acidic soils.",
+      "Potassium hydroxide (KOH) is used in the production of biodiesel and as an electrolyte in batteries."
+    ],
+    "Salts": [
+      "Salts are ionic compounds formed by the neutralization reaction between an acid and a base.",
+      "Sodium chloride (NaCl) is the most common salt, used as a food preservative and seasoning.",
+      "Calcium carbonate (CaCO₃) is found in limestone and is used in the production of cement.",
+      "Magnesium sulfate (MgSO₄), also known as Epsom salt, is used in medicine and agriculture.",
+      "Potassium nitrate (KNO₃) is used in fertilizers and in the production of gunpowder."
+    ],
+    "Organic Compounds": [
+      "Organic compounds are chemicals that contain carbon atoms bonded to hydrogen, oxygen, nitrogen, and other elements.",
+      "Methane (CH₄) is the simplest hydrocarbon and is a major component of natural gas.",
+      "Ethanol (C₂H₅OH) is an alcohol used in beverages, as a fuel, and as a solvent.",
+      "Glucose (C₆H₁₂O₆) is a simple sugar and an important energy source for living organisms.",
+      "Aspirin (C₉H₈O₄) is a common pain reliever and anti-inflammatory drug."
+    ],
+    "Polymers": [
+      "Polymers are large molecules made up of repeating units called monomers, with applications in various industries.",
+      "Polyethylene (PE) is the most common plastic, used in packaging, containers, and household items.",
+      "Polyvinyl chloride (PVC) is used in plumbing, electrical insulation, and construction materials.",
+      "Polystyrene (PS) is used in disposable cups, insulation, and packaging materials.",
+      "Nylon is a synthetic polymer used in textiles, ropes, and fishing nets."
+    ],
+    "Alloys": [
+      "Alloys are mixtures of two or more metals, or a metal and another element, to improve strength and durability.",
+      "Steel is an alloy of iron and carbon, widely used in construction and manufacturing.",
+      "Bronze is an alloy of copper and tin, historically used in tools, weapons, and sculptures.",
+      "Brass is an alloy of copper and zinc, used in musical instruments, plumbing, and decorative items.",
+      "Stainless steel is an alloy of iron, chromium, and nickel, known for its resistance to corrosion."
+    ],
+    "Chemical Reactions": [
+      "Chemical reactions involve the breaking and forming of bonds between atoms to create new substances.",
+      "Combustion is a chemical reaction that occurs when a substance reacts with oxygen to produce heat and light.",
+      "Photosynthesis is a process where plants convert carbon dioxide and water into glucose and oxygen using sunlight.",
+      "Oxidation-reduction (redox) reactions involve the transfer of electrons between substances.",
+      "Neutralization is a reaction between an acid and a base to form water and a salt."
+    ],
+    "Periodic Table": [
+      "The Periodic Table is a chart that organizes elements by increasing atomic number and similar chemical properties.",
+      "Dmitri Mendeleev is credited with creating the first Periodic Table in 1869.",
+      "Elements in the same group (column) of the Periodic Table have similar chemical properties.",
+      "Noble gases, such as helium and neon, are found in Group 18 and are known for their lack of reactivity.",
+      "Transition metals, found in the middle of the Periodic Table, are known for their conductivity and malleability."
+    ],
+    "Noble Gases": [
+      "Noble gases are a group of elements in Group 18 of the Periodic Table, known for their low reactivity.",
+      "Helium (He) is the second lightest element, used in balloons and as a coolant in cryogenics.",
+      "Neon (Ne) is used in neon signs and high-voltage indicators.",
+      "Argon (Ar) is used as an inert gas in welding and in incandescent light bulbs.",
+      "Xenon (Xe) is used in flash lamps, ion propulsion systems, and as a general anesthetic."
+    ],
+    "Transition Metals": [
+      "Transition metals are elements found in the middle of the Periodic Table, known for their ability to form various oxidation states.",
+      "Iron (Fe) is a transition metal used to make steel and is essential for the production of hemoglobin in the body.",
+      "Copper (Cu) is known for its high electrical conductivity and is widely used in electrical wiring.",
+      "Gold (Au) is a highly valued transition metal, known for its resistance to corrosion and use in jewelry.",
+      "Platinum (Pt) is used in catalytic converters, laboratory equipment, and jewelry."
+    ],
+    "Radioactive Elements": [
+      "Radioactive elements are unstable and undergo decay, emitting radiation in the form of alpha, beta, or gamma rays.",
+      "Uranium (U) is used as a fuel in nuclear reactors and in the production of nuclear weapons.",
+      "Radium (Ra) was historically used in luminous paints, but its use declined due to its radioactivity.",
+      "Plutonium (Pu) is used in nuclear reactors and as a fuel for space exploration missions.",
+      "Carbon-14 is a radioactive isotope used in radiocarbon dating to determine the age of ancient objects."
+    ],
+    "Catalysts": [
+      "Catalysts are substances that increase the rate of a chemical reaction without being consumed in the process.",
+      "Enzymes are biological catalysts that speed up reactions in living organisms.",
+      "Platinum is used as a catalyst in catalytic converters to reduce harmful emissions from vehicles.",
+      "Nickel is used as a catalyst in the hydrogenation of vegetable oils to produce margarine.",
+      "Catalysts are essential in industrial processes, such as the Haber process for ammonia production."
+    ],
+    "Acid-Base Indicators": [
+      "Acid-base indicators are substances that change color in response to the pH of a solution.",
+      "Litmus paper turns red in acidic solutions and blue in basic solutions.",
+      "Phenolphthalein is colorless in acidic solutions and pink in basic solutions.",
+      "Bromothymol blue changes from yellow in acidic solutions to blue in basic solutions.",
+      "Methyl orange turns red in acidic solutions and yellow in basic solutions."
+    ],
+    "Gases": [
+      "Gases are a state of matter characterized by the free movement of molecules and lack of a fixed shape or volume.",
+      "Oxygen (O₂) is essential for respiration in living organisms and supports combustion.",
+      "Carbon dioxide (CO₂) is a greenhouse gas that contributes to global warming.",
+      "Nitrogen (N₂) makes up about 78% of the Earth's atmosphere and is used in the production of fertilizers.",
+      "Helium (He) is a noble gas used in balloons, airships, and as a cooling agent."
+    ],
+    "Solvents": [
+      "Solvents are liquids that dissolve other substances to form a solution, commonly used in chemical reactions.",
+      "Water is known as the 'universal solvent' due to its ability to dissolve many substances.",
+      "Acetone is a solvent used in nail polish remover and as a cleaning agent.",
+      "Ethanol is a common solvent used in pharmaceuticals, cosmetics, and as a fuel.",
+      "Chloroform was historically used as an anesthetic and is now used as a solvent in laboratories."
+    ],
+    "Crystals": [
+      "Crystals are solid materials with atoms arranged in an orderly repeating pattern, forming unique shapes.",
+      "Quartz is a common crystal used in watches, electronics, and as a gemstone.",
+      "Salt (sodium chloride) forms cubic crystals and is essential for human health.",
+      "Diamonds are a form of carbon with a crystal structure that gives them exceptional hardness.",
+      "Ice crystals form when water freezes, creating a hexagonal lattice structure."
+    ],
+    "Chemical Bonds": [
+      "Chemical bonds are the forces that hold atoms together in molecules and compounds.",
+      "Ionic bonds occur when electrons are transferred from one atom to another, creating charged ions.",
+      "Covalent bonds form when atoms share electrons to achieve a stable electron configuration.",
+      "Metallic bonds occur between metal atoms, allowing them to conduct electricity and heat.",
+      "Hydrogen bonds are weak bonds that occur between polar molecules, important in the structure of water and DNA."
+    ],
+  };
 }

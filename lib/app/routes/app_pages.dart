@@ -23,6 +23,8 @@ class AppPages {
     GetPage(
       name: _Paths.HOME_SCREEN,
       page: () => const HomeScreenView(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 1100),
       binding: HomeScreenBinding(),
     ),
     GetPage(

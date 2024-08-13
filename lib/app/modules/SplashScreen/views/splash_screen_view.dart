@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
@@ -22,17 +23,34 @@ class SplashScreenView extends GetView<SplashScreenController> {
             child: Image.asset(
               Media.splashBgGif, // Your background image
               fit: BoxFit.cover,
-              opacity: AlwaysStoppedAnimation(0.7),
+              opacity: AlwaysStoppedAnimation(0.3),
             ),
           ),
           // Main content
           Center(
             child: Column(
               children: [
-                Container(
-                    height: Get.height / 1.5,
-                    width: Get.width,
-                    child: Lottie.asset(Media.splash2Bomb)),
+                Gap(20),
+                // game logo
+                Center(
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "gameLogo",
+                        child: Image.asset(
+                          Media.bombNoBG,
+                          fit: BoxFit.cover,
+                          filterQuality: FilterQuality.high,
+                          opacity: AlwaysStoppedAnimation(0.7),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                // Container(
+                //     height: Get.height / 1.5,
+                //     width: Get.width,
+                //     child: Lottie.asset(Media.splash2Bomb)),
                 Spacer(),
                 Shimmer.fromColors(
                   baseColor: Colors.grey,
@@ -55,7 +73,10 @@ class SplashScreenView extends GetView<SplashScreenController> {
                       Gap(10),
                       Text(
                         '©CodeFascia',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900),
                       ),
                     ],
                   ),

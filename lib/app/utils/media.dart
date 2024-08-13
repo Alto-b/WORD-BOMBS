@@ -23,4 +23,5 @@ class Media {
   //audio
   static const wordSelectSuccessSound = 'assets/audio/success_bell.mp3';
   static const guess_success_1 = 'assets/audio/guess_success_1.mp3';
+  static const futuristic = 'audio/futuristic.mp3';
 }
