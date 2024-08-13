@@ -1,7 +1,11 @@
 class Media {
+  //logo
+  static const codeFasciaLogo = 'assets/code_fascia_logo.png';
+
   //splash screen
   static const loader1 = 'assets/loaders/splash-1.json';
   static const splash2Bomb = 'assets/loaders/splash-2-bomb.json';
+  static const splashBgGif = 'assets/gifs/word_bombs_animation.gif';
 
 //home screen
   static const hgManNoBG = 'assets/hgman-nobg.png';

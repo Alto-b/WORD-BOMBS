@@ -37,7 +37,7 @@ class GameScreenController extends GetxController {
   final List<int> qwertyOrder = [
     16, 22, 4, 17, 19, 24, 20, 8, 14, 15, // QWERTYUIOP
     0, 18, 3, 5, 6, 7, 9, 10, 11, // ASDFGHJKL
-    25, 23, 2, 21, 1, 12, 13 // ZXCVBNM
+    25, 23, 2, 21, 1, 13, 12 // ZXCVBNM
   ];
 
   final AudioPlayer audioPlayer = AudioPlayer();
@@ -132,7 +132,7 @@ class GameScreenController extends GetxController {
   }
 
   List<String> getRepositoryNames() {
-    return ['Countries', 'Sports'];
+    return ['Countries', 'Sports', 'Vehicles'];
   }
 
   // Method to return the appropriate repository based on input
@@ -144,6 +144,8 @@ class GameScreenController extends GetxController {
         return DataRepo().countries;
       case 'Sports':
         return DataRepo().sports;
+      case 'Vehicles':
+        return DataRepo().vehicles;
       default:
         return DataRepo().countries;
       // debugPrint('Repository not found: $repoName');

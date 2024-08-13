@@ -35,10 +35,7 @@ class HomeScreenController extends GetxController {
   }
 
   List<String> getRepositoryNames() {
-    return [
-      'Countries',
-      'Sports',
-    ];
+    return ['Countries', 'Sports', 'Vehicles'];
   }
 
   void resetRepositorySelection() {

@@ -1,5 +1,5 @@
 class DataRepo {
-  //repositories for country
+  //...............................................repositories for country...............................................
   Map<String, List<String>> countries = {
     "United States": [
       "A large country in North America with 50 states, known for its diverse landscapes and climates ranging from deserts to tundras.",
@@ -296,7 +296,7 @@ class DataRepo {
       "Famous for its diverse landscapes, ranging from highlands and savannas to river valleys and forests."
     ],
   };
-//repository for sports
+//...............................................repository for sports...............................................
   Map<String, List<String>> sports = {
     "Soccer": [
       "Known as football in most of the world, it's the most popular sport globally.",
@@ -465,6 +465,156 @@ class DataRepo {
       "Lewis Hamilton and Michael Schumacher are legendary F1 drivers, each with multiple world championships.",
       "Motorsport requires precision driving, engineering excellence, and split-second decision-making.",
       "Known for its thrilling races, cutting-edge technology, and the global fan base that follows each series."
+    ],
+  };
+//...............................................repository for vehicles...............................................
+  Map<String, List<String>> vehicles = {
+    "Cars": [
+      "Cars are the most common type of vehicle, used for personal transportation.",
+      "The first gasoline-powered car was developed by Karl Benz in 1886.",
+      "Popular car brands include Toyota, Ford, and BMW.",
+      "Cars can be categorized into different types such as sedans, SUVs, and hatchbacks.",
+      "Electric cars, like those made by Tesla, are becoming increasingly popular due to their environmental benefits."
+    ],
+    "Motorcycles": [
+      "Motorcycles are two-wheeled vehicles that are popular for both commuting and sport.",
+      "Harley-Davidson is an iconic brand known for its heavyweight cruiser motorcycles.",
+      "Motorcycles can be categorized into different types such as cruisers, sportbikes, and dirt bikes.",
+      "They offer a unique sense of freedom and are known for their maneuverability.",
+      "The Isle of Man TT is one of the most famous motorcycle races in the world."
+    ],
+    "Trucks": [
+      "Trucks are vehicles designed to transport cargo, ranging from light-duty pickups to heavy-duty trucks.",
+      "Ford F-Series has been the best-selling truck in the United States for decades.",
+      "Trucks are essential for industries such as construction, agriculture, and logistics.",
+      "They come in various forms including flatbeds, box trucks, and tankers.",
+      "Trucks are known for their durability, power, and ability to carry heavy loads."
+    ],
+    "Bicycles": [
+      "Bicycles are human-powered vehicles with two wheels, used for transportation, recreation, and sport.",
+      "The first bicycle was invented in the early 19th century, known as the 'Dandy Horse'.",
+      "Bicycles come in various types including road bikes, mountain bikes, and BMX.",
+      "They are an environmentally friendly mode of transportation and promote physical fitness.",
+      "Cycling events like the Tour de France are among the most prestigious in the sporting world."
+    ],
+    "Boats": [
+      "Boats are watercraft used for travel, recreation, and fishing.",
+      "Yachts are luxury boats known for their size, comfort, and amenities.",
+      "Sailboats use wind to propel them, while motorboats rely on engines.",
+      "Boats are categorized into various types such as speedboats, fishing boats, and pontoons.",
+      "The America's Cup is one of the most famous sailing competitions in the world."
+    ],
+    "Airplanes": [
+      "Airplanes are aircraft that use fixed wings and engines to fly, revolutionizing global travel.",
+      "The Wright brothers made the first successful powered flight in 1903.",
+      "Commercial airplanes like the Boeing 747 and Airbus A380 are used for long-distance travel.",
+      "Airplanes are essential for military operations, cargo transport, and passenger travel.",
+      "The Concorde was a supersonic passenger jet known for its speed, but it was retired in 2003."
+    ],
+    "Trains": [
+      "Trains are vehicles that run on tracks, used for transporting passengers and cargo.",
+      "The Trans-Siberian Railway is the longest railway line in the world, spanning over 9,000 kilometers.",
+      "High-speed trains like the Shinkansen in Japan can reach speeds of over 300 km/h.",
+      "Trains are an efficient and reliable mode of transportation for both short and long distances.",
+      "They come in various types such as freight trains, passenger trains, and bullet trains."
+    ],
+    "Buses": [
+      "Buses are large road vehicles designed to carry multiple passengers, commonly used in public transport.",
+      "The iconic double-decker buses in London are known worldwide.",
+      "School buses are a common sight in many countries, used to transport students.",
+      "Buses can be powered by diesel, electricity, or natural gas, with electric buses gaining popularity.",
+      "They are an affordable and accessible mode of transportation, especially in urban areas."
+    ],
+    "Helicopters": [
+      "Helicopters are aircraft that use rotating blades to lift off vertically, allowing them to hover and maneuver in tight spaces.",
+      "They are commonly used for rescue missions, military operations, and transport in difficult terrain.",
+      "The first practical helicopter was developed by Igor Sikorsky in 1939.",
+      "Helicopters are known for their versatility, being able to land in areas where airplanes cannot.",
+      "Popular models include the Bell 206 and the Black Hawk."
+    ],
+    "Scooters": [
+      "Scooters are lightweight two-wheeled vehicles, popular in urban areas for their ease of use and fuel efficiency.",
+      "Vespa is one of the most iconic scooter brands, known for its classic design.",
+      "Electric scooters are becoming increasingly popular due to their eco-friendliness.",
+      "Scooters are commonly used for short-distance travel and are easy to park in crowded areas.",
+      "They are known for their simplicity, convenience, and cost-effectiveness."
+    ],
+    "Electric Vehicles": [
+      "Electric vehicles use electric motors and batteries instead of internal combustion engines.",
+      "Tesla is a leading brand in the EV market, known for its innovation and performance.",
+      "EVs produce zero tailpipe emissions, making them environmentally friendly.",
+      "The range of EVs has improved significantly, with some models capable of over 300 miles on a single charge.",
+      "Charging infrastructure is expanding globally, making EVs more practical for everyday use."
+    ],
+    "Vans": [
+      "Vans are versatile vehicles used for transporting goods and passengers, often favored by businesses.",
+      "They come in various sizes, from compact cargo vans to large passenger vans.",
+      "Popular models include the Ford Transit and Mercedes-Benz Sprinter.",
+      "Vans are commonly used by delivery companies, tradespeople, and for group transport.",
+      "They are known for their spacious interiors and ability to handle a variety of tasks."
+    ],
+    "SUVs": [
+      "Sport Utility Vehicles (SUVs) are larger vehicles designed for off-road capability and family transport.",
+      "Jeep is one of the most iconic SUV brands, known for its rugged off-road vehicles.",
+      "SUVs come in various sizes, from compact crossovers to full-size models.",
+      "They are popular for their spacious interiors, elevated seating positions, and versatility.",
+      "SUVs are known for their ability to handle a variety of terrains, including snow, mud, and sand."
+    ],
+    "RVs": [
+      "Recreational Vehicles (RVs) are motor vehicles or trailers equipped with living space and amenities.",
+      "RVs are popular for road trips, camping, and extended travel, offering the comforts of home on the go.",
+      "They come in various types, including motorhomes, campervans, and travel trailers.",
+      "RVs provide a sense of adventure and freedom, allowing people to explore remote areas.",
+      "They are known for their convenience, flexibility, and the lifestyle they represent."
+    ],
+    "Submarines": [
+      "Submarines are underwater vehicles used for military, research, and exploration purposes.",
+      "They can operate for extended periods underwater, with some capable of diving to great depths.",
+      "Submarines are essential for naval operations, often used for stealth missions.",
+      "Research submarines like Alvin have been used to explore the ocean's depths and discover new species.",
+      "Submarines are known for their unique capabilities and the challenges of underwater navigation."
+    ],
+    "ATVs": [
+      "All-Terrain Vehicles (ATVs) are off-road vehicles designed for use on rugged terrain.",
+      "ATVs are popular for recreational use, particularly in outdoor activities like hunting and trail riding.",
+      "They come in various types, including sport ATVs, utility ATVs, and side-by-sides.",
+      "ATVs are known for their ability to navigate difficult terrain, including mud, sand, and rocks.",
+      "They are commonly used in agriculture, forestry, and rescue operations."
+    ],
+    "Hovercraft": [
+      "Hovercraft are vehicles that travel over water or land on a cushion of air, generated by large fans.",
+      "They are used for various purposes, including military transport, rescue missions, and recreation.",
+      "Hovercraft can travel over various surfaces, including water, mud, and ice, making them highly versatile.",
+      "The first practical hovercraft was invented by Sir Christopher Cockerell in 1959.",
+      "Hovercraft are known for their unique design and ability to operate in areas inaccessible to other vehicles."
+    ],
+    "Tractors": [
+      "Tractors are powerful vehicles used primarily in agriculture for tasks such as plowing, tilling, and hauling.",
+      "John Deere is one of the most well-known brands in the agricultural machinery industry.",
+      "Tractors come in various sizes, from small garden tractors to large farm tractors.",
+      "They are essential for modern farming, allowing for the efficient use of land and resources.",
+      "Tractors are known for their durability, power, and versatility in agricultural work."
+    ],
+    "Tanks": [
+      "Tanks are heavily armored combat vehicles used by military forces for ground warfare.",
+      "The first tanks were developed during World War I to break through enemy trenches.",
+      "Modern tanks, like the M1 Abrams and T-90, are equipped with powerful cannons and advanced technology.",
+      "Tanks are designed to provide mobility, protection, and firepower on the battlefield.",
+      "They are known for their formidable presence, strength, and role in modern warfare."
+    ],
+    "Snowmobiles": [
+      "Snowmobiles are motorized vehicles designed for travel over snow and ice.",
+      "They are popular in regions with heavy snowfall, used for recreation, transportation, and work.",
+      "Snowmobiles are essential for activities like snowmobiling, ice fishing, and winter rescue operations.",
+      "They come in various types, including trail snowmobiles, mountain snowmobiles, and utility snowmobiles.",
+      "Snowmobiles are known for their ability to navigate snowy terrain, providing access to remote areas."
+    ],
+    "Electric Bikes": [
+      "Electric bikes (e-bikes) are bicycles equipped with an electric motor to assist with pedaling.",
+      "E-bikes are becoming increasingly popular for commuting, offering an eco-friendly alternative to cars.",
+      "They come in various styles, including city bikes, mountain bikes, and folding bikes.",
+      "E-bikes provide the convenience of powered assistance while still allowing for exercise and outdoor activity.",
+      "They are known for their versatility, efficiency, and the growing infrastructure supporting them."
     ],
   };
 }
