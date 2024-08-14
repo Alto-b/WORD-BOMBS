@@ -30,7 +30,7 @@ class SplashScreenView extends GetView<SplashScreenController> {
           Center(
             child: Column(
               children: [
-                Gap(20),
+                Gap(60),
                 // game logo
                 Center(
                   child: Column(

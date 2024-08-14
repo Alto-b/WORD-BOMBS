@@ -47,7 +47,7 @@ class SplashScreenController extends GetxController {
 
   Future<void> goToHomeScreen() async {
     log("SplashScreenController 1");
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(milliseconds: 2600));
     log("SplashScreenController 2");
     Get.offAllNamed(
       Routes.HOME_SCREEN,
