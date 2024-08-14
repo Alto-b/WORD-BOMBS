@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:ui'; // Import for BackdropFilter
+
 import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 
 class RepositoryDropdown extends StatefulWidget {
@@ -41,52 +43,72 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
       context: context,
       builder: (context) {
         return Center(
-          child: Material(
-            color: Colors.transparent,
-            child: ScaleTransition(
-              scale: _scaleAnimation!,
-              child: Container(
-                width: Get.width * 0.7,
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Colors.black87,
-                  borderRadius: BorderRadius.circular(25),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.pink.withOpacity(0.8),
-                      blurRadius: 3,
-                      offset: Offset(0, 4),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+            child: Material(
+              color: Colors.transparent,
+              child: ScaleTransition(
+                scale: _scaleAnimation!,
+                child: Container(
+                  width: Get.width * 0.8, // Slightly wider dialog
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(25),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.pink.withOpacity(0.8),
+                        blurRadius: 3,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight:
+                          Get.height * 0.7, // Increased height of the dialog
                     ),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: homeScreenController
-                      .getRepositoryNames()
-                      .map<Widget>((String value) {
-                    return ListTile(
-                      title: Text(
-                        value,
-                        style: GoogleFonts.orbitron(
-                          color: selectedRepository == value
-                              ? Colors.pink
-                              : Colors.white,
-                          fontSize: selectedRepository == value ? 18 : 14,
-                          fontWeight: selectedRepository == value
-                              ? FontWeight.w900
-                              : FontWeight.w500,
+                    child: Scrollbar(
+                      thumbVisibility: true,
+                      showTrackOnHover: true,
+                      thickness: 6,
+                      radius: Radius.circular(10),
+                      interactive: true,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: homeScreenController
+                              .getRepositoryNames()
+                              .map<Widget>((String value) {
+                            return ListTile(
+                              title: Text(
+                                value,
+                                style: GoogleFonts.orbitron(
+                                  color: selectedRepository == value
+                                      ? Colors.pink
+                                      : Colors.white,
+                                  fontSize:
+                                      selectedRepository == value ? 18 : 14,
+                                  fontWeight: selectedRepository == value
+                                      ? FontWeight.w900
+                                      : FontWeight.w500,
+                                ),
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  selectedRepository = value;
+                                  homeScreenController
+                                      .selectedRepository.value = value;
+                                });
+                                widget.onRepositorySelected(value);
+                                Navigator.of(context).pop();
+                              },
+                            );
+                          }).toList(),
                         ),
                       ),
-                      onTap: () {
-                        setState(() {
-                          selectedRepository = value;
-                          homeScreenController.selectedRepository.value = value;
-                        });
-                        widget.onRepositorySelected(value);
-                        Navigator.of(context).pop();
-                      },
-                    );
-                  }).toList(),
+                    ),
+                  ),
                 ),
               ),
             ),
