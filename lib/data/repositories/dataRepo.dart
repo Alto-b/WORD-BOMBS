@@ -760,8 +760,7 @@ class DataRepo {
       "Omnivores are known for their ability to switch between different food sources depending on availability."
     ],
   };
-//...............................................repository for chemistry
-//...............................................
+//...............................................repository for chemistry...............................................
 
   Map<String, List<String>> chemistryAndChemicals = {
     "Elements": [
@@ -897,5 +896,1267 @@ class DataRepo {
       "Metallic bonds occur between metal atoms, allowing them to conduct electricity and heat.",
       "Hydrogen bonds are weak bonds that occur between polar molecules, important in the structure of water and DNA."
     ],
+  };
+//...............................................repository for movies...............................................
+  Map<String, List<String>> movies = {
+    "The Shawshank Redemption": [
+      "Based on a novella by Stephen King, it’s widely regarded as one of the greatest films ever made.",
+      "The film is set in the fictional Shawshank State Penitentiary and follows the story of Andy Dufresne, who is wrongfully imprisoned.",
+      "Known for its powerful themes of hope, friendship, and resilience.",
+      "Famous for the iconic scene where Andy escapes through a sewage pipe.",
+      "Received multiple Academy Award nominations, including Best Picture."
+    ],
+    "The Godfather": [
+      "Directed by Francis Ford Coppola and based on the novel by Mario Puzo.",
+      "Widely considered one of the greatest films in world cinema and a cornerstone of the gangster genre.",
+      "The story focuses on the powerful Italian-American crime family of Don Vito Corleone.",
+      "Famous for Marlon Brando's iconic performance as Don Vito Corleone.",
+      "Won three Academy Awards, including Best Picture and Best Actor for Brando."
+    ],
+    "Inception": [
+      "Directed by Christopher Nolan, known for its complex and mind-bending plot.",
+      "The story revolves around a thief who enters people's dreams to steal their secrets.",
+      "Famous for its visually stunning special effects, including the zero-gravity fight scene.",
+      "Explores deep themes such as reality, dreams, and the subconscious mind.",
+      "Won four Academy Awards, including Best Cinematography and Best Visual Effects."
+    ],
+    "The Dark Knight": [
+      "Directed by Christopher Nolan, it’s the second film in his Batman trilogy.",
+      "Heath Ledger's portrayal of the Joker is widely regarded as one of the greatest performances in cinema history.",
+      "Known for its dark tone, complex characters, and moral dilemmas.",
+      "The film grossed over 1 billion dollar worldwide and set new standards for superhero films.",
+      "Ledger posthumously won the Academy Award for Best Supporting Actor."
+    ],
+    "Forrest Gump": [
+      "Directed by Robert Zemeckis, based on the novel by Winston Groom.",
+      "The film tells the life story of Forrest Gump, a man with a low IQ but an incredibly kind heart.",
+      "Known for its iconic quotes like 'Life is like a box of chocolates; you never know what you're gonna get.'",
+      "The film uses groundbreaking special effects to insert Forrest into historical footage.",
+      "Won six Academy Awards, including Best Picture, Best Director, and Best Actor for Tom Hanks."
+    ],
+    "Pulp Fiction": [
+      "Directed by Quentin Tarantino, known for its non-linear narrative and eclectic dialogue.",
+      "The film interweaves multiple stories involving crime, redemption, and violence.",
+      "Famous for its memorable characters and scenes, such as the dance sequence between John Travolta and Uma Thurman.",
+      "Credited with revitalizing John Travolta's career and launching Tarantino into stardom.",
+      "Won the Palme d'Or at the Cannes Film Festival and an Academy Award for Best Original Screenplay."
+    ],
+    "The Lord of the Rings: The Fellowship of the Ring": [
+      "Directed by Peter Jackson and based on the novel by J.R.R. Tolkien.",
+      "The first film in the epic fantasy trilogy, following the journey to destroy the One Ring.",
+      "Known for its stunning New Zealand landscapes, detailed set designs, and special effects.",
+      "Introduced audiences to Middle-earth, a richly detailed fantasy world.",
+      "Won four Academy Awards, including Best Cinematography and Best Visual Effects."
+    ],
+    "Titanic": [
+      "Directed by James Cameron, the film became the highest-grossing film of its time.",
+      "A romantic drama set against the backdrop of the infamous sinking of the RMS Titanic.",
+      "Famous for the iconic 'I'm the king of the world!' scene and the love story between Jack and Rose.",
+      "Won 11 Academy Awards, including Best Picture and Best Director.",
+      "Known for its groundbreaking special effects and the famous Celine Dion song 'My Heart Will Go On.'"
+    ],
+    "The Matrix": [
+      "Directed by the Wachowskis, known for its innovative visual effects, particularly 'bullet time.'",
+      "The film explores themes of reality, consciousness, and artificial intelligence.",
+      "Follows the story of Neo, a hacker who discovers the truth about the simulated reality known as the Matrix.",
+      "Famous for its philosophical undertones and groundbreaking action sequences.",
+      "Won four Academy Awards, including Best Visual Effects and Best Film Editing."
+    ],
+    "Schindler's List": [
+      "Directed by Steven Spielberg, based on the true story of Oskar Schindler, who saved over a thousand Jews during the Holocaust.",
+      "Shot in black and white, with the exception of a few symbolic color elements.",
+      "Known for its powerful portrayal of the Holocaust and its emotional depth.",
+      "Widely regarded as one of the greatest films ever made, addressing the horrors of the Holocaust.",
+      "Won seven Academy Awards, including Best Picture and Best Director for Spielberg."
+    ],
+    "Fight Club": [
+      "Directed by David Fincher, based on the novel by Chuck Palahniuk.",
+      "A cult classic that explores themes of identity, consumerism, and the human condition.",
+      "Famous for its twist ending and the rule 'The first rule of Fight Club is: You do not talk about Fight Club.'",
+      "Stars Brad Pitt and Edward Norton in one of their most memorable roles.",
+      "Initially received mixed reviews but has since become a highly influential film."
+    ],
+    "Gladiator": [
+      "Directed by Ridley Scott, an epic historical drama set in ancient Rome.",
+      "Follows the story of Maximus, a betrayed Roman general who seeks vengeance as a gladiator.",
+      "Famous for its intense battle scenes and Russell Crowe's powerful performance.",
+      "Won five Academy Awards, including Best Picture and Best Actor for Crowe.",
+      "Credited with reviving the epic film genre."
+    ],
+    "Avatar": [
+      "Directed by James Cameron, known for its groundbreaking use of 3D technology and visual effects.",
+      "Set on the alien world of Pandora, the film explores themes of environmentalism and imperialism.",
+      "Became the highest-grossing film of all time, a title it held for nearly a decade.",
+      "Famous for its immersive world-building and innovative motion capture technology.",
+      "Nominated for nine Academy Awards, winning three for its technical achievements."
+    ],
+    "Casablanca": [
+      "Directed by Michael Curtiz, a classic film set during World War II.",
+      "Known for its memorable lines like 'Here's looking at you, kid' and 'We'll always have Paris.'",
+      "Follows the story of an American expatriate who must choose between love and duty.",
+      "Won three Academy Awards, including Best Picture, Best Director, and Best Screenplay.",
+      "Widely regarded as one of the greatest love stories in cinematic history."
+    ],
+    "Star Wars: Episode IV - A New Hope": [
+      "Directed by George Lucas, it’s the film that started the Star Wars phenomenon.",
+      "Introduced iconic characters like Luke Skywalker, Princess Leia, and Darth Vader.",
+      "Revolutionized special effects and set new standards for blockbuster filmmaking.",
+      "Famous for its epic space battles, the lightsaber duel, and John Williams' iconic score.",
+      "Won seven Academy Awards, including Best Visual Effects and Best Original Score."
+    ]
+  };
+//...............................................repository for movies...............................................
+  Map<String, List<String>> famousPeople = {
+    "Albert Einstein": [
+      "Developed the theory of relativity, one of the two pillars of modern physics.",
+      "Famous for the equation E=mc², which expresses the equivalence of mass and energy.",
+      "Won the Nobel Prize in Physics in 1921 for his discovery of the photoelectric effect.",
+      "Known for his wild hair and eccentric personality, becoming a symbol of genius.",
+      "Immigrated to the United States in 1933, where he continued his work at the Institute for Advanced Study in Princeton."
+    ],
+    "Marie Curie": [
+      "Pioneered research on radioactivity, a term she coined.",
+      "The first woman to win a Nobel Prize, and the only person to win Nobel Prizes in two different scientific fields (Physics and Chemistry).",
+      "Discovered the elements polonium and radium with her husband Pierre Curie.",
+      "Her work led to the development of X-ray machines, which were crucial during World War I.",
+      "Despite her groundbreaking work, she faced significant challenges as a woman in science during her time."
+    ],
+    "Mahatma Gandhi": [
+      "Leader of the Indian independence movement against British rule, employing nonviolent civil disobedience.",
+      "Famous for his philosophy of nonviolence, or 'ahimsa,' and for leading peaceful protests.",
+      "Known for his simple lifestyle, often seen wearing traditional Indian dhoti and shawl.",
+      "Played a key role in India’s independence in 1947, inspiring civil rights movements across the world.",
+      "Assassinated in 1948 by a Hindu nationalist who opposed his philosophy of nonviolence and reconciliation with Muslims."
+    ],
+    "Martin Luther King Jr.": [
+      "Leader of the American civil rights movement, advocating for racial equality through nonviolent protest.",
+      "Famous for his 'I Have a Dream' speech during the 1963 March on Washington, which called for an end to racism.",
+      "Awarded the Nobel Peace Prize in 1964 for his efforts to combat racial inequality through nonviolence.",
+      "Assassinated in 1968, his legacy continues to influence civil rights movements worldwide.",
+      "Key figure in the passage of the Civil Rights Act of 1964 and the Voting Rights Act of 1965."
+    ],
+    "Leonardo da Vinci": [
+      "Renowned Renaissance artist, known for masterpieces like the Mona Lisa and The Last Supper.",
+      "Also a scientist, engineer, and inventor, with sketches that anticipated modern inventions like helicopters and tanks.",
+      "His notebooks, filled with diagrams and notes, show his deep interest in anatomy, astronomy, and botany.",
+      "Often described as the quintessential 'Renaissance Man' for his diverse talents and intellectual curiosity.",
+      "Spent his final years in France, where he was invited by King Francis I to work and live."
+    ],
+    "William Shakespeare": [
+      "Widely regarded as one of the greatest writers in the English language and the world’s pre-eminent dramatist.",
+      "Wrote 39 plays, including tragedies like Hamlet and Romeo and Juliet, comedies like A Midsummer Night's Dream, and histories like Henry V.",
+      "His works have been translated into every major living language and are performed more often than those of any other playwright.",
+      "Also known for his 154 sonnets, exploring themes of love, beauty, politics, and mortality.",
+      "Born and raised in Stratford-upon-Avon, where he also spent his final years."
+    ],
+    "Nelson Mandela": [
+      "Anti-apartheid revolutionary and political leader who served as President of South Africa from 1994 to 1999.",
+      "Imprisoned for 27 years for his efforts to overthrow the apartheid regime, he became a symbol of resistance and reconciliation.",
+      "Awarded the Nobel Peace Prize in 1993 alongside F.W. de Klerk for their work to peacefully end apartheid.",
+      "Known for his philosophy of forgiveness and reconciliation, helping to unite South Africa after decades of racial division.",
+      "Authored the autobiography 'Long Walk to Freedom,' detailing his life and struggle for equality."
+    ],
+    "Isaac Newton": [
+      "English mathematician, physicist, astronomer, and author who is widely recognized as one of the most influential scientists of all time.",
+      "Formulated the laws of motion and universal gravitation, which dominated the scientific view of the physical universe for the next three centuries.",
+      "His book 'Mathematical Principles of Natural Philosophy,' commonly known as the Principia, laid the groundwork for classical mechanics.",
+      "Also made significant contributions to optics and mathematics, including the development of calculus.",
+      "Served as Warden and later Master of the Royal Mint, where he oversaw the recoinage of the English currency."
+    ],
+    "Mother Teresa": [
+      "Catholic nun and missionary known for her work with the poor in Kolkata, India.",
+      "Founded the Missionaries of Charity, which now operates in over 130 countries, providing care for the sick, homeless, and dying.",
+      "Awarded the Nobel Peace Prize in 1979 for her humanitarian work.",
+      "Canonized as Saint Teresa of Calcutta by the Catholic Church in 2016.",
+      "Known for her deep faith and commitment to serving the 'poorest of the poor,' despite criticism of her methods and beliefs."
+    ],
+    "Winston Churchill": [
+      "British Prime Minister during World War II, known for his leadership and oratory skills.",
+      "Famous for his speeches that inspired the British people during the darkest days of the war, including the phrase 'We shall never surrender.'",
+      "Also a Nobel Prize-winning writer, known for his historical works, including a multi-volume history of World War II.",
+      "Led Britain to victory in World War II, though his post-war government was defeated in the 1945 election.",
+      "Known for his wit, eccentricity, and his role in shaping the post-war world order."
+    ],
+    "Steve Jobs": [
+      "Co-founder of Apple Inc., and a key figure in the development of personal computers, smartphones, and digital media.",
+      "Known for his visionary leadership, overseeing the creation of iconic products like the iPhone, iPad, and MacBook.",
+      "Famous for his emphasis on design, user experience, and innovation, often pushing boundaries in technology.",
+      "Also co-founded Pixar Animation Studios, which revolutionized the animation industry with films like Toy Story.",
+      "Remembered as a transformative figure in technology, with a legacy that continues to influence the tech industry."
+    ],
+    "Amelia Earhart": [
+      "Aviation pioneer and the first female aviator to fly solo across the Atlantic Ocean.",
+      "Set numerous aviation records and was a key figure in the early movement for women's rights.",
+      "Disappeared in 1937 during an attempt to circumnavigate the globe, leading to one of the greatest unsolved mysteries in history.",
+      "Authored several books about her flying experiences, inspiring generations of women to pursue careers in aviation.",
+      "Remembered as a trailblazer in both aviation and women's rights, her legacy endures through numerous honors and memorials."
+    ],
+    "Galileo Galilei": [
+      "Italian astronomer, physicist, and engineer, known as the 'father of modern observational astronomy.'",
+      "Made significant contributions to the development of the scientific method and was a key figure in the Scientific Revolution.",
+      "Improved the telescope and used it to make groundbreaking observations, including the moons of Jupiter and the phases of Venus.",
+      "Championed heliocentrism, the idea that the Earth orbits the Sun, which led to conflict with the Catholic Church.",
+      "Placed under house arrest for his views, but his work laid the foundation for modern physics and astronomy."
+    ],
+    "Queen Elizabeth I": [
+      "Daughter of Henry VIII and Anne Boleyn, she became one of England's greatest monarchs.",
+      "Her reign, known as the Elizabethan Era, was a period of English cultural renaissance and the flourishing of English drama, led by playwrights such as William Shakespeare.",
+      "Famous for her political acumen, she maintained stability and avoided costly wars despite pressure from European powers.",
+      "Never married, earning her the nickname 'The Virgin Queen,' and she skillfully used her single status to her advantage in diplomacy.",
+      "Her leadership helped England become a major world power and laid the foundations for the British Empire."
+    ],
+    "Nelson Mandela": [
+      "Anti-apartheid revolutionary and the first Black president of South Africa.",
+      "Spent 27 years in prison for his activism against South Africa's racist apartheid system.",
+      "Led the country’s transition from apartheid to a multi-racial democracy.",
+      "Awarded the Nobel Peace Prize in 1993 for his efforts in dismantling apartheid.",
+      "Known for his emphasis on reconciliation and forgiveness, even toward those who had oppressed him."
+    ],
+    "Helen Keller": [
+      "An American author, disability rights advocate, and lecturer who was the first deaf-blind person to earn a Bachelor of Arts degree.",
+      "Lost her sight and hearing at 19 months old but overcame these challenges with the help of her teacher, Anne Sullivan.",
+      "Became an advocate for people with disabilities, co-founding the American Civil Liberties Union (ACLU) in 1920.",
+      "Wrote 12 published books and numerous articles on social issues, including women's suffrage, pacifism, and workers' rights.",
+      "Her life and accomplishments have inspired millions around the world, demonstrating the power of determination and education."
+    ],
+    "Muhammad Ali": [
+      "One of the greatest boxers of all time, known for his charisma and sportsmanship both in and out of the ring.",
+      "Won the world heavyweight title three times, becoming the first fighter to do so.",
+      "Famous for his refusal to be drafted into the Vietnam War, citing religious beliefs and opposition to the war, which led to his suspension from boxing.",
+      "Known for his fast footwork, powerful punches, and catchphrases like 'Float like a butterfly, sting like a bee.'",
+      "Also a civil rights advocate, using his fame to speak out against racial injustice and inequality."
+    ],
+    "Cleopatra": [
+      "The last active ruler of the Ptolemaic Kingdom of Egypt, famous for her intelligence, political acumen, and romantic relationships with Julius Caesar and Mark Antony.",
+      "Known for her role in the Roman political battles between Julius Caesar and Pompey, and later between Mark Antony and Octavian.",
+      "Often depicted as a seductress, but also a shrewd and capable ruler who sought to protect Egypt’s independence.",
+      "Her death marked the end of the Ptolemaic dynasty and the beginning of Roman Egypt.",
+      "Her life has been the subject of numerous works of art, literature, and films, solidifying her legacy as one of history's most fascinating figures."
+    ],
+    "Vincent van Gogh": [
+      "Dutch post-impressionist painter who is among the most famous and influential figures in Western art.",
+      "Known for his expressive and emotive use of color, with famous works including 'Starry Night,' 'Sunflowers,' and 'The Bedroom.'",
+      "Struggled with mental illness throughout his life and famously cut off part of his ear after a confrontation with fellow artist Paul Gauguin.",
+      "Sold only one painting during his lifetime, but his work gained widespread fame and influence after his death.",
+      "His tragic life story and powerful paintings have made him a symbol of the tortured artist, with his works now among the most valuable in the world."
+    ],
+    "Mona Lisa": [
+      "The subject of Leonardo da Vinci's most famous painting, known for her enigmatic smile.",
+      "Also known as La Gioconda, the painting is housed in the Louvre Museum in Paris.",
+      "Considered an archetypal masterpiece of the Italian Renaissance, the painting’s fame has grown over centuries.",
+      "The identity of the sitter remains a topic of debate among historians, with some believing she was Lisa Gherardini, a wealthy Florentine woman.",
+      "The painting’s fame has made it an enduring symbol of artistic achievement and mystery."
+    ]
+  };
+//...............................................repository for fruits and vegetables...............................................
+  Map<String, List<String>> fruitsAndVegetables = {
+    "Apple": [
+      "One of the most popular and widely cultivated fruits in the world.",
+      "Comes in various colors, including red, green, and yellow, each with a slightly different taste.",
+      "Rich in fiber and vitamin C, making it a healthy snack option.",
+      "Associated with the saying 'An apple a day keeps the doctor away' due to its health benefits.",
+      "Over 7,500 varieties of apples are grown worldwide, each with unique flavor and texture."
+    ],
+    "Banana": [
+      "A tropical fruit that is a staple food in many countries around the world.",
+      "Rich in potassium, making it beneficial for heart health and muscle function.",
+      "Bananas grow in clusters on large herbaceous plants, not trees.",
+      "Easily digestible and often recommended as a first solid food for babies.",
+      "Used in various cuisines, from sweet desserts like banana bread to savory dishes like banana curry."
+    ],
+    "Carrot": [
+      "A root vegetable typically orange in color, though it comes in other shades like purple, red, and yellow.",
+      "Rich in beta-carotene, which the body converts into vitamin A, essential for eye health.",
+      "Can be eaten raw, cooked, or juiced, and is often used in salads, soups, and stews.",
+      "Originally domesticated in Persia, where the earliest varieties were purple and yellow.",
+      "The orange carrot was popularized in the Netherlands in the 17th century as a tribute to the House of Orange."
+    ],
+    "Tomato": [
+      "Botanically a fruit but commonly used as a vegetable in culinary contexts.",
+      "Rich in lycopene, an antioxidant linked to many health benefits, including reduced risk of heart disease and cancer.",
+      "Comes in various colors, including red, yellow, green, and purple, each with its own flavor profile.",
+      "Native to western South America, it was first domesticated in Mexico and later spread worldwide.",
+      "A key ingredient in many cuisines, especially Italian, where it is used in sauces, salads, and pizzas."
+    ],
+    "Spinach": [
+      "A leafy green vegetable that is highly nutritious, packed with vitamins A, C, and K, as well as iron and calcium.",
+      "Can be eaten raw in salads, cooked in various dishes, or blended into smoothies.",
+      "Originally from Persia, spinach became a popular vegetable in the Mediterranean and later worldwide.",
+      "Famous for its association with the cartoon character Popeye, who eats spinach to gain superhuman strength.",
+      "Contains oxalates, which can interfere with calcium absorption, but also offers numerous health benefits."
+    ],
+    "Strawberry": [
+      "A popular red fruit known for its sweet flavor and juicy texture.",
+      "Rich in vitamin C, manganese, and antioxidants, making it a nutritious and delicious snack.",
+      "Unique among fruits because its seeds are on the outside rather than inside.",
+      "Cultivated varieties are descendants of wild strawberries from the Americas and Europe.",
+      "Often used in desserts like strawberry shortcake, as well as in jams, jellies, and smoothies."
+    ],
+    "Broccoli": [
+      "A cruciferous vegetable related to cabbage, kale, and cauliflower, known for its high nutritional value.",
+      "Rich in vitamins C, K, and A, as well as fiber and various antioxidants.",
+      "Can be eaten raw, steamed, roasted, or added to a variety of dishes, including stir-fries and casseroles.",
+      "Originally cultivated in Italy, where it was bred from wild cabbage.",
+      "Known for its potential cancer-fighting properties due to the presence of sulforaphane."
+    ],
+    "Blueberry": [
+      "A small, round fruit that is blue or purple in color and known for its sweet-tart flavor.",
+      "Packed with antioxidants, particularly anthocyanins, which give the fruit its color and health benefits.",
+      "Native to North America, blueberries have been consumed for centuries by indigenous peoples.",
+      "Often eaten fresh, in smoothies, or as part of baked goods like muffins and pies.",
+      "Studies suggest that blueberries may help improve brain function and memory."
+    ],
+    "Pumpkin": [
+      "A large, orange squash that is a type of winter squash, known for its versatility in cooking.",
+      "Rich in vitamins A and C, as well as fiber and antioxidants.",
+      "Often associated with autumn and Halloween, when it is carved into jack-o'-lanterns.",
+      "Used in both sweet and savory dishes, including pumpkin pie, soups, and roasted pumpkin.",
+      "Native to North America, pumpkins have been cultivated for thousands of years."
+    ],
+    "Mango": [
+      "A tropical stone fruit with a sweet, juicy flesh and a large pit in the center.",
+      "Rich in vitamins A and C, as well as dietary fiber, making it a healthy and delicious snack.",
+      "Native to South Asia, particularly India, where it is considered the 'king of fruits.'",
+      "Comes in many varieties, each with a unique flavor, texture, and color.",
+      "Often eaten fresh, in smoothies, or as part of desserts like mango sticky rice."
+    ],
+    "Potato": [
+      "A starchy root vegetable that is one of the most widely consumed foods in the world.",
+      "Rich in carbohydrates, particularly in the form of starch, making it a key energy source in many diets.",
+      "Native to the Andes region of South America, potatoes were brought to Europe by Spanish explorers.",
+      "Used in a wide range of dishes, from mashed potatoes to French fries to potato chips.",
+      "A staple food in many cultures, potatoes can be boiled, baked, fried, or roasted."
+    ],
+    "Pineapple": [
+      "A tropical fruit known for its spiky skin and sweet-tart flavor.",
+      "Rich in vitamin C, manganese, and bromelain, an enzyme that aids digestion.",
+      "Native to South America, particularly in the area now known as Paraguay and southern Brazil.",
+      "Often eaten fresh, grilled, or as part of desserts and tropical drinks like piña colada.",
+      "Pineapple's name comes from the resemblance of the fruit to a pine cone."
+    ],
+    "Cucumber": [
+      "A cool, refreshing vegetable often used in salads, sandwiches, and pickles.",
+      "Composed mostly of water, making it hydrating and low in calories.",
+      "Rich in vitamin K and contains a small amount of vitamin C and potassium.",
+      "Native to South Asia, cucumbers have been cultivated for thousands of years.",
+      "Can be eaten raw or pickled, and is often used in skincare for its soothing properties."
+    ],
+    "Grapes": [
+      "Small, sweet fruits that grow in clusters on vines and come in various colors, including red, green, and purple.",
+      "Used to make wine, raisins, and grape juice, as well as being eaten fresh as a snack.",
+      "Rich in antioxidants, particularly resveratrol, which has been linked to heart health.",
+      "Cultivated for thousands of years, grapes are one of the most widely grown fruit crops in the world.",
+      "Grapes are often associated with ancient Roman and Greek mythology, where they symbolized abundance and fertility."
+    ],
+    "Onion": [
+      "A bulbous vegetable that is a staple ingredient in many cuisines worldwide.",
+      "Known for its pungent flavor and aroma, which mellows and sweetens when cooked.",
+      "Rich in vitamins C and B6, as well as manganese and various antioxidants.",
+      "Can be eaten raw, sautéed, roasted, or caramelized, adding flavor to a wide variety of dishes.",
+      "Onions have been cultivated for thousands of years, with origins traced back to central Asia."
+    ],
+    "Avocado": [
+      "A creamy, nutrient-rich fruit known for its high content of healthy fats, particularly monounsaturated fat.",
+      "Rich in fiber, potassium, and vitamins C, E, and K, making it a popular superfood.",
+      "Native to Mexico and Central America, where it has been cultivated for over 7,000 years.",
+      "Often used in dishes like guacamole, salads, and smoothies, or simply spread on toast.",
+      "Avocados have become a symbol of health and wellness, often associated with trendy diets and culinary innovations."
+    ],
+    "Peach": [
+      "A juicy, sweet fruit with a fuzzy skin and a large pit in the center.",
+      "Rich in vitamins A and C, as well as dietary fiber and antioxidants.",
+      "Native to Northwest China, peaches have been cultivated for over 4,000 years.",
+      "Often eaten fresh, canned, or baked into desserts like peach cobbler.",
+      "Peaches are a symbol of longevity and immortality in Chinese culture."
+    ],
+    "Eggplant": [
+      "A versatile vegetable, also known as aubergine, that is commonly used in Mediterranean, Middle Eastern, and Asian cuisines.",
+      "Rich in fiber, vitamins B1 and B6, and antioxidants like nasunin, which is found in its purple skin.",
+      "Native to India and Southeast Asia, eggplant has been cultivated for thousands of years.",
+      "Can be grilled, roasted, fried, or baked, and is a key ingredient in dishes like ratatouille and baba ghanoush.",
+      "Eggplant belongs to the nightshade family, which also includes tomatoes and potatoes."
+    ],
+    "Lemon": [
+      "A citrus fruit known for its bright yellow color and tangy, acidic flavor.",
+      "Rich in vitamin C, making it a popular choice for boosting the immune system.",
+      "Native to Asia, lemons were later introduced to Europe and the Americas by explorers.",
+      "Used in a wide variety of culinary applications, from flavoring dishes to making lemonade and desserts.",
+      "Lemon juice is also commonly used as a natural cleaning agent and preservative."
+    ],
+    "Zucchini": [
+      "A summer squash that is commonly green, though yellow varieties also exist.",
+      "Low in calories and rich in vitamin C, potassium, and dietary fiber.",
+      "Can be eaten raw, cooked, or baked into dishes like zucchini bread and ratatouille.",
+      "Native to Central and South America, zucchini was later cultivated in Italy, where it became popular.",
+      "Zucchini is often harvested while still immature for the best flavor and texture."
+    ],
+    "Cherry": [
+      "A small, round fruit that is typically red or dark purple, known for its sweet-tart flavor.",
+      "Rich in antioxidants, vitamins C and A, and dietary fiber.",
+      "Cherries are believed to have originated in the region between the Black and Caspian Seas.",
+      "Often eaten fresh, dried, or used in desserts like cherry pie and black forest cake.",
+      "Cherry blossoms, especially in Japan, are celebrated in festivals and symbolize the beauty and fleeting nature of life."
+    ]
+  };
+//...............................................repository for brands...............................................
+  Map<String, List<String>> brands = {
+    "Apple": [
+      "Founded in 1976 by Steve Jobs, Steve Wozniak, and Ronald Wayne.",
+      "Known for its innovative products like the iPhone, iPad, and Mac computers.",
+      "The company's logo is one of the most recognizable in the world, featuring a bitten apple.",
+      "Apple's App Store was the first platform to offer millions of apps to users.",
+      "Famous for its minimalistic design philosophy and high-end retail stores."
+    ],
+    "Nike": [
+      "Founded in 1964 by Bill Bowerman and Phil Knight as Blue Ribbon Sports, later renamed Nike in 1971.",
+      "The iconic 'Swoosh' logo was designed by a student for just 35 dollars",
+      "Known for its slogan 'Just Do It,' which became one of the most memorable brand catchphrases.",
+      "Nike is a leader in sports apparel and footwear, sponsoring top athletes and sports teams globally.",
+      "The brand's Air Jordan line, endorsed by Michael Jordan, revolutionized the athletic shoe market."
+    ],
+    "Coca-Cola": [
+      "Founded in 1886 by John Stith Pemberton in Atlanta, Georgia.",
+      "One of the most famous and widely consumed beverages in the world.",
+      "The Coca-Cola bottle is one of the most recognized shapes globally, known for its contoured design.",
+      "Coca-Cola has a strong presence in pop culture, often associated with happiness and sharing.",
+      "The company has a diverse portfolio, including Diet Coke, Sprite, and Fanta."
+    ],
+    "McDonald's": [
+      "Founded in 1940 by Richard and Maurice McDonald in San Bernardino, California.",
+      "Known for its iconic Golden Arches logo and Big Mac sandwich.",
+      "McDonald's is one of the world's largest fast-food chains, serving over 69 million customers daily.",
+      "Introduced the concept of the 'Happy Meal,' which became popular with children worldwide.",
+      "The company has over 38,000 locations in more than 100 countries."
+    ],
+    "Google": [
+      "Founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University.",
+      "Originally started as a search engine, it has since expanded into various areas including advertising, cloud computing, and AI.",
+      "Google's parent company, Alphabet Inc., was formed in 2015 to manage its expanding operations.",
+      "The brand is known for its innovative products like Google Search, Google Maps, and Android OS.",
+      "Google's mission is to 'organize the world’s information and make it universally accessible and useful.'"
+    ],
+    "Samsung": [
+      "Founded in 1938 by Lee Byung-chul as a trading company in South Korea.",
+      "Today, Samsung is a global leader in electronics, particularly in smartphones, televisions, and home appliances.",
+      "The Samsung Galaxy series is one of the most popular smartphone lines in the world.",
+      "Samsung is also a major player in the semiconductor industry, producing chips for various devices.",
+      "The company has a strong reputation for innovation, with significant investments in research and development."
+    ],
+    "Toyota": [
+      "Founded in 1937 by Kiichiro Toyoda in Japan as a division of Toyoda Automatic Loom Works.",
+      "Known for its reliable and fuel-efficient vehicles, including the best-selling Corolla model.",
+      "Toyota was a pioneer in hybrid technology with the launch of the Prius in 1997.",
+      "The company introduced the 'Toyota Production System,' a methodology that revolutionized manufacturing processes.",
+      "Toyota is consistently ranked as one of the largest automobile manufacturers in the world."
+    ],
+    "Microsoft": [
+      "Founded in 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.",
+      "Known for its Windows operating system, which became the dominant OS for personal computers.",
+      "Microsoft Office, including Word, Excel, and PowerPoint, is one of the most widely used software suites globally.",
+      "The company is also a leader in cloud computing with its Azure platform.",
+      "Microsoft's Xbox is a major player in the gaming industry, competing with Sony's PlayStation."
+    ],
+    "Amazon": [
+      "Founded in 1994 by Jeff Bezos as an online bookstore, it quickly expanded into various product categories.",
+      "Amazon is the world's largest online retailer, offering everything from books to electronics to groceries.",
+      "The company revolutionized e-commerce with its fast delivery services and customer-centric approach.",
+      "Amazon Web Services (AWS) is a leader in cloud computing, providing services to businesses worldwide.",
+      "Amazon's Prime membership program offers benefits like free shipping, streaming services, and exclusive deals."
+    ],
+    "BMW": [
+      "Founded in 1916 as Bayerische Motoren Werke AG in Germany, originally producing aircraft engines.",
+      "Known for luxury vehicles that emphasize performance, design, and advanced technology.",
+      "The company's slogan 'The Ultimate Driving Machine' reflects its focus on driving pleasure.",
+      "BMW produces a wide range of vehicles, including sedans, SUVs, and motorcycles.",
+      "The brand is also a leader in electric vehicle technology with its BMW i series."
+    ],
+    "Louis Vuitton": [
+      "Founded in 1854 by Louis Vuitton in Paris, France, as a maker of high-quality trunks and leather goods.",
+      "Known for its iconic monogram pattern and luxury fashion products, including handbags, luggage, and clothing.",
+      "Louis Vuitton is one of the world's leading luxury brands, often associated with exclusivity and status.",
+      "The brand has collaborated with famous artists and designers to create unique and limited-edition collections.",
+      "Part of LVMH, the world's largest luxury goods conglomerate, which includes brands like Dior and Givenchy."
+    ],
+    "Tesla": [
+      "Founded in 2003 by Martin Eberhard and Marc Tarpenning, with Elon Musk later joining and becoming the face of the company.",
+      "Known for its electric vehicles, including the Model S, Model 3, Model X, and Model Y.",
+      "Tesla is a leader in the electric vehicle market, with a strong focus on innovation and sustainability.",
+      "The company's Autopilot feature is a pioneering step toward fully autonomous driving.",
+      "Tesla also produces solar energy products and battery storage solutions, contributing to the renewable energy sector."
+    ],
+    "Starbucks": [
+      "Founded in 1971 by Jerry Baldwin, Zev Siegl, and Gordon Bowker in Seattle, Washington.",
+      "Known for its coffeehouse culture, offering a wide range of coffee drinks, teas, and snacks.",
+      "Starbucks has over 30,000 locations worldwide, making it one of the largest coffeehouse chains globally.",
+      "The brand emphasizes quality coffee, customer experience, and social responsibility.",
+      "Starbucks introduced the concept of the 'third place'—a comfortable place between home and work."
+    ],
+    "Intel": [
+      "Founded in 1968 by Robert Noyce and Gordon Moore, known for pioneering the semiconductor industry.",
+      "Intel is the world's largest and highest valued semiconductor chip manufacturer.",
+      "The company is famous for its microprocessors, which power the majority of personal computers worldwide.",
+      "Intel's 'Intel Inside' campaign helped make the brand a household name in the 1990s.",
+      "The company continues to innovate in fields like artificial intelligence, autonomous vehicles, and 5G technology."
+    ],
+    "Disney": [
+      "Founded in 1923 by Walt Disney and Roy O. Disney as the Disney Brothers Studio.",
+      "Known for creating some of the most beloved animated films and characters, including Mickey Mouse and Snow White.",
+      "Disney is a leader in entertainment, owning theme parks, movie studios, and television networks like ABC and ESPN.",
+      "The company acquired Marvel, Lucasfilm (Star Wars), and Pixar, expanding its reach in film and media.",
+      "Disney+ is the company's streaming service, offering a vast library of Disney, Marvel, Star Wars, and National Geographic content."
+    ],
+    "Pepsi": [
+      "Founded in 1898 by Caleb Bradham as 'Brad's Drink,' later renamed Pepsi-Cola.",
+      "Known for its rivalry with Coca-Cola in the global soft drink market.",
+      "Pepsi is famous for its bold marketing campaigns and sponsorship of sports and entertainment events.",
+      "The brand has expanded into snacks and beverages through its parent company, PepsiCo, which owns brands like Frito-Lay, Quaker, and Gatorade.",
+      "Pepsi's logo has undergone several redesigns over the years, reflecting its modern and youthful brand image."
+    ],
+    "Adidas": [
+      "Founded in 1949 by Adolf 'Adi' Dassler in Germany, after splitting from his brother Rudolf, who founded Puma.",
+      "Known for its three-stripe logo, which is instantly recognizable worldwide.",
+      "Adidas is a leader in sports apparel and footwear, collaborating with top athletes and fashion designers.",
+      "The brand has a strong presence in soccer, providing kits and equipment for many of the world's top teams.",
+      "Adidas has also embraced sustainability, with initiatives to reduce plastic waste and create environmentally friendly products."
+    ],
+    "Sony": [
+      "Founded in 1946 by Masaru Ibuka and Akio Morita in Tokyo, Japan.",
+      "Known for pioneering products like the Walkman, PlayStation, and Trinitron TV.",
+      "Sony is a major player in electronics, gaming, entertainment, and financial services.",
+      "The PlayStation gaming console series is one of the most successful in the world, with a huge fan base.",
+      "Sony Pictures and Sony Music are major players in the global entertainment industry."
+    ],
+    "L'Oréal": [
+      "Founded in 1909 by Eugène Schueller in France, originally as a hair dye company.",
+      "The world's largest cosmetics and beauty company, offering a wide range of products in skincare, haircare, makeup, and fragrance.",
+      "L'Oréal owns many well-known brands, including Maybelline, Lancôme, and Garnier.",
+      "The company is known for its innovation in beauty products and strong commitment to sustainability.",
+      "L'Oréal's slogan, 'Because You're Worth It,' has become iconic, promoting self-confidence and empowerment."
+    ],
+    "Honda": [
+      "Founded in 1948 by Soichiro Honda and Takeo Fujisawa in Japan.",
+      "Known for its reliable and fuel-efficient vehicles, as well as motorcycles and power equipment.",
+      "Honda is the world's largest manufacturer of motorcycles and internal combustion engines by volume.",
+      "The brand has a strong reputation for quality and innovation in both the automotive and motorcycle industries.",
+      "Honda also invests in robotics and AI, with products like ASIMO, a humanoid robot."
+    ],
+    "Rolex": [
+      "Founded in 1905 by Hans Wilsdorf and Alfred Davis in London, England, later moved to Geneva, Switzerland.",
+      "Known for its luxury watches, Rolex is a symbol of status, precision, and craftsmanship.",
+      "The brand is famous for innovations such as the first waterproof wristwatch, the Oyster, and the self-winding mechanism.",
+      "Rolex watches are often associated with success and are worn by prominent figures worldwide.",
+      "The brand is involved in various sponsorships, including sports events like tennis, golf, and motorsports."
+    ]
+  };
+//...............................................repository for mythology...............................................
+  Map<String, List<String>> mythology = {
+    "Greek Mythology": [
+      "Centered around the pantheon of Olympian gods, led by Zeus, the king of the gods.",
+      "Famous myths include the stories of Hercules, the Trojan War, and the Odyssey.",
+      "The gods often interacted with humans, sometimes helping them but often causing trouble.",
+      "The Greeks explained natural phenomena and human behavior through these myths, such as the changing seasons with the myth of Persephone.",
+      "Key figures include Athena (goddess of wisdom), Poseidon (god of the sea), and Hades (god of the underworld)."
+    ],
+    "Norse Mythology": [
+      "Originates from the Scandinavian and Germanic peoples, with gods who reside in Asgard.",
+      "Odin is the chief god, known for his wisdom, and Thor, the god of thunder, is one of the most popular figures.",
+      "Ragnarok is a central myth, depicting the end of the world in a great battle where many gods perish.",
+      "Myths were preserved in the Poetic Edda and Prose Edda, written down by Icelandic scholars.",
+      "Key elements include Yggdrasil, the World Tree, and the nine realms connected by it."
+    ],
+    "Egyptian Mythology": [
+      "Centered around the worship of gods like Ra (the sun god), Osiris (god of the afterlife), and Isis (goddess of magic and motherhood).",
+      "Pharaohs were considered divine and were believed to become gods after death.",
+      "The myth of Osiris and Isis is one of the most important, explaining the origins of the afterlife and the pharaoh's role.",
+      "The gods were often depicted with animal heads, such as Anubis with a jackal head and Horus with a falcon head.",
+      "The Egyptians believed in a complex afterlife, with rituals like mummification ensuring safe passage to the next world."
+    ],
+    "Roman Mythology": [
+      "Largely borrowed from Greek mythology but with different names and slightly altered characteristics.",
+      "Jupiter was the king of the gods, equivalent to Zeus, and Mars was the god of war, equivalent to Ares.",
+      "Myths often centered around the founding of Rome, such as the story of Romulus and Remus, twin brothers raised by a she-wolf.",
+      "The Romans also worshipped household gods known as Lares and Penates.",
+      "Roman mythology played a crucial role in the state's political and religious life, with emperors often deified after death."
+    ],
+    "Hindu Mythology": [
+      "Features a vast pantheon of gods and goddesses, including Brahma (the creator), Vishnu (the preserver), and Shiva (the destroyer).",
+      "The myths are found in ancient texts like the Vedas, the Mahabharata, and the Ramayana.",
+      "Central stories include the epic battles in the Mahabharata, and the life and adventures of Rama in the Ramayana.",
+      "Karma and reincarnation are key concepts, with one's actions in life affecting their future rebirths.",
+      "Deities often have multiple forms and avatars, such as Vishnu's incarnations as Rama and Krishna."
+    ],
+    "Celtic Mythology": [
+      "Originates from the ancient Celtic tribes of Ireland, Scotland, and Wales.",
+      "Features gods like Dagda (the good god), Brigid (goddess of healing and poetry), and Lugh (god of crafts and war).",
+      "The Tuatha Dé Danann are a race of deities who play a central role in many myths.",
+      "Key texts include the Mabinogion and the Book of Invasions, which detail the history and legends of the Celts.",
+      "Celtic mythology is rich in stories of magic, heroism, and the Otherworld, a mystical realm parallel to our own."
+    ],
+    "Aztec Mythology": [
+      "Centered around gods like Huitzilopochtli (god of war and the sun), Quetzalcoatl (the feathered serpent), and Tlaloc (god of rain).",
+      "The Aztecs believed in a cyclical universe, where the world had been created and destroyed multiple times.",
+      "Human sacrifice was a key aspect of their religious practices, believed to appease the gods and ensure the sun's continued movement.",
+      "The myth of the Five Suns describes the different eras of the world, each ending in destruction.",
+      "Aztec mythology was closely linked to their calendar and the cycles of nature."
+    ],
+    "Chinese Mythology": [
+      "Features a vast array of gods, spirits, and legendary figures, with the Jade Emperor as the ruler of the heavens.",
+      "The myth of Pangu is central, describing the creation of the world from the body of a giant.",
+      "Dragons are revered as powerful and benevolent creatures, associated with water and weather.",
+      "The Eight Immortals are popular figures, each with unique powers and symbols.",
+      "The myths are recorded in texts like the Classic of Mountains and Seas and the Journey to the West."
+    ],
+    "Japanese Mythology": [
+      "Centered around the Shinto religion, with gods known as kami who inhabit all things in nature.",
+      "Amaterasu, the sun goddess, is one of the most important deities, believed to be the ancestor of the Japanese emperors.",
+      "The Kojiki and Nihon Shoki are the oldest chronicles of Japanese myths, detailing the creation of Japan and its gods.",
+      "The myth of Izanagi and Izanami describes the creation of the Japanese islands.",
+      "Japanese mythology includes numerous spirits and creatures, such as yokai, which range from mischievous to malevolent."
+    ],
+    "Mayan Mythology": [
+      "Features gods like Itzamna (creator god), Kukulkan (feathered serpent), and Chac (rain god).",
+      "The Popol Vuh is the most important text, describing the creation of the world and the adventures of the Hero Twins.",
+      "The Mayans believed in a layered universe with 13 heavens and 9 underworlds, with humans residing in the middle.",
+      "Rituals, including bloodletting and human sacrifice, were performed to maintain cosmic balance.",
+      "The Mayan calendar was deeply intertwined with their mythology, predicting cycles of creation and destruction."
+    ],
+    "Incan Mythology": [
+      "Centered around gods like Viracocha (the creator god), Inti (the sun god), and Pachamama (earth goddess).",
+      "The Inca believed their emperor, the Sapa Inca, was a direct descendant of the sun god Inti.",
+      "Machu Picchu and other sacred sites were believed to be the abodes of gods and spirits.",
+      "Myths often explain the origins of natural features, such as mountains and rivers, as the result of divine actions.",
+      "The Inca practiced ancestor worship, believing that the spirits of the dead could influence the living."
+    ],
+    "Mesopotamian Mythology": [
+      "Includes the myths of the Sumerians, Akkadians, Babylonians, and Assyrians, with gods like Anu (sky god), Enlil (god of air), and Ishtar (goddess of love and war).",
+      "The Epic of Gilgamesh is one of the oldest known stories, telling the adventures of King Gilgamesh and his quest for immortality.",
+      "The Mesopotamians believed in a flat earth covered by a dome, with the gods residing in the heavens.",
+      "Myths often explain the origins of the world, the human race, and the city-states of Mesopotamia.",
+      "The gods were believed to control every aspect of life, from natural disasters to personal fortunes."
+    ],
+    "Polynesian Mythology": [
+      "Includes the myths of the Maori, Hawaiians, Samoans, and other Polynesian cultures.",
+      "Maui is a central figure, known for his exploits like fishing up islands and slowing the sun.",
+      "The Polynesians believed in a pantheon of gods and spirits that governed the natural world.",
+      "The concept of mana, a spiritual force, is central to Polynesian belief systems.",
+      "Oral traditions and chants preserve the myths, which explain the creation of the world, the origins of humans, and the genealogies of chiefs."
+    ],
+    "Native American Mythology": [
+      "Encompasses a diverse range of beliefs and myths from the various tribes across North America.",
+      "The Great Spirit, or Wakan Tanka, is often considered the supreme being in many Native American religions.",
+      "Animals play a crucial role in many myths, often serving as ancestors, guides, or symbols of spiritual power.",
+      "Creation myths vary widely, but many involve the Earth being formed from a vast, primordial ocean.",
+      "Oral traditions are key to preserving these myths, which are deeply connected to the land and nature."
+    ],
+    "Slavic Mythology": [
+      "Includes the myths and beliefs of the ancient Slavs, with gods like Perun (god of thunder), Veles (god of the underworld), and Mokosh (goddess of fertility).",
+      "The Slavs believed in a dualistic universe, with the gods of light and order opposing the forces of darkness and chaos.",
+      "Myths often explain natural phenomena, such as thunderstorms being the result of battles between Perun and Veles.",
+      "The Slavic pantheon was deeply tied to nature, with deities associated with rivers, forests, and mountains.",
+      "Much of Slavic mythology was absorbed into Christian traditions, but many elements survive in folklore and customs."
+    ]
+  };
+//...............................................repository for science...............................................
+  Map<String, List<String>> science = {
+    "Physics": [
+      "The branch of science concerned with the nature and properties of matter and energy.",
+      "Key concepts include force, energy, mass, and charge.",
+      "Famous physicists include Isaac Newton, who formulated the laws of motion and universal gravitation, and Albert Einstein, who developed the theory of relativity.",
+      "Quantum mechanics, a subfield of physics, describes the behavior of particles on the atomic and subatomic scales.",
+      "The Standard Model of particle physics explains how fundamental particles interact through the electromagnetic, weak, and strong nuclear forces."
+    ],
+    "Chemistry": [
+      "The study of the composition, structure, properties, and change of matter.",
+      "Famous for concepts like the periodic table, which organizes elements by their chemical properties.",
+      "Key areas include organic chemistry, which focuses on carbon-containing compounds, and inorganic chemistry, which deals with non-organic substances.",
+      "Chemistry is central to understanding processes like bonding, reactions, and the properties of materials.",
+      "Nobel Prizes in Chemistry have been awarded for breakthroughs like the discovery of the structure of DNA and the development of new synthetic materials."
+    ],
+    "Biology": [
+      "The study of living organisms and their interactions with one another and their environments.",
+      "Key concepts include evolution by natural selection, genetics, and cellular biology.",
+      "Famous biologists include Charles Darwin, who proposed the theory of evolution, and Gregor Mendel, the father of modern genetics.",
+      "Biology is divided into various subfields, such as botany (the study of plants), zoology (the study of animals), and microbiology (the study of microorganisms).",
+      "Modern biology also explores the molecular basis of life through fields like genomics and biotechnology."
+    ],
+    "Astronomy": [
+      "The scientific study of celestial objects, space, and the universe as a whole.",
+      "Key concepts include the Big Bang theory, the lifecycle of stars, and the formation of galaxies.",
+      "Famous astronomers include Galileo Galilei, who made significant improvements to the telescope, and Edwin Hubble, who discovered the expansion of the universe.",
+      "Astronomy is divided into observational and theoretical branches, with the former relying on telescopes and the latter on mathematical models.",
+      "Space exploration has greatly expanded our knowledge of the universe, with missions to the Moon, Mars, and beyond."
+    ],
+    "Geology": [
+      "The study of the Earth, including its composition, structure, and processes.",
+      "Key concepts include plate tectonics, the rock cycle, and the formation of minerals.",
+      "Geologists study phenomena like earthquakes, volcanoes, and the formation of mountains.",
+      "The Earth's history is recorded in its rock layers, with fossils providing evidence of past life and environmental conditions.",
+      "Geology is crucial for understanding natural resources, environmental change, and natural hazards."
+    ],
+    "Ecology": [
+      "The branch of biology that studies the interactions between organisms and their environments.",
+      "Key concepts include ecosystems, food chains, and biodiversity.",
+      "Ecologists study how species interact with each other and their surroundings, including the impacts of human activity on the environment.",
+      "Conservation biology, a subfield of ecology, focuses on protecting endangered species and habitats.",
+      "Ecological research informs environmental policy and helps manage natural resources sustainably."
+    ],
+    "Mathematics": [
+      "The abstract science of number, quantity, and space, either as abstract concepts (pure mathematics) or as applied to other disciplines such as physics and engineering (applied mathematics).",
+      "Key concepts include algebra, calculus, geometry, and statistics.",
+      "Famous mathematicians include Euclid, known as the father of geometry, and Carl Friedrich Gauss, who made significant contributions to number theory.",
+      "Mathematics is the language of science, providing the tools to model, analyze, and solve problems in various fields.",
+      "Modern mathematics also explores areas like chaos theory, cryptography, and topology."
+    ],
+    "Genetics": [
+      "The branch of biology that studies genes, genetic variation, and heredity in organisms.",
+      "Key concepts include DNA, the genetic code, and the mechanisms of inheritance.",
+      "Gregor Mendel's work on pea plants laid the foundation for the field of genetics.",
+      "Modern genetics has led to advancements in biotechnology, such as genetic engineering and CRISPR gene editing.",
+      "Genetics is also central to understanding evolution, disease, and the development of personalized medicine."
+    ],
+    "Meteorology": [
+      "The study of the atmosphere and weather patterns.",
+      "Key concepts include the water cycle, atmospheric pressure, and the formation of clouds.",
+      "Meteorologists use data from weather stations, satellites, and radar to forecast weather and study climate patterns.",
+      "Understanding meteorology is essential for predicting and preparing for severe weather events like hurricanes, tornadoes, and droughts.",
+      "Climate science, a related field, studies long-term trends in weather and their impact on the environment."
+    ],
+    "Oceanography": [
+      "The study of the physical and biological aspects of the ocean.",
+      "Key areas include marine biology, the study of organisms in the ocean, and physical oceanography, which focuses on ocean currents, waves, and tides.",
+      "Oceanographers also study the chemistry of seawater and the geology of the ocean floor.",
+      "The ocean plays a crucial role in regulating the Earth's climate and supporting biodiversity.",
+      "Oceanography is essential for understanding marine ecosystems, managing fisheries, and addressing issues like ocean pollution."
+    ],
+    "Psychology": [
+      "The scientific study of the mind and behavior.",
+      "Key concepts include cognition, emotion, personality, and mental health.",
+      "Famous psychologists include Sigmund Freud, who developed psychoanalysis, and B.F. Skinner, known for his work on behaviorism.",
+      "Psychology is divided into various subfields, such as clinical psychology, cognitive psychology, and developmental psychology.",
+      "Research in psychology informs practices in education, therapy, and understanding social behavior."
+    ],
+    "Anthropology": [
+      "The study of humans, their societies, and their cultural development.",
+      "Key areas include cultural anthropology, which studies cultural practices and beliefs, and physical anthropology, which examines human evolution.",
+      "Anthropologists study diverse aspects of human life, including language, art, religion, and social structures.",
+      "Famous anthropologists include Margaret Mead, known for her studies of Samoan culture, and Louis Leakey, who made significant discoveries in human evolution.",
+      "Anthropology provides insights into the diversity of human experiences and the commonalities that unite us."
+    ],
+    "Botany": [
+      "The branch of biology that studies plants, including their structure, properties, and biochemical processes.",
+      "Key areas include plant physiology, the study of how plants function, and plant taxonomy, the classification of plants.",
+      "Botanists also study the ecological relationships of plants with other organisms and their environment.",
+      "Plants are crucial to life on Earth, providing oxygen, food, and medicine.",
+      "Research in botany contributes to agriculture, horticulture, and conservation efforts."
+    ],
+    "Paleontology": [
+      "The study of the history of life on Earth through the examination of plant and animal fossils.",
+      "Key concepts include the fossil record, the study of ancient ecosystems, and the evolution of life over geological time.",
+      "Paleontologists have discovered fossils of dinosaurs, early mammals, and ancient plants, providing insights into past climates and environments.",
+      "The field helps scientists understand the processes of evolution and extinction.",
+      "Paleontology also informs our understanding of current biodiversity and how life may respond to future environmental changes."
+    ],
+    "Environmental Science": [
+      "The interdisciplinary study of the environment and the solutions to environmental problems.",
+      "Key concepts include sustainability, conservation, and the impacts of human activity on the planet.",
+      "Environmental scientists study issues like pollution, climate change, and deforestation.",
+      "The field combines knowledge from biology, chemistry, physics, and social sciences to address environmental challenges.",
+      "Research in environmental science informs policy decisions and promotes practices that protect the environment for future generations."
+    ],
+    "Medicine": [
+      "The science and practice of diagnosing, treating, and preventing disease.",
+      "Key concepts include pathology (the study of disease), pharmacology (the study of drugs), and surgery.",
+      "Famous figures include Hippocrates, known as the father of medicine, and Edward Jenner, who developed the first vaccine.",
+      "Advances in medicine have led to increased life expectancy and improved quality of life through the development of treatments, vaccines, and medical technologies.",
+      "Modern medicine also explores personalized medicine, genetics, and the impact of lifestyle on health."
+    ],
+    "Robotics": [
+      "The branch of technology that deals with the design, construction, operation, and application of robots.",
+      "Key areas include artificial intelligence, machine learning, and autonomous systems.",
+      "Robots are used in various industries, from manufacturing and healthcare to space exploration.",
+      "The development of robotics is leading to advancements in automation, efficiency, and human-robot interaction.",
+      "Ethical considerations in robotics include the impact on employment, privacy, and the potential for autonomous systems to make critical decisions."
+    ],
+    "Neuroscience": [
+      "The scientific study of the nervous system, including the brain, spinal cord, and peripheral nerves.",
+      "Key concepts include neuroplasticity, the brain's ability to change and adapt, and neurotransmission, the process of communication between neurons.",
+      "Neuroscience explores how the brain influences behavior, cognition, and emotions.",
+      "Advances in neuroscience have led to better understanding and treatment of neurological disorders like Alzheimer's disease, epilepsy, and depression.",
+      "The field also investigates the neural basis of consciousness, learning, and memory."
+    ]
+  };
+//...............................................repository for foods...............................................
+  Map<String, List<String>> foods = {
+    "Pizza": [
+      "Originated in Italy, with the modern pizza evolving in Naples during the 18th century.",
+      "Traditional Neapolitan pizza is made with simple ingredients: dough, tomatoes, mozzarella cheese, fresh basil, and olive oil.",
+      "Pizza has become a global phenomenon, with countless regional variations like New York-style, Chicago deep-dish, and Margherita.",
+      "Pizza is one of the most popular fast foods in the world, with millions of slices consumed daily.",
+      "The Margherita pizza was reportedly created in honor of Queen Margherita of Savoy, featuring the colors of the Italian flag."
+    ],
+    "Sushi": [
+      "A traditional Japanese dish that consists of vinegared rice paired with ingredients like seafood, vegetables, and occasionally tropical fruits.",
+      "Sushi types include nigiri (hand-pressed rice with a topping), maki (rice and filling rolled in seaweed), and sashimi (sliced raw fish served without rice).",
+      "Sushi rice is seasoned with a mixture of vinegar, sugar, and salt, giving it a distinctive flavor.",
+      "The practice of eating raw fish with rice dates back to ancient times in Japan, where it was initially a method of preserving fish.",
+      "Sushi has become a popular dish worldwide, often served with soy sauce, wasabi, and pickled ginger."
+    ],
+    "Tacos": [
+      "A traditional Mexican dish consisting of a folded or rolled tortilla filled with various ingredients like meat, beans, cheese, and vegetables.",
+      "Tacos can be made with soft corn or flour tortillas, or with crispy fried shells.",
+      "Popular taco fillings include carne asada (grilled beef), al pastor (spiced pork), and fish, often topped with salsa, guacamole, or lime juice.",
+      "The taco's origins are believed to date back to indigenous Mexican cultures who used tortillas to hold food.",
+      "Tacos have become a staple in Mexican cuisine and have spread globally, with variations like the American-style taco featuring ground beef and lettuce."
+    ],
+    "Pasta": [
+      "A staple of Italian cuisine, pasta is made from wheat flour mixed with water or eggs and formed into various shapes and sizes.",
+      "Common pasta shapes include spaghetti, penne, fusilli, and lasagna, each traditionally paired with specific types of sauces.",
+      "The earliest evidence of pasta dates back to ancient China, but it became a major part of Italian cuisine during the Middle Ages.",
+      "Popular pasta dishes include spaghetti Bolognese, lasagna, carbonara, and Alfredo.",
+      "Italy is the world's largest producer and consumer of pasta, with each region having its own traditional pasta dishes."
+    ],
+    "Hamburger": [
+      "A sandwich consisting of one or more cooked patties of ground meat, usually beef, placed inside a sliced bun.",
+      "The hamburger is often topped with ingredients like lettuce, tomato, cheese, pickles, onions, and condiments like ketchup and mustard.",
+      "The modern hamburger as we know it was popularized in the United States in the early 20th century, with origins linked to various American cities.",
+      "Fast food chains like McDonald's and Burger King have made the hamburger a global icon of American cuisine.",
+      "Hamburgers can also be made with alternative meats like turkey, chicken, or plant-based patties for vegetarians."
+    ],
+    "Curry": [
+      "A dish originating from the Indian subcontinent, characterized by its use of a complex combination of spices and herbs, usually including turmeric, cumin, coriander, ginger, and chili.",
+      "Curry can be made with a variety of ingredients, including meats, vegetables, and legumes, cooked in a spiced sauce.",
+      "In India, curries vary widely by region, with some being dry and others saucy, using ingredients like coconut milk, yogurt, or tomatoes as the base.",
+      "Curry has spread globally, with variations like Thai green curry, Japanese curry, and Caribbean curry, each with distinct flavors.",
+      "In the UK, curry has become a national favorite, with dishes like chicken tikka masala being among the most popular."
+    ],
+    "Paella": [
+      "A traditional Spanish dish originating from the Valencia region, known for its vibrant saffron-infused rice.",
+      "Paella is typically cooked in a large, shallow pan and can include a variety of ingredients like seafood, chicken, rabbit, and vegetables.",
+      "There are several variations, including Paella Valenciana (with rabbit and snails), Paella de Marisco (seafood paella), and Paella Mixta (a mix of seafood and meat).",
+      "The dish is believed to have been created by farmers in Valencia who used local ingredients to cook a communal meal over an open fire.",
+      "Paella is often enjoyed during gatherings and celebrations, symbolizing community and sharing."
+    ],
+    "Chocolate": [
+      "Made from cacao beans, chocolate is one of the most popular and beloved sweets in the world.",
+      "Chocolate can be enjoyed in many forms, including bars, truffles, hot cocoa, and as an ingredient in desserts like cakes and cookies.",
+      "The Aztecs and Mayans were among the first to consume cacao, which they made into a bitter, spiced drink believed to have divine properties.",
+      "Today, chocolate is produced in various forms, including dark, milk, and white chocolate, each with its own unique flavor profile.",
+      "Switzerland and Belgium are famous for their high-quality chocolate production, known for their creamy, smooth textures."
+    ],
+    "Croissant": [
+      "A buttery, flaky pastry of Austrian origin, though it is most famously associated with France.",
+      "The name 'croissant' means 'crescent' in French, referring to the shape of the pastry.",
+      "Made from a laminated dough that is layered with butter, rolled, and folded several times before being shaped and baked.",
+      "The croissant is often enjoyed as a breakfast item or snack, plain or filled with chocolate, almond paste, or ham and cheese.",
+      "The origins of the croissant date back to Vienna, Austria, where similar pastries called 'kipferl' were made as early as the 13th century."
+    ],
+    "Dim Sum": [
+      "A traditional Chinese meal consisting of small dishes served with tea, often enjoyed as a brunch.",
+      "Dim sum includes a variety of steamed, fried, and baked items, such as dumplings, buns, rolls, and cakes.",
+      "Popular dim sum dishes include har gow (shrimp dumplings), siu mai (pork dumplings), and char siu bao (barbecue pork buns).",
+      "Dim sum is typically served in small steamer baskets or on small plates, and is often shared among a group.",
+      "The tradition of dim sum is believed to have originated in the Cantonese teahouses of southern China, where travelers would stop for a bite to eat."
+    ],
+    "Falafel": [
+      "A popular Middle Eastern dish made from ground chickpeas or fava beans, mixed with herbs and spices, then formed into balls or patties and deep-fried.",
+      "Falafel is often served in a pita or flatbread, topped with salads, pickled vegetables, and drizzled with tahini or yogurt sauce.",
+      "It is believed to have originated in Egypt, where it was traditionally made with fava beans, before spreading throughout the Middle East.",
+      "Falafel is a popular street food and is often considered a symbol of vegetarian cuisine in the region.",
+      "The dish has gained international popularity, with many variations and adaptations found around the world."
+    ],
+    "Pho": [
+      "A traditional Vietnamese soup consisting of broth, rice noodles, herbs, and meat, usually beef or chicken.",
+      "The broth is simmered for hours with spices like cinnamon, star anise, and cloves to develop its deep flavor.",
+      "Pho is typically served with fresh herbs, bean sprouts, lime, and chili peppers on the side, allowing diners to customize their bowl.",
+      "The dish originated in northern Vietnam in the early 20th century and has since become a national dish of Vietnam.",
+      "Pho is often enjoyed as a breakfast food in Vietnam, though it can be eaten at any time of day."
+    ],
+    "Gelato": [
+      "An Italian-style ice cream that is known for its dense and creamy texture, with less air and fat than traditional ice cream.",
+      "Gelato is made with milk, sugar, and natural flavorings, often featuring flavors like pistachio, hazelnut, chocolate, and fruit.",
+      "The origins of gelato can be traced back to ancient Rome and Egypt, where people enjoyed frozen desserts made from snow and ice mixed with honey and fruit.",
+      "Today, gelato is a popular treat in Italy and around the world, enjoyed in small scoops served in cups or cones.",
+      "Gelaterias, or gelato shops, are common throughout Italy, where artisanal gelato is made fresh daily."
+    ],
+    "Hummus": [
+      "A creamy Middle Eastern dip made from blended chickpeas, tahini (sesame paste), lemon juice, garlic, and olive oil.",
+      "Hummus is traditionally served as part of a mezze, an assortment of small dishes, and is often eaten with pita bread or fresh vegetables.",
+      "The origins of hummus are widely debated, with several Middle Eastern countries claiming to be the birthplace of the dish.",
+      "Hummus is rich in protein and fiber, making it a nutritious and popular choice for vegetarians and vegans.",
+      "The dish has become a staple in many households around the world and is available in various flavors, including roasted red pepper and garlic."
+    ],
+    "Ramen": [
+      "A Japanese noodle soup consisting of Chinese-style wheat noodles served in a meat or fish-based broth, often flavored with soy sauce or miso.",
+      "Ramen is typically topped with ingredients like sliced pork, nori (seaweed), menma (fermented bamboo shoots), and scallions.",
+      "The dish has Chinese origins but was popularized in Japan after World War II, becoming a national favorite.",
+      "Ramen has gained international fame, with countless regional variations, including tonkotsu (pork bone broth), shoyu (soy sauce), and miso ramen.",
+      "Instant ramen noodles, invented in 1958 by Momofuku Ando, have become a global phenomenon and a convenient meal option."
+    ],
+    "Tiramisu": [
+      "A popular Italian dessert made with layers of coffee-soaked ladyfingers, mascarpone cheese, cocoa powder, and sometimes a liqueur like Marsala or rum.",
+      "The name 'tiramisu' means 'pick me up' in Italian, referring to the energizing effect of the coffee and cocoa.",
+      "Tiramisu is believed to have originated in the Veneto region of Italy in the 1960s, though its exact origins are disputed.",
+      "The dessert has become a beloved treat around the world, often featured on the menus of Italian restaurants.",
+      "Tiramisu can be made in various ways, with some versions incorporating chocolate, fruit, or different types of alcohol."
+    ],
+    "Pad Thai": [
+      "A stir-fried noodle dish that is one of Thailand's most famous and beloved dishes.",
+      "Pad Thai is made with rice noodles, eggs, tofu, shrimp or chicken, and flavored with tamarind paste, fish sauce, garlic, and chili.",
+      "The dish is often garnished with crushed peanuts, bean sprouts, lime wedges, and cilantro, adding a balance of flavors and textures.",
+      "Pad Thai was introduced as a national dish of Thailand in the 1930s as part of a campaign to promote Thai nationalism and reduce rice consumption.",
+      "Today, it is a popular street food in Thailand and is enjoyed in Thai restaurants worldwide."
+    ],
+    "Biryani": [
+      "A fragrant and flavorful rice dish that originated in the Indian subcontinent, made with basmati rice, meat (such as chicken, mutton, or fish), and a blend of spices.",
+      "Biryani is often cooked in a 'dum' style, where the ingredients are layered in a pot and slow-cooked, allowing the flavors to meld together.",
+      "The dish is believed to have been brought to India by Persian travelers and merchants, with various regional variations emerging over time.",
+      "Popular versions include Hyderabadi biryani, Lucknowi biryani, and Kolkata biryani, each with its own unique ingredients and cooking techniques.",
+      "Biryani is a celebratory dish, often served during special occasions like weddings, festivals, and family gatherings."
+    ]
+  };
+//...............................................repository for technology...............................................
+  Map<String, List<String>> technology = {
+    "Internet": [
+      "A global network of interconnected computers that allows for the exchange of data and information.",
+      "Originated from the ARPANET, a project funded by the U.S. Department of Defense in the late 1960s.",
+      "The World Wide Web, developed by Tim Berners-Lee in 1989, made the internet accessible to the general public.",
+      "The internet has revolutionized communication, commerce, education, and entertainment, becoming an integral part of modern life.",
+      "Today, over half of the world's population has access to the internet, with billions of devices connected."
+    ],
+    "Smartphone": [
+      "A mobile device that combines a phone with advanced features like internet access, apps, and a touchscreen interface.",
+      "The first smartphone, the IBM Simon, was released in 1994, but modern smartphones began with the introduction of the iPhone in 2007.",
+      "Smartphones have transformed the way people communicate, work, and consume media, with over 3 billion users worldwide.",
+      "Key features include high-resolution cameras, GPS, biometric sensors, and access to millions of apps through platforms like Apple's App Store and Google Play.",
+      "Smartphones have become essential tools for social media, online shopping, gaming, and navigation."
+    ],
+    "Artificial Intelligence": [
+      "The simulation of human intelligence processes by machines, particularly computer systems.",
+      "AI includes areas like machine learning, natural language processing, robotics, and computer vision.",
+      "AI is used in various applications, from virtual assistants like Siri and Alexa to autonomous vehicles and predictive analytics.",
+      "The field has evolved from early rule-based systems to complex neural networks that can learn from data and improve over time.",
+      "AI raises ethical concerns about privacy, job displacement, and decision-making in critical areas like healthcare and criminal justice."
+    ],
+    "Blockchain": [
+      "A decentralized and distributed digital ledger that records transactions across multiple computers in a secure, transparent, and tamper-resistant way.",
+      "Originally developed as the underlying technology for Bitcoin, the first cryptocurrency, in 2008.",
+      "Blockchain technology has applications beyond cryptocurrencies, including supply chain management, voting systems, and smart contracts.",
+      "A key feature of blockchain is its immutability, meaning once a transaction is recorded, it cannot be altered.",
+      "Blockchain is seen as a potential disruptor in various industries, offering new ways to ensure transparency, security, and efficiency."
+    ],
+    "Cloud Computing": [
+      "The delivery of computing services—including storage, processing, and networking—over the internet, allowing for on-demand access to resources.",
+      "Major cloud service providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud.",
+      "Cloud computing enables businesses and individuals to scale resources according to their needs without investing in physical infrastructure.",
+      "Popular models include Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).",
+      "The technology supports a wide range of applications, from data storage and backup to hosting web services and running AI models."
+    ],
+    "5G Technology": [
+      "The fifth generation of mobile network technology, offering significantly faster data speeds, lower latency, and greater connectivity than previous generations.",
+      "5G networks are expected to enable new applications, such as autonomous vehicles, smart cities, and advanced IoT (Internet of Things) devices.",
+      "The technology uses a broader range of frequencies, including millimeter waves, to achieve its high speeds and low latency.",
+      "5G is being rolled out globally, with major telecommunications companies investing in infrastructure to support widespread adoption.",
+      "The impact of 5G is anticipated to be transformative, driving innovation across industries like healthcare, manufacturing, and entertainment."
+    ],
+    "Virtual Reality": [
+      "A technology that creates a simulated environment, allowing users to interact with 3D worlds through a VR headset and controllers.",
+      "VR is used in gaming, training simulations, medical applications, and virtual tours.",
+      "The technology immerses users in a completely digital environment, often enhancing experiences with spatial audio and haptic feedback.",
+      "Key players in the VR market include Oculus (owned by Meta), HTC Vive, and Sony PlayStation VR.",
+      "Challenges for VR include the need for high-performance hardware, potential motion sickness, and the creation of compelling content."
+    ],
+    "Augmented Reality": [
+      "A technology that overlays digital information onto the real world, enhancing the user's perception of reality.",
+      "AR is commonly experienced through smartphones and wearable devices like smart glasses.",
+      "Popular applications include gaming (e.g., Pokémon GO), navigation, education, and retail, where AR can provide interactive product experiences.",
+      "AR differs from VR in that it adds to the existing environment rather than creating an entirely new one.",
+      "The technology is being explored in fields like healthcare for medical training, architecture for design visualization, and manufacturing for assembly guidance."
+    ],
+    "Quantum Computing": [
+      "An emerging field of computing that uses the principles of quantum mechanics to process information in fundamentally different ways than classical computers.",
+      "Quantum computers use qubits, which can represent both 0 and 1 simultaneously, enabling them to perform complex calculations much faster than traditional computers.",
+      "Potential applications include cryptography, materials science, and solving complex optimization problems.",
+      "Major tech companies like IBM, Google, and Microsoft are investing heavily in quantum computing research and development.",
+      "Quantum computing is still in its early stages, with significant technical challenges to overcome before it becomes commercially viable."
+    ],
+    "3D Printing": [
+      "A technology that creates physical objects from digital designs by laying down successive layers of material.",
+      "3D printing is used in various industries, including manufacturing, healthcare (for prosthetics and implants), and construction.",
+      "The technology allows for rapid prototyping, customization, and the production of complex geometries that would be difficult to achieve with traditional manufacturing methods.",
+      "Materials used in 3D printing include plastics, metals, ceramics, and even biological tissues in bioprinting.",
+      "3D printing is driving innovation in product design, reducing costs, and enabling new possibilities in fields like aerospace, automotive, and fashion."
+    ],
+    "Internet of Things (IoT)": [
+      "A network of interconnected devices that communicate with each other and exchange data over the internet.",
+      "IoT devices range from smart home products like thermostats and security cameras to industrial sensors and healthcare monitors.",
+      "The technology enables automation, real-time monitoring, and data-driven decision-making in various sectors.",
+      "IoT is transforming industries like agriculture (smart farming), manufacturing (Industry 4.0), and urban development (smart cities).",
+      "Security and privacy are major concerns in IoT, as the vast number of connected devices increases the potential for cyberattacks and data breaches."
+    ],
+    "Robotics": [
+      "The branch of technology that deals with the design, construction, operation, and application of robots.",
+      "Robots are used in various fields, including manufacturing (automation), healthcare (surgery assistance), and exploration (space rovers).",
+      "Advances in AI and machine learning are enabling robots to perform increasingly complex tasks, from assembly line work to interacting with humans.",
+      "Robots range from industrial robots that build cars to humanoid robots that can assist in caregiving and customer service.",
+      "The development of robotics is raising ethical questions about the future of work, human-robot interaction, and the potential for autonomous machines."
+    ],
+    "Renewable Energy": [
+      "Energy generated from natural resources that are replenished on a human timescale, such as solar, wind, hydro, and geothermal power.",
+      "Renewable energy is crucial for reducing greenhouse gas emissions and combating climate change.",
+      "Technological advances have made renewable energy sources more efficient and cost-effective, leading to increased adoption worldwide.",
+      "Solar panels and wind turbines are among the most common renewable energy technologies, with significant growth in global capacity.",
+      "The transition to renewable energy is supported by policies, incentives, and innovations in energy storage and grid management."
+    ],
+    "Biotechnology": [
+      "The use of living organisms or biological systems to develop products and technologies that improve human life.",
+      "Biotechnology applications include genetic engineering, pharmaceuticals, agricultural improvements, and environmental sustainability.",
+      "CRISPR-Cas9, a revolutionary gene-editing technology, allows scientists to modify DNA with precision, offering potential cures for genetic diseases.",
+      "Biotechnology is driving advancements in personalized medicine, biofuels, and the development of new crops that are resistant to pests and environmental stress.",
+      "Ethical concerns in biotechnology include genetic modification, cloning, and the potential impact on biodiversity."
+    ],
+    "Wearable Technology": [
+      "Devices that are worn on the body and equipped with sensors, connectivity, and computing capabilities.",
+      "Popular wearables include fitness trackers, smartwatches, and smart glasses.",
+      "Wearables are used for health monitoring (tracking steps, heart rate, and sleep patterns), communication, and augmented reality experiences.",
+      "The Apple Watch and Fitbit are among the most well-known wearable devices, offering a range of features from notifications to health metrics.",
+      "Wearable technology is expanding into fields like healthcare (remote patient monitoring) and workplace safety (monitoring hazardous conditions)."
+    ],
+    "Cybersecurity": [
+      "The practice of protecting systems, networks, and data from digital attacks, unauthorized access, and damage.",
+      "Cybersecurity is critical for safeguarding sensitive information, maintaining the integrity of systems, and ensuring the privacy of users.",
+      "Key areas include encryption, firewalls, threat detection, and incident response.",
+      "Cybersecurity challenges include the rise of ransomware, phishing attacks, and vulnerabilities in software and hardware.",
+      "As the digital landscape evolves, cybersecurity is becoming increasingly important for individuals, businesses, and governments."
+    ],
+    "Social Media": [
+      "Platforms that enable users to create, share, and interact with content and connect with others online.",
+      "Popular social media platforms include Facebook, Twitter, Instagram, TikTok, and LinkedIn.",
+      "Social media has transformed communication, marketing, news dissemination, and entertainment, with billions of users worldwide.",
+      "The rise of influencers, social media marketing, and online communities has created new opportunities and challenges for businesses and individuals.",
+      "Issues like privacy, misinformation, and the impact of social media on mental health are ongoing concerns."
+    ]
+  };
+//...............................................repository for superheroes...............................................
+  Map<String, List<String>> superheroes = {
+    "Superman": [
+      "Created by Jerry Siegel and Joe Shuster, Superman first appeared in Action Comics #1 in 1938.",
+      "Known as the 'Man of Steel,' he possesses superhuman strength, flight, invulnerability, super speed, heat vision, and x-ray vision.",
+      "Superman's alter ego is Clark Kent, a mild-mannered reporter for the Daily Planet in Metropolis.",
+      "He is an alien from the planet Krypton, sent to Earth as a baby before his planet was destroyed.",
+      "Superman is one of the most iconic and influential superheroes, often seen as a symbol of truth, justice, and the American way."
+    ],
+    "Batman": [
+      "Created by Bob Kane and Bill Finger, Batman first appeared in Detective Comics #27 in 1939.",
+      "Also known as the 'Dark Knight,' Batman has no superpowers but relies on his intellect, detective skills, martial arts abilities, and advanced technology.",
+      "His alter ego is Bruce Wayne, a wealthy industrialist and philanthropist in Gotham City.",
+      "Driven by the murder of his parents, Bruce Wayne swore to fight crime and protect Gotham from villains like the Joker, the Riddler, and Catwoman.",
+      "Batman operates out of the Batcave and is known for his iconic bat-symbol, Batsuit, and Batmobile."
+    ],
+    "Wonder Woman": [
+      "Created by William Moulton Marston, Wonder Woman first appeared in All Star Comics #8 in 1941.",
+      "An Amazonian princess, she possesses super strength, speed, agility, and the ability to fly.",
+      "Her weapons include the Lasso of Truth, indestructible bracelets, and a magical sword and shield.",
+      "Wonder Woman’s alter ego is Diana Prince, and she serves as an ambassador of peace and justice.",
+      "She is one of the founding members of the Justice League and is often depicted as a symbol of female empowerment."
+    ],
+    "Spider-Man": [
+      "Created by Stan Lee and Steve Ditko, Spider-Man first appeared in Amazing Fantasy #15 in 1962.",
+      "Peter Parker, a teenager from Queens, New York, gains spider-like abilities after being bitten by a radioactive spider.",
+      "Spider-Man has super strength, agility, the ability to cling to surfaces, and a 'spider-sense' that warns him of danger.",
+      "He designs web-shooters that allow him to swing between buildings and capture criminals.",
+      "Spider-Man’s story is marked by the famous mantra, 'With great power comes great responsibility,' reflecting his struggles to balance his superhero duties with his personal life."
+    ],
+    "Iron Man": [
+      "Created by Stan Lee, Larry Lieber, Don Heck, and Jack Kirby, Iron Man first appeared in Tales of Suspense #39 in 1963.",
+      "Tony Stark is a billionaire industrialist and genius inventor who builds a powered suit of armor to escape captivity.",
+      "The Iron Man suit gives Stark super strength, flight, and an array of weapons and advanced technology.",
+      "Tony Stark is the public face of Iron Man, openly operating as a superhero while also leading Stark Industries.",
+      "Iron Man is a founding member of the Avengers and plays a central role in the Marvel Cinematic Universe (MCU)."
+    ],
+    "Captain America": [
+      "Created by Joe Simon and Jack Kirby, Captain America first appeared in Captain America Comics #1 in 1941.",
+      "Steve Rogers, a frail young man, is transformed into the super-soldier Captain America after receiving the Super-Soldier Serum.",
+      "He is known for his enhanced strength, agility, endurance, and his indestructible shield, which he uses as a weapon and for defense.",
+      "Captain America is a symbol of patriotism and freedom, originally created during World War II to fight against the Axis powers.",
+      "After being frozen in ice for decades, he is revived in the modern era and becomes a leader of the Avengers."
+    ],
+    "Thor": [
+      "Created by Stan Lee, Larry Lieber, and Jack Kirby, Thor first appeared in Journey into Mystery #83 in 1962.",
+      "Thor is the Norse god of thunder, wielding the enchanted hammer Mjolnir, which grants him control over lightning and the power of flight.",
+      "He is a founding member of the Avengers and a defender of both Earth and his home realm of Asgard.",
+      "Thor is known for his immense strength, durability, and his warrior spirit.",
+      "In the Marvel Cinematic Universe (MCU), Thor is portrayed by Chris Hemsworth and is central to several key storylines."
+    ],
+    "Hulk": [
+      "Created by Stan Lee and Jack Kirby, the Hulk first appeared in The Incredible Hulk #1 in 1962.",
+      "Dr. Bruce Banner transforms into the Hulk, a massive green-skinned creature with incredible strength, whenever he becomes angry or stressed.",
+      "The Hulk's strength increases proportionally with his anger, making him one of the most powerful beings in the Marvel Universe.",
+      "The character is often portrayed as a tragic figure, struggling to control his emotions and the destruction caused by the Hulk.",
+      "The Hulk is a founding member of the Avengers and has been depicted in numerous comic book series, TV shows, and films."
+    ],
+    "Black Panther": [
+      "Created by Stan Lee and Jack Kirby, Black Panther first appeared in Fantastic Four #52 in 1966.",
+      "T'Challa is the king of Wakanda, a technologically advanced African nation with vast resources of the powerful metal vibranium.",
+      "As Black Panther, T'Challa possesses enhanced strength, agility, and senses, as well as access to advanced technology and combat training.",
+      "Black Panther is the first mainstream Black superhero in American comics, symbolizing leadership, intelligence, and bravery.",
+      "The character gained global prominence with the 2018 film 'Black Panther,' which was a critical and commercial success."
+    ],
+    "Wonder Woman": [
+      "Created by William Moulton Marston, Wonder Woman first appeared in All Star Comics #8 in 1941.",
+      "Diana of Themyscira is an Amazonian warrior princess with superhuman strength, agility, and the ability to fly.",
+      "Her iconic weapons include the Lasso of Truth, indestructible bracelets, and a magical sword and shield.",
+      "Wonder Woman is a founding member of the Justice League and a symbol of peace, justice, and women's empowerment.",
+      "Her alter ego, Diana Prince, works in various roles, including as a nurse and a military intelligence officer, depending on the storyline."
+    ],
+    "Wolverine": [
+      "Created by Roy Thomas, Len Wein, and John Romita Sr., Wolverine first appeared in The Incredible Hulk #180 in 1974.",
+      "Logan, also known as Wolverine, is a mutant with enhanced senses, strength, and regenerative healing abilities.",
+      "His most distinctive feature is his retractable adamantium claws, which are nearly indestructible.",
+      "Wolverine is a member of the X-Men and has a complicated past involving experiments, memory loss, and a struggle with his animalistic nature.",
+      "He is one of Marvel's most popular characters, known for his gruff demeanor, unbreakable spirit, and fierce loyalty."
+    ],
+    "Flash": [
+      "Created by Gardner Fox and Harry Lampert, the Flash first appeared in Flash Comics #1 in 1940.",
+      "Barry Allen, the most famous incarnation of the Flash, gained super-speed after being struck by lightning and doused in chemicals.",
+      "As the 'Fastest Man Alive,' the Flash can move at incredible speeds, phase through objects, and even travel through time.",
+      "Barry Allen is a forensic scientist, using his skills to solve crimes both in and out of his superhero identity.",
+      "The Flash is a key member of the Justice League and has been a central figure in many major DC Comics storylines, including the 'Crisis on Infinite Earths.'"
+    ],
+    "Aquaman": [
+      "Created by Paul Norris and Mort Weisinger, Aquaman first appeared in More Fun Comics #73 in 1941.",
+      "Arthur Curry, also known as Aquaman, is the king of Atlantis and possesses superhuman strength, the ability to communicate with sea life, and the power to manipulate water.",
+      "Aquaman's trident is a powerful weapon that can control the oceans and is often depicted as a symbol of his royal authority.",
+      "He is a founding member of the Justice League and a protector of both the surface world and the underwater realms.",
+      "Aquaman's character has been revitalized in recent years, particularly with the 2018 film 'Aquaman,' where he is portrayed by Jason Momoa."
+    ],
+    "Green Lantern": [
+      "Created by Bill Finger and Martin Nodell, Green Lantern first appeared in All-American Comics #16 in 1940.",
+      "The most well-known Green Lantern is Hal Jordan, a test pilot who is chosen by a dying alien to wield a powerful ring that grants him incredible abilities.",
+      "The Green Lantern ring can create constructs of light, limited only by the wearer's imagination and willpower.",
+      "Hal Jordan is part of the Green Lantern Corps, an intergalactic police force that protects the universe.",
+      "Green Lantern's stories often explore themes of courage, responsibility, and the balance of power in the universe."
+    ],
+    "Doctor Strange": [
+      "Created by Stan Lee and Steve Ditko, Doctor Strange first appeared in Strange Tales #110 in 1963.",
+      "Dr. Stephen Strange is a former neurosurgeon who becomes the Sorcerer Supreme, Earth's primary protector against magical and mystical threats.",
+      "He wields powerful artifacts like the Eye of Agamotto and the Cloak of Levitation, and commands vast magical knowledge.",
+      "Doctor Strange's Sanctum Sanctorum in Greenwich Village, New York, serves as his base of operations and a nexus of magical energy.",
+      "The character has seen a resurgence in popularity with his portrayal by Benedict Cumberbatch in the Marvel Cinematic Universe."
+    ],
+    "Daredevil": [
+      "Created by Stan Lee and Bill Everett, with input from Jack Kirby, Daredevil first appeared in Daredevil #1 in 1964.",
+      "Matt Murdock, blinded as a child by a radioactive substance, gains enhanced senses and becomes the vigilante Daredevil.",
+      "He is known as the 'Man Without Fear,' patrolling the streets of Hell's Kitchen, New York, with acrobatic skill and heightened senses.",
+      "By day, Matt Murdock is a lawyer, using his legal knowledge to fight for justice in the courtroom.",
+      "Daredevil is a complex character, often dealing with themes of morality, justice, and the conflict between his dual identities."
+    ]
+  };
+//...............................................repository for Information Technology...............................................
+  Map<String, List<String>> ITAndDevelopment = {
+    "Programming Languages": [
+      "Tools used to write instructions for computers to perform specific tasks, ranging from simple calculations to complex algorithms.",
+      "Popular programming languages include Python, JavaScript, Java, C++, and Ruby.",
+      "Each language has its own syntax and is suited for different types of development, such as web development (JavaScript), data science (Python), or systems programming (C++).",
+      "High-level languages like Python are easier to learn and use, while low-level languages like C offer greater control over hardware.",
+      "Languages evolve over time, with new versions and frameworks improving performance, security, and developer productivity."
+    ],
+    "Web Development": [
+      "The process of building and maintaining websites, including everything from creating simple static pages to complex web applications.",
+      "Web development is typically divided into front-end (client-side) and back-end (server-side) development.",
+      "Front-end technologies include HTML, CSS, and JavaScript, which are used to create the visual and interactive elements of a website.",
+      "Back-end technologies include server-side languages like Python, Ruby, and PHP, as well as databases like MySQL and MongoDB.",
+      "Web developers use frameworks like React, Angular, and Django to streamline development and manage complex projects."
+    ],
+    "Cloud Computing": [
+      "The delivery of computing services, including storage, processing, and networking, over the internet, allowing for on-demand access to resources.",
+      "Cloud computing providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform.",
+      "Key cloud services models include Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).",
+      "Cloud computing enables businesses to scale resources according to their needs without investing in physical infrastructure.",
+      "It supports a wide range of applications, from hosting websites to running complex AI models, and offers benefits like cost savings, flexibility, and disaster recovery."
+    ],
+    "DevOps": [
+      "A set of practices that combines software development (Dev) and IT operations (Ops) to shorten the development lifecycle and deliver high-quality software continuously.",
+      "DevOps emphasizes collaboration between developers, operations teams, and other stakeholders to automate processes and improve efficiency.",
+      "Key tools in the DevOps pipeline include version control systems like Git, continuous integration/continuous deployment (CI/CD) tools like Jenkins, and containerization platforms like Docker.",
+      "DevOps practices aim to reduce the time between writing code and deploying it to production, with a focus on reliability and scalability.",
+      "Popular DevOps methodologies include Infrastructure as Code (IaC), automated testing, and monitoring."
+    ],
+    "Cybersecurity": [
+      "The practice of protecting systems, networks, and data from digital attacks, unauthorized access, and damage.",
+      "Cybersecurity is critical for safeguarding sensitive information, maintaining system integrity, and ensuring user privacy.",
+      "Key concepts include encryption, firewalls, threat detection, vulnerability management, and incident response.",
+      "Common cybersecurity threats include phishing attacks, malware, ransomware, and denial-of-service (DoS) attacks.",
+      "As cyber threats evolve, cybersecurity practices must continuously adapt to protect against new vulnerabilities and ensure compliance with regulations."
+    ],
+    "Database Management": [
+      "The process of storing, retrieving, and managing data in databases, which are organized collections of structured information.",
+      "Database management systems (DBMS) like MySQL, PostgreSQL, and Oracle allow users to create, read, update, and delete data in a structured format.",
+      "SQL (Structured Query Language) is the standard language for interacting with relational databases, allowing for complex queries and data manipulation.",
+      "NoSQL databases, such as MongoDB and Cassandra, are designed to handle large volumes of unstructured data and offer flexibility in data modeling.",
+      "Database administrators (DBAs) are responsible for managing and maintaining databases, ensuring data integrity, security, and performance."
+    ],
+    "Agile Development": [
+      "A methodology for software development that emphasizes iterative progress, collaboration, and flexibility.",
+      "Agile development breaks projects into small, manageable increments called sprints, with regular feedback from stakeholders.",
+      "Popular Agile frameworks include Scrum, Kanban, and Extreme Programming (XP), each with its own set of practices and roles.",
+      "Agile aims to deliver functional software quickly, adapting to changes in requirements and priorities as the project evolves.",
+      "The Agile Manifesto, published in 2001, outlines the core values and principles that guide Agile development practices."
+    ],
+    "Artificial Intelligence": [
+      "The simulation of human intelligence in machines, enabling them to perform tasks that typically require human cognition, such as learning, reasoning, and problem-solving.",
+      "AI includes subfields like machine learning, natural language processing (NLP), computer vision, and robotics.",
+      "Machine learning, a key component of AI, involves training algorithms on large datasets to recognize patterns and make predictions or decisions.",
+      "AI is used in various applications, from virtual assistants like Siri and Alexa to self-driving cars and predictive analytics.",
+      "Ethical considerations in AI include bias in algorithms, privacy concerns, and the potential impact on jobs and society."
+    ],
+    "Blockchain": [
+      "A decentralized digital ledger technology that records transactions across multiple computers in a secure, transparent, and tamper-resistant way.",
+      "Originally developed as the underlying technology for Bitcoin, the first cryptocurrency, blockchain has since expanded to other applications.",
+      "Key features of blockchain include immutability, meaning that once data is recorded, it cannot be altered, and decentralization, which removes the need for a central authority.",
+      "Blockchain is used in various industries, including finance (cryptocurrencies), supply chain management, voting systems, and smart contracts.",
+      "The technology is seen as a potential disruptor for traditional systems, offering new ways to ensure transparency, security, and efficiency."
+    ],
+    "Internet of Things": [
+      "A network of interconnected devices that communicate with each other and exchange data over the internet.",
+      "IoT devices range from smart home products like thermostats and security cameras to industrial sensors and healthcare monitors.",
+      "IoT enables automation, real-time monitoring, and data-driven decision-making in various sectors, including agriculture, manufacturing, and urban development.",
+      "Security and privacy are major concerns in IoT, as the vast number of connected devices increases the potential for cyberattacks and data breaches.",
+      "IoT is transforming industries by enabling new applications, such as smart cities, predictive maintenance, and remote patient monitoring."
+    ],
+    "Version Control": [
+      "A system that records changes to files over time, allowing developers to track revisions, collaborate on code, and revert to previous versions if needed.",
+      "Git is the most widely used version control system, enabling distributed development and collaboration through platforms like GitHub and GitLab.",
+      "Version control is essential for managing codebases, particularly in teams, as it ensures that changes are tracked, conflicts are resolved, and code integrity is maintained.",
+      "Common version control concepts include commits (saving changes), branches (creating parallel versions of the code), and merges (combining changes from different branches).",
+      "Version control systems also support continuous integration/continuous deployment (CI/CD) pipelines, automating the process of testing and deploying code."
+    ],
+    "Software Testing": [
+      "The process of evaluating software to ensure that it meets specified requirements and functions correctly.",
+      "Software testing includes various types, such as unit testing (testing individual components), integration testing (testing combined components), and system testing (testing the entire system).",
+      "Automated testing involves using tools and scripts to perform tests, often as part of a CI/CD pipeline, ensuring faster and more reliable testing.",
+      "Manual testing involves human testers executing test cases and exploring the software to identify defects.",
+      "Testing is crucial for identifying bugs, ensuring software quality, and verifying that the product meets user expectations before release."
+    ],
+    "Continuous Integration Continuous Deployment": [
+      "A set of practices that automate the process of integrating, testing, and deploying code, ensuring that software can be released quickly and reliably.",
+      "Continuous Integration (CI) involves automatically testing code changes as they are integrated into the main branch, catching issues early in the development process.",
+      "Continuous Deployment (CD) extends CI by automatically deploying tested changes to production environments, enabling frequent and consistent releases.",
+      "CI/CD pipelines use tools like Jenkins, CircleCI, and GitLab CI to automate the process, ensuring that code is continuously integrated, tested, and deployed.",
+      "CI/CD practices help reduce the time between writing code and delivering it to users, improving software quality and responsiveness to changes."
+    ],
+    "Microservices": [
+      "An architectural style that structures an application as a collection of small, loosely coupled services that can be developed, deployed, and scaled independently.",
+      "Each microservice focuses on a specific business function and communicates with other services via APIs, often using lightweight protocols like HTTP or messaging queues.",
+      "Microservices offer flexibility, enabling teams to develop, deploy, and scale different parts of an application independently, often using different technologies.",
+      "Challenges with microservices include managing complexity, ensuring consistent communication between services, and maintaining data consistency across distributed systems.",
+      "Microservices are commonly used in cloud-native applications, supported by containerization tools like Docker and orchestration platforms like Kubernetes."
+    ],
+    "Containers": [
+      "A lightweight form of virtualization that allows developers to package an application and its dependencies into a single unit, which can run consistently across different environments.",
+      "Docker is the most popular containerization platform, enabling developers to create, deploy, and manage containers.",
+      "Containers are portable, making it easy to move applications between development, testing, and production environments without compatibility issues.",
+      "Container orchestration platforms like Kubernetes manage the deployment, scaling, and operation of containers in production environments.",
+      "Containers have become a key technology in DevOps, microservices, and cloud-native development, offering scalability, efficiency, and consistency."
+    ]
   };
 }

@@ -133,11 +133,20 @@ class GameScreenController extends GetxController {
 
   List<String> getRepositoryNames() {
     return [
-      'Countries',
-      'Sports',
-      'Vehicles',
       'Animals',
+      'Brands',
       'Chemistry',
+      'Countries',
+      'Famous People',
+      'Foods',
+      'Fruits & Vegetables',
+      'Information Technology',
+      'Movies',
+      'Mythology',
+      'Science',
+      'Sports',
+      'Superheroes',
+      'Vehicles'
     ];
   }
 
@@ -156,6 +165,24 @@ class GameScreenController extends GetxController {
         return DataRepo().animals;
       case 'Chemistry':
         return DataRepo().chemistryAndChemicals;
+      case 'Movies':
+        return DataRepo().movies;
+      case 'Famous People':
+        return DataRepo().famousPeople;
+      case 'Fruits & Vegetables':
+        return DataRepo().fruitsAndVegetables;
+      case 'Brands':
+        return DataRepo().brands;
+      case 'Mythology':
+        return DataRepo().mythology;
+      case 'Science':
+        return DataRepo().science;
+      case 'Foods':
+        return DataRepo().foods;
+      case 'Superheroes':
+        return DataRepo().superheroes;
+      case 'Information Technology':
+        return DataRepo().ITAndDevelopment;
       default:
         // If the repository name is not found, return a random repository
         String randomRepoName =
