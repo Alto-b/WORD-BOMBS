@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'package:hangman_game/app/modules/HomeScreen/widgets/homescreen_footer.dart';
 import 'package:hangman_game/app/modules/HomeScreen/widgets/repo_dropdown.dart';
 import 'package:hangman_game/app/modules/HomeScreen/widgets/shake_widget.dart';
 import 'package:hangman_game/app/routes/app_pages.dart';
@@ -149,6 +150,7 @@ class HomeScreenView extends GetView<HomeScreenController> {
                                   controller.onRepositorySelected,
                             ),
                           ),
+                          HomeScreenFooter(controller: controller)
                         ],
                       ),
                     ),

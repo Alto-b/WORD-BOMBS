@@ -17,22 +17,27 @@ class RepositoryDropdown extends StatefulWidget {
 class _RepositoryDropdownState extends State<RepositoryDropdown>
     with SingleTickerProviderStateMixin {
   String? selectedRepository;
-  AnimationController? _animationController;
-  Animation<double>? _scaleAnimation;
+  late AnimationController _animationController;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
 
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1.0).animate(
-        CurvedAnimation(parent: _animationController!, curve: Curves.easeOut));
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 300),
+    );
+
+    _scaleAnimation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeOut,
+    );
   }
 
   @override
   void dispose() {
-    _animationController?.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -41,14 +46,16 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
 
     showDialog(
       context: context,
+      barrierDismissible: true,
       builder: (context) {
+        _animationController.forward(); // Start the animation when dialog opens
         return Center(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Material(
               color: Colors.transparent,
               child: ScaleTransition(
-                scale: _scaleAnimation!,
+                scale: _scaleAnimation,
                 child: Container(
                   width: Get.width * 0.8, // Slightly wider dialog
                   padding: EdgeInsets.all(20),
@@ -75,6 +82,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
                       radius: Radius.circular(10),
                       interactive: true,
                       child: SingleChildScrollView(
+                        physics: BouncingScrollPhysics(),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: homeScreenController
@@ -115,8 +123,10 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
           ),
         );
       },
-    );
-    _animationController?.forward();
+    ).then((_) {
+      _animationController
+          .reverse(); // Reverse the animation when dialog closes
+    });
   }
 
   @override

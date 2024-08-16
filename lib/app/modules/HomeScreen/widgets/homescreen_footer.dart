@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 
-class HomeScreenFooter extends StatelessWidget {
+class HomeScreenFooter extends GetView<HomeScreenController> {
   const HomeScreenFooter({
     super.key,
     required this.controller,
@@ -21,9 +21,10 @@ class HomeScreenFooter extends StatelessWidget {
           IconButton(
               onPressed: () {
                 log("settings button pressed from homescreen");
+                controller.showAppInfo(context);
               },
               icon: const Icon(
-                Icons.settings,
+                Icons.info_outline,
                 color: Colors.white,
               )),
           IconButton(
