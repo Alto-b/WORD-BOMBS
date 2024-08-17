@@ -962,7 +962,7 @@ class DataRepo {
       "Famous for its philosophical undertones and groundbreaking action sequences.",
       "Won four Academy Awards, including Best Visual Effects and Best Film Editing."
     ],
-    "Schindler's List": [
+    "Schindlers List": [
       "Directed by Steven Spielberg, based on the true story of Oskar Schindler, who saved over a thousand Jews during the Holocaust.",
       "Shot in black and white, with the exception of a few symbolic color elements.",
       "Known for its powerful portrayal of the Holocaust and its emotional depth.",
