@@ -1,22 +1,21 @@
 import 'dart:math';
-import 'dart:developer';
 import 'package:animated_icon/animated_icon.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
-import 'package:hangman_game/app/routes/app_pages.dart';
-import 'package:hangman_game/app/utils/media.dart';
-import 'package:hangman_game/data/models/keyMap.dart';
+import 'package:word_bomb/app/modules/HomeScreen/controllers/home_screen_controller.dart';
+import 'package:word_bomb/app/routes/app_pages.dart';
+import 'package:word_bomb/app/utils/media.dart';
+import 'package:word_bomb/data/models/keyMap.dart';
 
-import 'package:hangman_game/data/repositories/dataRepo.dart';
+import 'package:word_bomb/data/repositories/dataRepo.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lottie/lottie.dart';
 
 class GameScreenController extends GetxController {
-  Rx<Color> scaffoldColor = Color(0xFF1f2631).obs;
+  Rx<Color> scaffoldColor = const Color(0xFF1f2631).obs;
   RxBool isLoadingHints = false.obs;
   RxString randomCountryHint = 'loading'.obs;
   RxString selectedRepository = ''.obs;
@@ -199,11 +198,11 @@ class GameScreenController extends GetxController {
 
   Color getButtonColor(int index) {
     String? character = getValue(index.toString());
-    print("Character: $character");
-    print("Tapped Button List: $tappedButtonList");
+    debugPrint("Character: $character");
+    debugPrint("Tapped Button List: $tappedButtonList");
     if (character != null && tappedButtonList.contains(index)) {
       List<String> currentWordList = currentWord.value.toLowerCase().split('');
-      print("Current Word List: $currentWordList");
+      debugPrint("Current Word List: $currentWordList");
       if (currentWordList.contains(character.toLowerCase())) {
         return Colors.green;
       } else {
@@ -233,7 +232,7 @@ class GameScreenController extends GetxController {
   }
 
   void checkIfWordExists(String keyword, int index) async {
-    print("lifeCount ${lifeCount.value}");
+    debugPrint("lifeCount ${lifeCount.value}");
     if (lifeCount.value == 5) {
       _updateMaxScore(maxScore.value); // Save the score
       showAlertDialog("Game Over", "You've exhausted all your chances.");
@@ -261,7 +260,7 @@ class GameScreenController extends GetxController {
       _updateMaxScore(maxScore.value); // Save the score
       // await splashScaffoldColor();
       await updateHintsAfterRight();
-      await Future.delayed(Duration(milliseconds: 1200)).then((value) {
+      await Future.delayed(const Duration(milliseconds: 1200)).then((value) {
         tappedButtonList.clear();
         chooseCategory(); // Get a new random country
       }); // Add a small delay for user experience
@@ -270,7 +269,7 @@ class GameScreenController extends GetxController {
 
   Future<void> updateHintsAfterRight() async {
     isLoadingHints.value = true;
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     playAudioOnSuccess();
     isLoadingHints.value = false;
   }
@@ -283,8 +282,9 @@ class GameScreenController extends GetxController {
     // Change scaffold color to green for 500 milliseconds
     scaffoldColor.value = Colors.blueGrey;
     HapticFeedback.heavyImpact(); // Trigger haptic feedback
-    await Future.delayed(Duration(milliseconds: 200));
-    scaffoldColor.value = Color(0xFF1f2631); // Change back to original color
+    await Future.delayed(const Duration(milliseconds: 200));
+    scaffoldColor.value =
+        const Color(0xFF1f2631); // Change back to original color
   }
 
   //alert dialog for game over
@@ -303,24 +303,24 @@ class GameScreenController extends GetxController {
               children: [
                 Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Lottie.asset(Media.bomb),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   message,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 AnimateIcon(
                   key: UniqueKey(),
                   onTap: () {

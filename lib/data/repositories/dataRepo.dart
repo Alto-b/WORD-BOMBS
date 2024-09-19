@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class DataRepo {
   //...............................................repositories for country...............................................
   Map<String, List<String>> countries = {
@@ -941,13 +943,6 @@ class DataRepo {
       "Credited with revitalizing John Travolta's career and launching Tarantino into stardom.",
       "Won the Palme d'Or at the Cannes Film Festival and an Academy Award for Best Original Screenplay."
     ],
-    "The Lord of the Rings: The Fellowship of the Ring": [
-      "Directed by Peter Jackson and based on the novel by J.R.R. Tolkien.",
-      "The first film in the epic fantasy trilogy, following the journey to destroy the One Ring.",
-      "Known for its stunning New Zealand landscapes, detailed set designs, and special effects.",
-      "Introduced audiences to Middle-earth, a richly detailed fantasy world.",
-      "Won four Academy Awards, including Best Cinematography and Best Visual Effects."
-    ],
     "Titanic": [
       "Directed by James Cameron, the film became the highest-grossing film of its time.",
       "A romantic drama set against the backdrop of the infamous sinking of the RMS Titanic.",
@@ -1104,13 +1099,6 @@ class DataRepo {
       "Famous for her political acumen, she maintained stability and avoided costly wars despite pressure from European powers.",
       "Never married, earning her the nickname 'The Virgin Queen,' and she skillfully used her single status to her advantage in diplomacy.",
       "Her leadership helped England become a major world power and laid the foundations for the British Empire."
-    ],
-    "Nelson Mandela": [
-      "Anti-apartheid revolutionary and the first Black president of South Africa.",
-      "Spent 27 years in prison for his activism against South Africa's racist apartheid system.",
-      "Led the country’s transition from apartheid to a multi-racial democracy.",
-      "Awarded the Nobel Peace Prize in 1993 for his efforts in dismantling apartheid.",
-      "Known for his emphasis on reconciliation and forgiveness, even toward those who had oppressed him."
     ],
     "Helen Keller": [
       "An American author, disability rights advocate, and lecturer who was the first deaf-blind person to earn a Bachelor of Arts degree.",
@@ -2000,13 +1988,6 @@ class DataRepo {
       "As Black Panther, T'Challa possesses enhanced strength, agility, and senses, as well as access to advanced technology and combat training.",
       "Black Panther is the first mainstream Black superhero in American comics, symbolizing leadership, intelligence, and bravery.",
       "The character gained global prominence with the 2018 film 'Black Panther,' which was a critical and commercial success."
-    ],
-    "Wonder Woman": [
-      "Created by William Moulton Marston, Wonder Woman first appeared in All Star Comics #8 in 1941.",
-      "Diana of Themyscira is an Amazonian warrior princess with superhuman strength, agility, and the ability to fly.",
-      "Her iconic weapons include the Lasso of Truth, indestructible bracelets, and a magical sword and shield.",
-      "Wonder Woman is a founding member of the Justice League and a symbol of peace, justice, and women's empowerment.",
-      "Her alter ego, Diana Prince, works in various roles, including as a nurse and a military intelligence officer, depending on the storyline."
     ],
     "Wolverine": [
       "Created by Roy Thomas, Len Wein, and John Romita Sr., Wolverine first appeared in The Incredible Hulk #180 in 1974.",

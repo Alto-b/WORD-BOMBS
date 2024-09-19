@@ -1,15 +1,14 @@
-import 'dart:developer';
+// ignore_for_file: deprecated_member_use
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
-import 'package:hangman_game/app/routes/app_pages.dart';
+import 'package:word_bomb/app/routes/app_pages.dart';
 
-import 'package:hangman_game/app/utils/color_converter.dart';
-import 'package:hangman_game/app/utils/media.dart';
-import 'package:hangman_game/data/models/keyMap.dart';
+import 'package:word_bomb/app/utils/color_converter.dart';
+import 'package:word_bomb/app/utils/media.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:pushable_button/pushable_button.dart';
@@ -47,7 +46,7 @@ class GameScreenView extends GetView<GameScreenController> {
             title: Obx(
               () => Text(
                 'Current Score: ${controller.maxScore.value}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -60,8 +59,13 @@ class GameScreenView extends GetView<GameScreenController> {
           body: Column(
             children: [
               Text(
-                "Category: ${controller.selectedRepository.value}",
-                style: TextStyle(color: Colors.white),
+                " ${controller.selectedRepository.value} ",
+                style: const TextStyle(
+                  letterSpacing: 2,
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               Obx(
                 () => Stack(
@@ -111,8 +115,9 @@ class GameScreenView extends GetView<GameScreenController> {
                         ? CarouselSlider.builder(
                             options: CarouselOptions(
                                 autoPlay: true,
-                                scrollPhysics: FixedExtentScrollPhysics(),
-                                autoPlayAnimationDuration: Duration(seconds: 2),
+                                scrollPhysics: const FixedExtentScrollPhysics(),
+                                autoPlayAnimationDuration:
+                                    const Duration(seconds: 2),
                                 // autoPlayInterval: Duration(seconds: 3),
                                 enlargeCenterPage: true,
                                 enlargeFactor: 0.2,
@@ -221,15 +226,15 @@ class GameScreenView extends GetView<GameScreenController> {
                         minHeight: 25,
                         backgroundColor: Colors.green.shade300,
                         value: controller.lifeCount.value / 5,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.transparent),
+                        valueColor: const AlwaysStoppedAnimation<Color>(
+                            Colors.transparent),
                       ),
                     ),
                     ClipRRect(
                       child: Container(
                         height: 25,
                         width: screenWidth * (controller.lifeCount.value / 5),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
                               Colors.yellow,
@@ -258,7 +263,7 @@ class GameScreenView extends GetView<GameScreenController> {
     return Obx(
       () => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0),
-        child: Container(
+        child: SizedBox(
           width: Get.width / 12,
           child: PushableButton(
             height: 45,

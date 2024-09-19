@@ -4,16 +4,16 @@ import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/modules/HomeScreen/widgets/homescreen_footer.dart';
-import 'package:hangman_game/app/modules/HomeScreen/widgets/repo_dropdown.dart';
-import 'package:hangman_game/app/modules/HomeScreen/widgets/shake_widget.dart';
-import 'package:hangman_game/app/routes/app_pages.dart';
-import 'package:hangman_game/app/utils/media.dart';
+import 'package:word_bomb/app/modules/HomeScreen/widgets/homescreen_footer.dart';
+import 'package:word_bomb/app/modules/HomeScreen/widgets/repo_dropdown.dart';
+import 'package:word_bomb/app/modules/HomeScreen/widgets/shake_widget.dart';
+import 'package:word_bomb/app/routes/app_pages.dart';
+import 'package:word_bomb/app/utils/media.dart';
 import 'package:lottie/lottie.dart';
 import '../controllers/home_screen_controller.dart';
 
 class HomeScreenView extends GetView<HomeScreenController> {
-  const HomeScreenView({Key? key}) : super(key: key);
+  const HomeScreenView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
+import 'package:word_bomb/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 
 class HomeScreenFooter extends GetView<HomeScreenController> {
   const HomeScreenFooter({
@@ -10,6 +10,7 @@ class HomeScreenFooter extends GetView<HomeScreenController> {
     required this.controller,
   });
 
+  @override
   final HomeScreenController controller;
 
   @override

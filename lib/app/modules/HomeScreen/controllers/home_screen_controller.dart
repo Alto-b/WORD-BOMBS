@@ -2,7 +2,8 @@ import 'dart:developer';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/data/repositories/dataRepo.dart';
+import 'package:word_bomb/data/repositories/dataRepo.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreenController extends GetxController {
@@ -10,6 +11,7 @@ class HomeScreenController extends GetxController {
   final RxBool isSoundPlayed = false.obs;
   RxInt lifetimeMaxScore = 0.obs;
   RxString selectedRepository = ''.obs;
+  RxString appVersion = ''.obs;
   @override
   void onInit() {
     super.onInit();
@@ -19,6 +21,7 @@ class HomeScreenController extends GetxController {
     initRepositories();
     // playAudioOnInit();
     initSharedPreference();
+    loadAppVersion();
   }
 
   @override
@@ -32,6 +35,12 @@ class HomeScreenController extends GetxController {
     audioPlayer.stop();
     audioPlayer.dispose();
     super.onClose();
+  }
+
+  Future<void> loadAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+
+    appVersion.value = packageInfo.version;
   }
 
   List<String> getRepositoryNames() {
@@ -99,69 +108,161 @@ class HomeScreenController extends GetxController {
   }
 
   /// A method that returns an AlertDialog for displaying information about the app.
+
   AlertDialog buildInfoDialog(BuildContext context) {
     return AlertDialog(
-      title: Text(
-        'About This App',
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-        ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0), // Rounded corners
       ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      title: Row(
         children: [
-          Text(
-            'This app is designed to provide an immersive experience in Flutter development. '
-            'With a focus on modern UI design, this app integrates various features to help developers '
-            'learn and apply their skills in building robust applications.',
-            style: TextStyle(
-              fontSize: 16,
-            ),
+          Icon(
+            Icons.info_outline,
+            color: Theme.of(context).primaryColor,
           ),
-          SizedBox(height: 10),
-          Text(
-            'Key Features:',
+          const SizedBox(width: 10),
+          const Text(
+            'About Word Bomb',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 5),
-          Text(
-            '• Feature 1: Modern UI components\n'
-            '• Feature 2: Real-time data updates\n'
-            '• Feature 3: Custom animations and transitions\n'
-            '• Feature 4: Seamless state management\n',
-            style: TextStyle(
-              fontSize: 16,
-            ),
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Version: 1.0.0',
-            style: TextStyle(
-              fontSize: 16,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
         ],
+      ),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Divider(
+              color: Colors.grey[300], // Subtle divider
+              thickness: 1,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              'Word Bomb is an exciting word guessing game that challenges your vocabulary skills! '
+              'Select from different categories and guess the words based on the chosen theme. '
+              'Keep your mind sharp and enjoy hours of fun!',
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.5, // Improved line height for readability
+                color: Colors.grey[800],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Key Features:',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColorDark,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                featureItem(context, 'Multiple game categories to choose from',
+                    Icons.category),
+                featureItem(context, 'Timed challenges for added excitement',
+                    Icons.timer),
+                featureItem(context, 'Earn points and track your progress',
+                    Icons.emoji_events),
+                featureItem(
+                    context, 'Fun and educational gameplay', Icons.school),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Column(
+              children: [
+                Center(
+                  child: Text(
+                    '© CODEFASCIA',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight
+                          .w500, // Medium font weight for better emphasis
+                      fontStyle: FontStyle.italic,
+                      letterSpacing:
+                          1.0, // Adds some spacing between letters for a refined look
+                      color: Colors
+                          .blueGrey[800], // Slightly darker color for contrast
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                    height: 8), // Reduced height for a more compact look
+                Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // Align the version text in the center
+                    children: [
+                      Icon(
+                        Icons.info_outline,
+                        size: 18,
+                        color: Colors.blueGrey[
+                            800], // Matching icon color for consistency
+                      ),
+                      const SizedBox(width: 4), // Spacing between icon and text
+                      Text(
+                        'v.$appVersion',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500, // Medium font weight
+                          fontStyle: FontStyle.italic,
+                          letterSpacing: 1.0,
+                          color: Colors.blueGrey[800],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
       actions: [
         TextButton(
           onPressed: () {
             Navigator.of(context).pop(); // Close the dialog
           },
-          child: Text(
-            'Close',
-            style: TextStyle(
-              color: Theme.of(context).primaryColor,
+          style: TextButton.styleFrom(
+            foregroundColor: Theme.of(context).primaryColor,
+            textStyle: const TextStyle(
               fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
           ),
+          child: const Text('Close'),
         ),
       ],
+    );
+  }
+
+  Widget featureItem(BuildContext context, String feature, IconData icon) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        children: [
+          Icon(
+            icon,
+            size: 20,
+            color: Theme.of(context).primaryColor,
+          ),
+          const SizedBox(width: 8),
+          Flexible(
+            child: Text(
+              feature,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[800],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 

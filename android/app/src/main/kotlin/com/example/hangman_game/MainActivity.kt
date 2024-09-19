@@ -1,4 +1,4 @@
-package com.example.hangman_game
+package com.codefascia.wordbomb_game
 
 import io.flutter.embedding.android.FlutterActivity
 

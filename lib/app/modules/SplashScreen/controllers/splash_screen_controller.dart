@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/routes/app_pages.dart';
-import 'package:hangman_game/app/utils/media.dart';
+import 'package:word_bomb/app/routes/app_pages.dart';
+import 'package:word_bomb/app/utils/media.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class SplashScreenController extends GetxController {
@@ -27,7 +27,7 @@ class SplashScreenController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    Future.delayed(Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       isLogoAnimated.value = true;
     });
     // goToHomeScreen();
@@ -47,7 +47,7 @@ class SplashScreenController extends GetxController {
 
   Future<void> goToHomeScreen() async {
     log("SplashScreenController 1");
-    await Future.delayed(Duration(milliseconds: 2600));
+    await Future.delayed(const Duration(milliseconds: 2600));
     log("SplashScreenController 2");
     Get.offAllNamed(
       Routes.HOME_SCREEN,

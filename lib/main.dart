@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:hangman_game/app/modules/GameScreen/controllers/game_screen_controller.dart';
-import 'package:hangman_game/app/routes/app_pages.dart';
-import 'package:hangman_game/app_binding.dart';
+import 'package:word_bomb/app/routes/app_pages.dart';
+import 'package:word_bomb/app_binding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +23,8 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
       // defaultTransition: Transition.cupertino,
       theme: ThemeData(
-          scaffoldBackgroundColor: Color(0xFF1f2631),
-          appBarTheme: AppBarTheme(
+          scaffoldBackgroundColor: const Color(0xFF1f2631),
+          appBarTheme: const AppBarTheme(
             backgroundColor: Color(0xFF1f2631),
           )),
     );

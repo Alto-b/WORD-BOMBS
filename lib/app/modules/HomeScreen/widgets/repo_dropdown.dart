@@ -1,14 +1,16 @@
+// ignore_for_file: library_private_types_in_public_api, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui'; // Import for BackdropFilter
 
-import 'package:hangman_game/app/modules/HomeScreen/controllers/home_screen_controller.dart';
+import 'package:word_bomb/app/modules/HomeScreen/controllers/home_screen_controller.dart';
 
 class RepositoryDropdown extends StatefulWidget {
   final Function(String) onRepositorySelected;
 
-  RepositoryDropdown({required this.onRepositorySelected});
+  const RepositoryDropdown({super.key, required this.onRepositorySelected});
 
   @override
   _RepositoryDropdownState createState() => _RepositoryDropdownState();
@@ -26,7 +28,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
 
     _scaleAnimation = CurvedAnimation(
@@ -58,7 +60,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
                 scale: _scaleAnimation,
                 child: Container(
                   width: Get.width * 0.8, // Slightly wider dialog
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.black87,
                     borderRadius: BorderRadius.circular(25),
@@ -66,7 +68,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
                       BoxShadow(
                         color: Colors.pink.withOpacity(0.8),
                         blurRadius: 3,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
@@ -79,10 +81,10 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
                       thumbVisibility: true,
                       showTrackOnHover: true,
                       thickness: 6,
-                      radius: Radius.circular(10),
+                      radius: const Radius.circular(10),
                       interactive: true,
                       child: SingleChildScrollView(
-                        physics: BouncingScrollPhysics(),
+                        physics: const BouncingScrollPhysics(),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: homeScreenController
@@ -91,7 +93,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
                             return ListTile(
                               title: Text(
                                 value,
-                                style: GoogleFonts.orbitron(
+                                style: TextStyle(
                                   color: selectedRepository == value
                                       ? Colors.pink
                                       : Colors.white,
@@ -131,8 +133,6 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
 
   @override
   Widget build(BuildContext context) {
-    final homeScreenController = Get.find<HomeScreenController>();
-
     return GestureDetector(
       onTap: () => _showCustomDropdownDialog(context),
       child: Container(
@@ -145,7 +145,7 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
             BoxShadow(
               color: Colors.grey.withOpacity(0.2),
               blurRadius: 8,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
@@ -156,13 +156,13 @@ class _RepositoryDropdownState extends State<RepositoryDropdown>
             children: [
               Text(
                 selectedRepository ?? 'Select Category',
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white70,
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              Icon(Icons.arrow_drop_down, color: Colors.pink),
+              const Icon(Icons.arrow_drop_down, color: Colors.pink),
             ],
           ),
         ),

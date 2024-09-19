@@ -1,5 +1,5 @@
-name: hangman_game
-description: "hangman_game is a complete result of noklachia moment felt during
+name: word_bomb
+description: "word bomb is a complete result of noklachia moment felt during
   work about good old childhood games."
 
 publish_to: 'none'
@@ -7,11 +7,11 @@ publish_to: 'none'
 version: 1.2.1+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=3.2.3 <4.0.0' 
 
 dependencies:
   animated_icon: ^0.0.9
-  audioplayers: ^6.0.0
+  audioplayers: 
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   dropdown_button2: ^2.3.9
@@ -20,10 +20,9 @@ dependencies:
   flutter_staggered_animations: ^1.1.1
   gap: ^3.0.1
   get: ^4.6.6
-  google_fonts: ^6.2.1
   lottie: ^3.1.2
   package_info_plus: 
-  pushable_button: ^0.0.4
+  pushable_button: 
   shared_preferences: null
   shimmer: ^3.0.0
 

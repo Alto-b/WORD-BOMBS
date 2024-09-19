@@ -1,6 +1,6 @@
 {
-    "name": "hangman_game",
-    "short_name": "hangman_game",
+    "name": "word_bomb",
+    "short_name": "word_bomb",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -6,11 +6,11 @@ class ShakeWidget extends StatefulWidget {
   final int shakes;
 
   const ShakeWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(milliseconds: 500),
     this.shakes = 3,
-  }) : super(key: key);
+  });
 
   @override
   ShakeWidgetState createState() => ShakeWidgetState();

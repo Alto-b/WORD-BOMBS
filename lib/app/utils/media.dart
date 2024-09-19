@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class Media {
   //logo
   static const codeFasciaLogo = 'assets/code_fascia_logo.png';
