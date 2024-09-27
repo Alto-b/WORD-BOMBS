@@ -4,7 +4,7 @@ description: "word bomb is a complete result of noklachia moment felt during
 
 publish_to: 'none'
 
-version: 1.2.1+1
+version: 1.2.2+3
 
 environment:
   sdk: '>=3.2.3 <4.0.0' 
