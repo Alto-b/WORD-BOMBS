@@ -863,7 +863,7 @@ class DataRepo {
       "Nickel is used as a catalyst in the hydrogenation of vegetable oils to produce margarine.",
       "Catalysts are essential in industrial processes, such as the Haber process for ammonia production."
     ],
-    "Acid-Base Indicators": [
+    "Acid Base Indicators": [
       "Acid-base indicators are substances that change color in response to the pH of a solution.",
       "Litmus paper turns red in acidic solutions and blue in basic solutions.",
       "Phenolphthalein is colorless in acidic solutions and pink in basic solutions.",
